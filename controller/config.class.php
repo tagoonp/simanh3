@@ -10,6 +10,9 @@ $dbname = 'simanh3';
 $user = 'root';
 $password = 'mandymorenn';
 
+$host = '157.230.46.106';
+$user = 'rmis5';
+$password = 'rmis5';
 // $user = 'root';
 // $password = 'mySsimanh#3';
 

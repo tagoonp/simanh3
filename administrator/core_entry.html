@@ -8,7 +8,6 @@
         <link rel="stylesheet" href="../node_modules/preload.js/dist/css/preload.css">
         <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.css">
         <link rel="stylesheet" href="../node_modules/sweetalert/dist/sweetalert.css">
-        <!-- <link rel="stylesheet" href="../node_modules/rangeSlider-master/dist/range-slider.css"> -->
         <link rel="stylesheet" href="../assets/custom/css/style.css">
 
         <title>SIMANH : Improving Health System Response through Epidemiological Surveillance in Improving Maternal and Newborn Health and Survival</title>
@@ -124,9 +123,15 @@
                         <div class="col-12 col-sm-8">
                           <div class="selectgroup selectgroup-pills">
                             <div class="row">
+                              <div class="col-2 col-sm-1 dn">
+                                  <label class="selectgroup-item">
+                                      <input type="radio" name="icon-input-referstatus" value="na" class="selectgroup-input" data-role="none" checked="">
+                                      <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                                  </label>
+                              </div>
                               <div class="col-2 col-sm-1">
                                   <label class="selectgroup-item">
-                                      <input type="radio" name="icon-input-referstatus" value="0" class="selectgroup-input" data-role="none" checked="">
+                                      <input type="radio" name="icon-input-referstatus" value="0" class="selectgroup-input" data-role="none">
                                       <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
                                   </label>
                               </div>
@@ -147,7 +152,7 @@
 
 
                       <div class="form-group row">
-                        <label for="" class="col-form-label col-12 col-sm-4">Refer from / to hospital name : <span class="text-danger">*</span> </label>
+                        <label for="" class="col-form-label col-12 col-sm-4">Refer from / to hospital name : </label>
                         <div class="col-12 col-sm-8">
                             <input type="text" class="form-control custom-input-1" data-role="none" id="txtFacility" >
                         </div>
@@ -167,14 +172,25 @@
                     <div class="form-group row">
                       <label for="" class="col-form-label col-12 col-sm-4">Identification number / Migrant Resident Cert. / VISA : <span class="text-danger">*</span> </label>
                       <div class="col-12 col-sm-8">
-                          <input type="text" class="form-control custom-input-1" data-role="none" id="txtCid" >
+                          <input type="text" class="form-control custom-input-1" data-role="none" id="txtCid"  tabindex="6">
                       </div>
                     </div>
 
                     <div class="form-group row">
-                      <label for="" class="col-form-label col-12 col-sm-4">Address - district : <span class="text-danger">*</span> </label>
+                      <label for="" class="col-form-label col-12 col-sm-4">Address (Province and District) : <span class="text-danger">*</span> </label>
                       <div class="col-12 col-sm-8">
-                          <input type="text" class="form-control custom-input-1" data-role="none" id="txtDistrict">
+                        <div class="row">
+                          <div class="col-6">
+                            <select class="form-control custom-input-1 txtProvince" name="txtProvince" id="txtProvince" data-role="none" tabindex="7">
+                              <option value="">-- Select province --</option>
+                            </select>
+                          </div>
+                          <div class="col-6">
+                            <select class="form-control custom-input-1 txtDistrict" name="txtDistrict" id="txtDistrict" data-role="none" tabindex="8">
+                              <option value="">-- Select district --</option>
+                            </select>
+                          </div>
+                        </div>
                       </div>
                     </div>
 
@@ -183,17 +199,17 @@
                       <div class="col-12 col-sm-8">
                         <div class="row">
                           <div class="col-4">
-                            <select class="form-control custom-input-1 text-center" name="txtDD2" id="txtDD2" data-role="none">
+                            <select class="form-control custom-input-1 text-center age_input" name="txtDD2" id="txtDD2" data-role="none" tabindex="9">
                               <option value="">-- DD --</option>
                             </select>
                           </div>
                           <div class="col-4 pl-0 pr-0">
-                            <select class="form-control custom-input-1 text-center" name="txtMM2" id="txtMM2" data-role="none">
+                            <select class="form-control custom-input-1 text-center age_input" name="txtMM2" id="txtMM2" data-role="none" tabindex="10">
                               <option value="">-- MM --</option>
                             </select>
                           </div>
                           <div class="col-4">
-                            <select class="form-control custom-input-1 text-center" name="txtYY2" id="txtYY2" data-role="none">
+                            <select class="form-control custom-input-1 text-center age_input" name="txtYY2" id="txtYY2" data-role="none" tabindex="11">
                               <option value="">-- YYYY --</option>
                             </select>
                           </div>
@@ -415,7 +431,7 @@
                   </div>
                 </div>
 
-                <div class="card mb-3" style="border: none;">
+                <div class="card mb-3" style="border: none;" id="card3">
                   <div class="card-header" style="background: rgb(62, 78, 85);">
                     <h5 class="mb-0 text-white fb">Obstertric information</h5>
                   </div>
@@ -450,7 +466,7 @@
                     <div class="form-group row">
                       <label for="" class="col-form-label col-12 col-sm-4">Place of antenatal care : </label>
                       <div class="col-12 col-sm-8">
-                        <select class="form-control custom-input-1" name="" data-role="none">
+                        <select class="form-control custom-input-1" name="txtAnc" id="txtAnc" data-role="none" tabindex="12">
                           <option value="0" selected>No</option>
                           <option value="1" > Private clinic</option>
                           <option value="2" > Health Promotion Hospital</option>
@@ -466,20 +482,42 @@
                       <div class="form-group row">
                         <label for="" class="col-form-label col-12 col-sm-4">GA at 1<sup>st</sup> ANC (Week) : </label>
                         <div class="col-12 col-sm-8">
-                          <input type="range" min="4" max="44" class="form-control" id="txtAbort" data-rangeSlider>
+                          <!-- <input type="range" min="4" max="44" class="form-control" id="txt1GA" data-rangeSlider>
                           <small class="text-danger">
                             ** หากไม่มีข้อมูล (No data) ให้ปล่อยว่าง
-                          </small>
+                          </small> -->
+                          <div class="row">
+                            <div class="col-8 pr-0">
+                              <input type="range" min="4" max="44" class="form-control" id="txt1GA" data-rangeSlider>
+                              <small class="text-danger">
+                                ** หากไม่มีข้อมูล (No data) ให้ปล่อยว่าง
+                              </small>
+                            </div>
+                            <div class="col-4 pl-0 pt-1">
+                              <button type="button" name="button" class="btn btn-secondary btn-sm" data-role="none" onclick="setNodataSlider('txt1GA')">Set no data</button>
+                            </div>
+                          </div>
                         </div>
                       </div>
 
                       <div class="form-group row">
                         <label for="" class="col-form-label col-12 col-sm-4">Number of ANC : </label>
                         <div class="col-12 col-sm-8">
-                          <input type="range" min="0" max="15" class="form-control" id="txtAbort" data-rangeSlider>
+                          <!-- <input type="range" min="0" max="15" class="form-control" id="txtNumAnc" data-rangeSlider>
                           <small class="text-danger">
                           	** หากไม่มีข้อมูล (No data) ให้ปล่อยว่าง
-                          </small>
+                          </small> -->
+                          <div class="row">
+                            <div class="col-8 pr-0">
+                              <input type="range" min="0" max="20" class="form-control" id="txtNumAnc" data-rangeSlider>
+                              <small class="text-danger">
+                                ** หากไม่มีข้อมูล (No data) ให้ปล่อยว่าง
+                              </small>
+                            </div>
+                            <div class="col-4 pl-0 pt-1">
+                              <button type="button" name="button" class="btn btn-secondary btn-sm" data-role="none" onclick="setNodataSlider('txtNumAnc')">Set no data</button>
+                            </div>
+                          </div>
                         </div>
                       </div>
 
@@ -664,14 +702,14 @@
                       <div class="form-group row">
                         <label for="" class="col-form-label col-12 col-sm-4">Blood pressure results at last ANC (Systolic) :</label>
                         <div class="col-12 col-sm-8">
-                            <input type="number" min="0" max="999" class="form-control custom-input-1" data-role="none" id="txtHn2" >
+                            <input type="number" min="0" max="999" class="form-control custom-input-1" data-role="none" id="txtAncSys"  tabindex="13">
                         </div>
                       </div>
 
                       <div class="form-group row">
                         <label for="" class="col-form-label col-12 col-sm-4">Blood pressure results at last ANC (Diastolic) : </label>
                         <div class="col-12 col-sm-8">
-                            <input type="number" min="0" max="999" class="form-control custom-input-1" data-role="none" id="txtHn2" >
+                            <input type="number" min="0" max="999" class="form-control custom-input-1" data-role="none" id="txtAncDia" tabindex="14" >
                         </div>
                       </div>
 
@@ -748,35 +786,35 @@
                     <div class="form-group row">
                       <label for="" class="col-form-label col-12 col-sm-4">Blood pressure (Systolic) :</label>
                       <div class="col-12 col-sm-8">
-                          <input type="number" min="0" max="999" class="form-control custom-input-1" data-role="none" id="txtAdmSts" tabindex='1' >
+                          <input type="number" min="0" max="999" class="form-control custom-input-1" data-role="none" id="txtAdmSts" tabindex='15' >
                       </div>
                     </div>
 
                     <div class="form-group row">
                       <label for="" class="col-form-label col-12 col-sm-4">Blood pressure (Diastolic) : </label>
                       <div class="col-12 col-sm-8">
-                          <input type="number" min="0" max="999" class="form-control custom-input-1" data-role="none" id="txtAdmDia" tabindex='2' >
+                          <input type="number" min="0" max="999" class="form-control custom-input-1" data-role="none" id="txtAdmDia" tabindex='16' >
                       </div>
                     </div>
 
                     <div class="form-group row">
                       <label for="" class="col-form-label col-12 col-sm-4">Pulse rate : </label>
                       <div class="col-12 col-sm-8">
-                          <input type="number" min="0" max="999" class="form-control custom-input-1" data-role="none" id="txtHn2" >
+                          <input type="number" min="0" max="999" class="form-control custom-input-1" data-role="none" id="txtPr"  tabindex="17">
                       </div>
                     </div>
 
                     <div class="form-group row">
                       <label for="" class="col-form-label col-12 col-sm-4">Body Temperature : </label>
                       <div class="col-12 col-sm-8">
-                          <input type="number" min="0" max="999" class="form-control custom-input-1" data-role="none" id="txtHn2" >
+                          <input type="number" min="0" max="999" class="form-control custom-input-1" data-role="none" id="txtBt"  tabindex="18">
                       </div>
                     </div>
 
                     <div class="form-group row">
                       <label for="" class="col-form-label col-12 col-sm-4">Fetal heart rate : </label>
                       <div class="col-12 col-sm-8">
-                          <input type="number" min="0" max="999" class="form-control custom-input-1" data-role="none" id="txtHn2" >
+                          <input type="number" min="0" max="999" class="form-control custom-input-1" data-role="none" id="txtFhr"  tabindex="19">
                       </div>
                     </div>
 
@@ -851,10 +889,17 @@
                     <div class="form-group row">
                       <label for="" class="col-form-label col-12 col-sm-4">GA at admission : </label>
                       <div class="col-12 col-sm-8">
-                        <input type="range" min="4" max="50" class="form-control" id="txtAbort" data-rangeSlider>
-                        <small class="text-danger">
-                          ** หากไม่มีข้อมูล (No data) ให้ปล่อยว่าง
-                        </small>
+                        <div class="row">
+                          <div class="col-8 pr-0">
+                            <input type="range" min="4" max="50" class="form-control" id="tatGaAdm" data-rangeSlider>
+                            <small class="text-danger">
+                              ** หากไม่มีข้อมูล (No data) ให้ปล่อยว่าง
+                            </small>
+                          </div>
+                          <div class="col-4 pl-0 pt-1">
+                            <button type="button" name="button" class="btn btn-secondary btn-sm" data-role="none" onclick="setNodataSlider('tatGaAdm')">Set no data</button>
+                          </div>
+                        </div>
                       </div>
                     </div>
 
@@ -863,17 +908,17 @@
                       <div class="col-12 col-sm-8">
                         <div class="row">
                           <div class="col-4">
-                            <select class="form-control custom-input-1 text-center" name="txtDD3" id="txtDD3" data-role="none">
+                            <select class="form-control custom-input-1 text-center" name="txtDD3" id="txtDD3" data-role="none" tabindex="20">
                               <option value="">-- DD --</option>
                             </select>
                           </div>
                           <div class="col-4 pl-0 pr-0">
-                            <select class="form-control custom-input-1 text-center" name="txtMM3" id="txtMM3" data-role="none">
+                            <select class="form-control custom-input-1 text-center" name="txtMM3" id="txtMM3" data-role="none" tabindex="21">
                               <option value="">-- MM --</option>
                             </select>
                           </div>
                           <div class="col-4">
-                            <select class="form-control custom-input-1 text-center" name="txtYY3" id="txtYY3" data-role="none">
+                            <select class="form-control custom-input-1 text-center" name="txtYY3" id="txtYY3" data-role="none" tabindex="22">
                               <option value="">-- YYYY --</option>
                             </select>
                           </div>
@@ -886,12 +931,12 @@
                       <div class="col-12 col-sm-8">
                         <div class="row">
                           <div class="col-6">
-                            <select class="form-control custom-input-1 text-center" name="txtHH3" id="txtHH3" data-role="none">
+                            <select class="form-control custom-input-1 text-center" name="txtHH3" id="txtHH3" data-role="none" tabindex="23">
                               <option value="">-- HH --</option>
                             </select>
                           </div>
                           <div class="col-6 pl-0">
-                            <select class="form-control custom-input-1 text-center" name="txtMIN3" id="txtMIN3" data-role="none">
+                            <select class="form-control custom-input-1 text-center" name="txtMIN3" id="txtMIN3" data-role="none" tabindex="24">
                               <option value="">-- MIN --</option>
                             </select>
                           </div>
@@ -904,17 +949,17 @@
                       <div class="col-12 col-sm-8">
                         <div class="row">
                           <div class="col-4">
-                            <select class="form-control custom-input-1 text-center" name="txtDD4" id="txtDD4" data-role="none">
+                            <select class="form-control custom-input-1 text-center" name="txtDD4" id="txtDD4" data-role="none" tabindex="25">
                               <option value="">-- DD --</option>
                             </select>
                           </div>
                           <div class="col-4 pl-0 pr-0">
-                            <select class="form-control custom-input-1 text-center" name="txtMM4" id="txtMM4" data-role="none">
+                            <select class="form-control custom-input-1 text-center" name="txtMM4" id="txtMM4" data-role="none" tabindex="26">
                               <option value="">-- MM --</option>
                             </select>
                           </div>
                           <div class="col-4">
-                            <select class="form-control custom-input-1 text-center" name="txtYY4" id="txtYY4" data-role="none">
+                            <select class="form-control custom-input-1 text-center" name="txtYY4" id="txtYY4" data-role="none" tabindex="27">
                               <option value="">-- YYYY --</option>
                             </select>
                           </div>
@@ -927,12 +972,12 @@
                       <div class="col-12 col-sm-8">
                         <div class="row">
                           <div class="col-6">
-                            <select class="form-control custom-input-1 text-center" name="" data-role="none">
+                            <select class="form-control custom-input-1 text-center" name="" data-role="none" tabindex="28">
                               <option value="">-- HH --</option>
                             </select>
                           </div>
                           <div class="col-6 pl-0">
-                            <select class="form-control custom-input-1 text-center" name="" data-role="none">
+                            <select class="form-control custom-input-1 text-center" name="" data-role="none" tabindex="29">
                               <option value="">-- MIN --</option>
                             </select>
                           </div>
@@ -990,7 +1035,7 @@
 
 
 
-      <script type="text/javascript" src="../cordova.js"></script>
+      <!-- <script type="text/javascript" src="../cordova.js"></script> -->
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSfKxbsrDqlaQnnZEktT3dyT2V1g_cXoA" async defer></script>
       <script type="text/javascript" src="../node_modules/jquery.mobile-1.4.5/js/jquery.min.js"></script>
       <script type="text/javascript" src="../node_modules/jquery.mobile-1.4.5/js/jquery.mobile-1.4.5.js"></script>
@@ -999,7 +1044,6 @@
       <script type="text/javascript" src="../node_modules/moment/min/moment.min.js"></script>
       <script type="text/javascript" src="../node_modules/sweetalert/dist/sweetalert.min.js"></script>
       <script type="text/javascript" src="../node_modules/preload.js/dist/js/preload.js"></script>
-      <!-- <script type="text/javascript" src="../node_modules/rangeSlider-master/dist/range-slider.min.js"></script> -->
 
       <!-- Ststem core -->
       <script type="text/javascript" src="../assets/custom/js/config.js" ></script>
@@ -1013,11 +1057,26 @@
           fnc.setDateInput('#txtDD1')
           fnc.setMonthInput('#txtMM1')
           fnc.setYearInput('#txtYY1')
+          fnc.setHourInput('#txtHH1')
+          fnc.setMinInput('#txtMIN1')
+
           fnc.setDateInput('#txtDD2')
           fnc.setMonthInput('#txtMM2')
           fnc.setYearInput('#txtYY2')
-          fnc.setHourInput('#txtHH1')
-          fnc.setMinInput('#txtMIN1')
+
+          fnc.setDateInput('#txtDD3')
+          fnc.setMonthInput('#txtMM3')
+          fnc.setYearInput('#txtYY3')
+          fnc.setHourInput('#txtHH3')
+          fnc.setMinInput('#txtMIN3')
+
+          fnc.setDateInput('#txtDD4')
+          fnc.setMonthInput('#txtMM4')
+          fnc.setYearInput('#txtYY4')
+          fnc.setHourInput('#txtHH4')
+          fnc.setMinInput('#txtMIN4')
+
+          core.get_province('txtProvince')
 
           if(current_hn == null){
             window.location = './index'
@@ -1025,9 +1084,12 @@
           $('#txtHn2').val(current_hn)
 
           setTimeout(function(){
-            // initMap()
             authen.user()
             preload.hide()
+            $today = fnc.get_current_date().split('-')
+            $('#txtMM1').val($today[1])
+            $('#txtYY1').val($today[0])
+            console.log($today[0]);
           }, 000)
         })
 
@@ -1035,46 +1097,7 @@
 
         })
 
-        function initMap(){
-          map = new google.maps.Map(document.getElementById('map'), {
-                    center: {lat: -34.397, lng: 150.644},
-                    zoom: 13,
-                    // disableDefaultUI: true
-          });
 
-          // Try HTML5 geolocation.
-          if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-              var pos = {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude
-              };
-              map.setCenter(pos);
-              $('#txtLat1').val(pos.lat)
-              $('#txtLng1').val(pos.lng)
-
-              var marker = new google.maps.Marker({
-                position: pos
-              });
-
-
-              marker.setMap(map)
-
-              // getMyMarker(map)
-
-            }, function() {
-              // handleLocationError(true, infoWindow, map.getCenter());
-            });
-          }
-        }
-
-        function searchMapall(){
-
-        }
-
-        function onAddNewLabor(){
-
-        }
       </script>
     </body>
 </html>

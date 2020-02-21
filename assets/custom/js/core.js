@@ -1,52 +1,24 @@
-var iw = {
-  get_province(){
-      var jxr = $.post(conf.api + 'core/province?stage=get', function(){}, 'json')
+var core = {
+  get_province(ele){
+      var jxr = $.post(conf.api + 'province?stage=get', function(){}, 'json')
                  .always(function(snap){
-                   // console.log(snap);
                    if(fnc.json_exist(snap)){
                        snap.forEach(i=>{
-                         $('.txtProvince').append('<option value="' + i.Changwat + '">' + i.Name + '</option>')
+                         $('#' + ele).append('<option value="' + i.Changwat + '">' + i.Name + '</option>')
                        })
                    }
                  })
   },
-  get_province2(){
-      var jxr = $.post(conf.api + 'core/province?stage=get', function(){}, 'json')
-                 .always(function(snap){
-                   // console.log(snap);
-                   if(fnc.json_exist(snap)){
-                       snap.forEach(i=>{
-                         $('.txtProvince').append('<option value="' + i.Changwat + '">' + i.Name + '</option>')
-                       })
-                   }
-                 })
-  },
-  get_district(){
+  get_district(ele_in, ele_out){
     var param = {
-      prov: $('#txtProvince').val()
+      prov: $('#' + ele_in).val()
     }
-    $('#txtSubdistrict').html('<option value="" class="text-center">-- เลือกตำบล --</option>')
-    var jxr = $.post(conf.api + 'core/district?stage=get', param , function(){}, 'json')
+    var jxr = $.post(conf.api + 'district?stage=get', param , function(){}, 'json')
               .always(function(snap){
                   if(fnc.json_exist(snap)){
-                      $('#txtDistrict').html('<option value="" class="text-center">-- เลือกอำเภอ --</option>')
+                      $('#' + ele_out).html('<option value="">-- Select district --</option>')
                       snap.forEach(i=>{
-                          $('#txtDistrict').append('<option value="' + i.Ampur + '">' + i.Name + '</option>')
-                      })
-                  }
-              })
-  },
-  get_district2(prov, next_ele){
-    var param = {
-      prov: prov
-    }
-    $('.txtSubDistrict').html('<option value="" class="text-center">-- เลือกตำบล --</option>')
-    var jxr = $.post(conf.api + 'core/district?stage=get', param , function(){}, 'json')
-              .always(function(snap){
-                  if(fnc.json_exist(snap)){
-                      $('#' + next_ele).html('<option value="" class="text-center">-- เลือกอำเภอ --</option>')
-                      snap.forEach(i=>{
-                          $('#' + next_ele).append('<option value="' + i.Ampur + '">' + i.Name + '</option>')
+                          $('#' + ele_out).append('<option value="' + i.Ampur + '">' + i.Name + '</option>')
                       })
                   }
               })
@@ -63,22 +35,6 @@ var iw = {
                 if(fnc.json_exist(snap)){
                     snap.forEach(i=>{
                         $('#txtSubdistrict').append('<option value="' + i.Tumbon + '">' + i.Name + '</option>')
-                    })
-                }
-              })
-  },
-  get_subdistrict2(prov, dist, next_ele){
-    var param = {
-      prov: prov,
-      dist: dist
-    }
-    var jxr = $.post(conf.api + 'core/sub_district?stage=get', param , function(){}, 'json')
-              .always(function(snap){
-                // console.log(snap);
-                $('#' + next_ele).html('<option value="" class="text-center">-- เลือกตำบล --</option>')
-                if(fnc.json_exist(snap)){
-                    snap.forEach(i=>{
-                        $('#' + next_ele).append('<option value="' + i.Tumbon + '">' + i.Name + '</option>')
                     })
                 }
               })
@@ -117,7 +73,7 @@ var fnc = {
 
     },
     setYearInput(ele){
-        $cyear = parseInt(this.get_current_year() - 10)
+        $cyear = parseInt(fnc.get_current_year())
 
         for($i = $cyear; $i >= ($cyear - 100) ; $i--){
             $(ele).append('<option value="' + $i + '">' + ($i + 543) + '</option>')
