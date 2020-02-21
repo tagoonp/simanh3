@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+        <link rel="stylesheet" href="./node_modules/jquery.mobile-1.4.5/jquery.mobile-1.4.5.css">
+        <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" >
+        <link rel="stylesheet" href="./node_modules/preload.root.js/dist/css/preload.css">
+        <link rel="stylesheet" href="./assets/custom/css/style.css">
+
+        <title>SIMANH - Improving Health System Response through Epidemiological Surveillance
+in Improving Maternal and Newborn Health and Survival : Field Testing in Thailand</title>
+    </head>
+    <body>
+        <div data-role="page" id="app" style="background-color: #ffffff;">
+          <div class="container pt-2">
+            <div class="row">
+              <div class="col-12 text-center">
+                <img src="./img/logo3.png" alt="" width="300">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-md-12 offset-md-0 col-sm-4 offset-sm-4">
+                <div class="row">
+                  <div class="col-12 text-center">
+                    <img src="./img/simanh-logo-1.png" alt="" class="img-fluid" >
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12 d-none d-md-block tsdn text-center">
+                    Improving Health System Response through Epidemiological Surveillance<br>
+in Improving Maternal and Newborn Health and Survival : Field Testing in Thailand
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-10 offset-1 col-sm-6 offset-md-3 pt-3">
+                    <form onsubmit="return false;" class="loginForm">
+                      <div class="form-group">
+                        <input type="text" class="form-control custom-input-1 text-center" data-role="none" id="txtUsername" placeholder="Username" autofocus>
+                      </div>
+                      <div class="form-group">
+                        <input type="password" class="form-control custom-input-1 text-center" data-role="none" id="txtPassword" placeholder="Password">
+                      </div>
+                      <div class="form-group d-none d-sm-block text-center">
+                        <button class="btn btn-success text-white btn-block" data-role="none" type="submit" data-role="none">Log in</button>
+                      </div>
+                      <div class="form-group d-block d-sm-none">
+                        <button class="btn btn-success text-white btn-block" data-role="none" type="submit" data-role="none">Log in</button>
+                      </div>
+                    </form>
+                    <div class="form-group text-center pt-2 tsdn text-white" style="font-size: 0.8em;">
+                      <a href="#" class="text-dark tsdn ml-3 btnChangepage"  data-toggle="modal" data-target="#passwordHintModal" data-ajax="false">Forget password?</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-12 text-center tsdn d-none d-sm-block" style="font-size: 0.8em;">
+                    Copyright
+                      <script>
+                        document.write(new Date().getFullYear())
+                      </script> under powered by <a href="Javascript:openUrl('http://simanh.psu.ac.th', '_blank')" data-ajax="false" class="tsdn">Maternal Surveillance Project</a>.<br><a href="Javascript:openUrl('http://medipe2.psu.ac.th', '_blank')">Epidemiology Unit</a>, 6th Floor Administrative Building, Faculty of Medicine, Prince of Songkla University.
+                  </div>
+
+                  <div class="col-12 text-center tsdn d-block d-sm-none" style="font-size: 0.8em;">
+                  Copyright
+                      <script>
+                        document.write(new Date().getFullYear())
+                      </script> <br>under powered by <a href="Javascript:openUrl('http://simanh.psu.ac.th', '_blank')" data-ajax="false" class="tsdn">Maternal Surveillance Project</a>.<br><a href="Javascript:openUrl('http://medipe2.psu.ac.th', '_blank')">Epidemiology Unit</a>, 6th Floor Administrative Building, Faculty of Medicine, Prince of Songkla University.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- .app -->
+
+        <!-- <script type="text/javascript" src="cordova.js"></script> -->
+        <script type="text/javascript" src="./node_modules/jquery.mobile-1.4.5/js/jquery.min.js"></script>
+        <script type="text/javascript" src="./node_modules/jquery.mobile-1.4.5/js/jquery.mobile-1.4.5.js"></script>
+        <script type="text/javascript" src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript" src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
+        <script type="text/javascript" src="./node_modules/moment/min/moment.min.js"></script>
+        <script type="text/javascript" src="./node_modules/preload.root.js/dist/js/preload.js"></script>
+
+        <!-- Ststem core -->
+        <script type="text/javascript" src="./assets/custom/js/config.js" ></script>
+        <script type="text/javascript" src="./assets/custom/js/core.js" ></script>
+
+        <!-- Page script -->
+        <script type="text/javascript" src="./assets/custom/js/login.js" ></script>
+
+        <script>
+
+          $(document).ready(function(){
+
+            preload.hide()
+            $('#txtUsername').focus()
+            if((current_user != null) && (current_role != null)){
+              window.location = './' + current_role + '/index.html'
+            }
+
+            $w_window = $(window).height();
+            $w_app = $('#app').height();
+            $('#app').css('margin-top', ($w_window/2) - ($w_app/2) + 'px')
+
+          })
+
+          $(function(){
+
+          })
+        </script>
+    </body>
+</html>
+
+<!-- Modal -->
+<div class="modal fade" id="notify1Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-12 pb-3 pt-4 text-center">
+            <img src="./img/alert.png" alt="" style="max-width: 100px;">
+            <p class="text-center pt-3">
+              Invalid user account or password.
+            </p>
+            <div class="text-center">
+              <button class="btn btn-danger btn-block" data-dismiss="modal">OK</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="passwordHintModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm  modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="col-12 pb-3 pt-4 text-center">
+          <img src="./img/alert.png" alt="" style="max-width: 100px;">
+        </div>
+        <p class=" text-center">
+          Please contact out staff for your password.
+        </p>
+        <button type="button" class="btn btn-success btn-block" data-dismiss="modal">Close window</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade mt-5" id="modalVersion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered- modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="text-center">
+          <div class="row">
+            <div class="col-12 pb-3 pt-4">
+              <img src="./img/alert.png" alt="" style="max-width: 100px;">
+            </div>
+          </div>
+          <h4>Version update</h4>
+          <p class="text-muted" style="font-size: 16px;">Click button below to update</p>
+          <div class="text-center pb-2">
+            <button class="btn btn-danger btn-block btn-lg" data-role="none" onclick="gotoUpdate()">Update</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

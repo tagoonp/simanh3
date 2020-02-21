@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+        <link rel="stylesheet" href="../node_modules/jquery.mobile-1.4.5/jquery.mobile-1.4.5.css">
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" >
+        <link rel="stylesheet" href="../node_modules/preload.js/dist/css/preload.css">
+        <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.css">
+        <link rel="stylesheet" href="../node_modules/sweetalert/dist/sweetalert.css">
+        <link rel="stylesheet" href="../assets/custom/css/style.css">
+
+        <title>SIMANH : Improving Health System Response through Epidemiological Surveillance in Improving Maternal and Newborn Health and Survival</title>
+    </head>
+
+    <body class="bg_custom2">
+      <div data-role="page" id="app" style="background: #ffffff;">
+        <div class="container pt-5">
+          <div class="row">
+            <div class="col-12 col-sm-10 offset-sm-1">
+              <div class="row">
+                <div class="col-10 offset-1 text-center">
+                  <img src="../img/simanh-logo-1.png" alt="" class="img-fluid" >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-10 offset-1 col-sm-8 offset-sm-2 text-center pt-3 d-none d-sm-block">
+              <h5 class="tsdn text-dark">Improving Health System Response through Epidemiological Surveillance in Improving Maternal and Newborn Health and Survival</h5>
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-12 col-sm-8 offset-sm-2">
+              <div class="card c-drop-shadow-" style="border:none; background: none !important;">
+                <div class="card-body" style=" background: none !important;">
+                  <div class="row">
+
+                    <div class="col-4 col-sm-3 text-center" style="cursor: pointer;"  data-toggle="modal" data-target="#admissionModalCenter">
+                      <div class="pt-2 pl-3 pr-3 pb-2">
+                        <img src="../img/addlabor.png" alt="" class="img-fluid">
+                      </div>
+                      <div class="pb-3" style="font-size: 0.8em;">Enter individual data</div>
+                    </div>
+
+                    <div class="col-4 col-sm-3 text-center" style="cursor: pointer;"  onclick="slide2('aggregate')">
+                      <div class="pt-2 pl-3 pr-3 pb-2">
+                        <img src="../img/btn-1.png" alt="" class="img-fluid">
+                      </div>
+                      <div class="pb-3" style="font-size: 0.8em;">Aggregate indicators</div>
+                    </div>
+
+                    <div class="col-4 col-sm-3 text-center" style="cursor: pointer;" onclick="slide2('statistics')">
+                      <div class="pt-2 pl-3 pr-3 pb-2">
+                        <img src="../img/btn-2.png" alt="" class="img-fluid">
+                      </div>
+                      <div class="pb-3" style="font-size: 0.8em;">Statistics</div>
+                    </div>
+
+                    <div class="col-4 col-sm-3 text-center" style="cursor: pointer;" onclick="slide2('confirm_record')">
+                      <div class="pt-2 pl-3 pr-3 pb-2">
+                        <img src="../img/btn-4.png" alt="" class="img-fluid">
+                      </div>
+                      <div class="pb-3" style="font-size: 0.8em;">Confirm record</div>
+                    </div>
+
+                    <div class="col-4 col-sm-3 text-center" style="cursor: pointer;" onclick="slide2('notification')">
+                      <div class="pt-2 pl-3 pr-3 pb-2">
+                        <img src="../img/btn-5.png" alt="" class="img-fluid">
+                      </div>
+                      <div class="pb-3" style="font-size: 0.8em;">Notification</div>
+                    </div>
+
+                    <div class="col-4 col-sm-3 text-center" style="cursor: pointer;" onclick="slide2('profile')">
+                      <div class="pt-2 pl-3 pr-3 pb-2">
+                        <img src="../img/btn-profile.png" alt="" class="img-fluid">
+                      </div>
+                      <div class="pb-3" style="font-size: 0.8em;">Profile</div>
+                    </div>
+
+                    <div class="col-4 col-sm-3 text-center" style="cursor: pointer;" onclick="authen.signout()">
+                      <div class="pt-2 pl-3 pr-3 pb-2">
+                        <img src="../img/signout.png" alt="" class="img-fluid">
+                      </div>
+                      <div class="pb-3" style="font-size: 0.8em;">Signout</div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row d-none d-sm-block">
+            <div class="col-12 text-center tsdn pb-3" style="font-size: 0.8em;">
+            Copyright
+                <script>
+                  document.write(new Date().getFullYear())
+                </script> under powered by <a href="Javascript:openUrl('http://simanh.psu.ac.th', '_blank')" data-ajax="false" class="tsdn">Maternal Surveillance Project</a>.<br><a href="Javascript:openUrl('http://medipe2.psu.ac.th', '_blank')">Epidemiology Unit</a>, 6th Floor Administrative Building, Faculty of Medicine, Prince of Songkla University.
+            </div>
+          </div>
+
+          <div class="row d-block d-sm-none">
+            <div class="col-12 text-center tsdn pb-3" style="font-size: 0.8em;">
+            Copyright <script>
+                  document.write(new Date().getFullYear())
+                </script> by <a href="Javascript:openUrl('http://simanh.psu.ac.th', '_blank')" data-ajax="false" class="tsdn">Maternal Surveillance Project</a>.<br><a href="Javascript:openUrl('http://medipe2.psu.ac.th', '_blank')">Epidemiology Unit</a>, Prince of Songkla University.
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- .app -->
+
+      <div data-role="page" id="profile" style="background: #f4f4f4;">
+        <div class="container pt-5">
+          <div class="row">
+            <div class="col-12 col-sm-4 offset-sm-4">
+              <div class="row">
+                <div class="col-6 offset-3 col-sm-8 offset-sm-2 pt-0 mt-0" id="profileImg">
+                  <img src="../img/tmp-profile-img.png" alt="" class="img-fluid img-circle">
+                </div>
+                <div class="col-12 text-center">
+                  <div class="btn btn-primary btn-circle btn-lg" style="margin-top: -50px; margin-left: 100px;" onclick="app.takephoto()">
+                    <i class="fas fa-camera"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 text-center pt-3">
+                  <h4 class="tsdn text-dark textUserFullname"><i class="fas fa-sync fa-spin"></i></h4>
+                  <h6 class="tsdn text-dark textUserRole">ผู้ใช้งานทั่วไป</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-3" style="margin-bottom: 100px;">
+            <div class="col-12">
+              <div class="card c-drop-shadow-" style="border:none; background-: none !important;">
+                <div class="card-body p-0" style=" background: none !important; font-size: 16px;">
+                  <div class="row">
+
+                    <div class="col-12">
+                      <div class="p-3">
+                        <small class="text-success">ชื่อ - นามสกุล</small><a href="#" data-ajax="false" class="float-right" style="font-size: 13px; margin-top: 20px;"  data-toggle="modal" data-target="#modalFullname"><i class="fas fa-pencil-alt"></i></a><br>
+                        <div class="textUserFullname">-</div>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="p-3">
+                        <small class="text-success">E-mail address</small><a href="#" data-ajax="false" class="float-right" style="font-size: 13px; margin-top: 20px;" data-toggle="modal" data-target="#modalEmail"><i class="fas fa-pencil-alt"></i></a><br>
+                        <div class="textUserEmail">-</div>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="p-3">
+                        <small class="text-success">หมายเลขโทรศัพท์</small><a href="#" data-ajax="false" class="float-right" style="font-size: 13px; margin-top: 20px;" data-toggle="modal" data-target="#modalPhone"><i class="fas fa-pencil-alt"></i></a><br>
+                        <div class="textUserPhone">-</div>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="p-3">
+                        <small class="text-success">หน่วยงานที่สังกัด</small><a href="#" data-ajax="false" class="float-right" style="font-size: 13px; margin-top: 20px;"  data-toggle="modal" data-target="#modalInstitution"><i class="fas fa-pencil-alt"></i></a><br>
+                        <div class="textUserInstitution">-</div>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="p-3">
+                        <small class="text-success">จังหวัดที่รับผิดชอบ</small><a href="#" data-ajax="false" class="float-right" style="font-size: 13px; margin-top: 20px;" data-toggle="modal" data-target="#modalInstitution"><i class="fas fa-pencil-alt"></i></a><br>
+                        <div class="textUserProvince">-</div>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="p-3">
+                        <small class="text-success">อำเภอ</small><a href="#" data-ajax="false" class="float-right" style="font-size: 13px; margin-top: 20px;" data-toggle="modal" data-target="#modalInstitution"><i class="fas fa-pencil-alt"></i></a><br>
+                        <div class="textUserDistrict">-</div>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="p-3">
+                        <small class="text-success">ตำบล</small><a href="#" data-ajax="false" class="float-right" style="font-size: 13px; margin-top: 20px;" data-toggle="modal" data-target="#modalInstitution"><i class="fas fa-pencil-alt"></i></a><br>
+                        <div class="textUserSubdistrict">-</div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 pt-4">
+              <button class="btn btn-primary btn-block" data-role="none" data-toggle="modal" data-target="#modalPassword">เปลี่ยนรหัสผ่าน</button>
+              <button class="btn btn-danger btn-block" data-role="none" onclick="authen.signout()">ลงชื่อออก</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- .profile -->
+
+      <div data-role="page" id="appAdd" style="background: #fff; z-index: 999999998 !important;">
+        <div class="container-fluid" style="background: #fff;">
+          <div class="row" style="">
+            <div class="col-12 pt-3">
+              <a href="#app" data-transition="slide" data-direction="reverse" class="float-left text-dark mt-1 ml-2" style="position: relative; z-index: 9999  !important;"><i class="fas fa-chevron-left" style="font-size: 1.6em;"></i></a>
+            </div>
+          </div>
+          <div class="row pt-3 " style="margin-top: -38px;">
+            <div class="col-12 text-center pb-3" style="border: solid; border-width: 0px 0px 3px 0px; border-color: rgb(0, 193, 169);">
+              <span data-ajax="false" style="color: rgb(51, 51, 51); font-size: 18px;">ขั้นที่ 1 : <span class="text-danger">ค้นหาข้อมูลเดิม</span> </span>
+            </div>
+          </div>
+        </div>
+        <div class="container pt-3">
+          <div class="" style="top: 90px;">
+            <div class="row">
+              <div class="col-12 pl-3 pr-3">
+                <div class="text-center" style="font-size: 14px;">
+                  การกรอกเขตบัตรประชาชน ทำให้ท่านสามารถค้นหาข้อมูลเดิมของบุคคลนั้นจากระบบได้โดยที่ท่านอาจไม่ต้องเพิ่มข้อมูลใหม่ทั้งหมด
+                </div>
+                <form onsubmit="return false;" data-role="none">
+                  <div class="form-group pt-3 text-center">
+                    <label for="">เลขบัตรประจำตัวประชาชน</label>
+                    <input type="text" id="txtSearchkey1" class="form-control custom-input-1 text-center" data-role="none">
+                  </div>
+
+                  <div class="form-group">
+                    <button class="btn btn-primary btn-block" data-role="none" onclick="labor.addNew()"><i class="fas fa-search"></i> ค้นหา</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div data-role="page" id="appSearch" style="background: #f4f4f4;">
+        <div class="container-fluid" style="background: #fff;">
+          <div class="row">
+            <div class="col-12 pt-3">
+              <a href="#app" data-transition="slide" data-direction="reverse" class="float-left text-dark mt-1 ml-2" style="position: relative;"><i class="fas fa-chevron-left" style="font-size: 1.6em;"></i></a>
+            </div>
+          </div>
+          <div class="row pt-3">
+            <div class="col-12 text-center pb-2" style="border: solid; border-width: 0px 0px 3px 0px; border-color: rgb(0, 193, 100);">
+              <a href="#" data-ajax="false" style="color: rgb(51, 51, 51); font-size: 18px;">ค้นหาข้อมูลกิจกรรม</a>
+            </div>
+          </div>
+        </div>
+        <div class="container pt-3">
+          <div class="searchList" style="margin-bottom: 100px; padding-top: 210px;">
+
+          </div>
+          <div id="map-tool-1" class="" style="top: 90px;">
+            <div class="card" style="border-radius-: 0px;">
+              <div class="card-body">
+                <form onsubmit="return false;" data-role="none">
+                  <div class="form-group">
+                    <label for="">คำค้นหา / ชื่อกิจกรรม</label>
+                    <input type="text" id="txtSearchkey" class="form-control custom-input-2" data-role="none">
+                  </div>
+
+                  <div class="form-group">
+                    <button class="btn btn-primary btn-lg btn-block" data-role="none" onclick="searchActivity()"><i class="fas fa-search"></i> ค้นหา</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div data-role="page" id="appMap" style="background: #fff;">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12 pt-3">
+              <a href="#app" data-transition="slide" data-direction="reverse" class="float-left text-dark mt-1 ml-2" style="position: relative;"><i class="fas fa-chevron-left" style="font-size: 1.6em;"></i></a>
+            </div>
+          </div>
+          <div class="row pt-3">
+            <div class="col-12 text-center pb-2" style="border: solid; border-width: 0px 0px 3px 0px; border-color: rgb(0, 193, 100);">
+              <a href="#" data-ajax="false" style="color: rgb(51, 51, 51); font-size: 18px;">สถานที่จัดกิจกรรมทั้งหมด</a>
+            </div>
+          </div>
+        </div>
+        <div class="container pt-3">
+          <div id="map"></div>
+          <div id="map-tool-1" class="dn">
+            <div class="card">
+              <div class="card-body">
+                <form onsubmit="return false;" data-role="none">
+                  <div class="form-group">
+                    <label for="">Latitude</label>
+                    <input type="text" id="txtLat1" class="form-control custom-input-2" data-role="none">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="">Longitude</label>
+                    <input type="text" id="txtLng1" class="form-control custom-input-2" data-role="none">
+                  </div>
+
+                  <div class="form-group">
+                    <button class="btn btn-primary btn-lg btn-block" data-role="none" onclick="addLocation()">บันทึกพิกัดนี้</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div data-role="page" id="addPerson" style="background: #fff;">
+        <div class="container-fluid" style="background: #fff;">
+          <div class="row" style="">
+            <div class="col-12 pt-3">
+              <a href="#app" data-transition="slide" data-direction="reverse" class="float-left text-dark mt-1 ml-2" style="position: relative; z-index: 9999  !important;"><i class="fas fa-chevron-left" style="font-size: 1.6em;"></i></a>
+            </div>
+          </div>
+          <div class="row pt-3 " style="margin-top: -38px;">
+            <div class="col-12 text-center pb-3" style="border: solid; border-width: 0px 0px 3px 0px; border-color: rgb(0, 193, 169);">
+              <span data-ajax="false" style="color: rgb(0, 193, 169); font-size: 18px;"><span class="text-danger-">เพิ่มข้อมูลแรงงานใหม่</span> </span>
+            </div>
+          </div>
+        </div>
+        <div class="container pt-3">
+          <div class="" style="top: 90px;">
+            <div class="row">
+              <div class="col-12 pl-3 pr-3">
+                <h4 class="tsdn text-danger">ส่วนที่ 1</h4>
+                <h5 class="tsdn">ตอนที่ 1.1 : ข้อมูลส่วนบุคคล</h5>
+                <form onsubmit="return false;" data-role="none">
+                  <div class="form-group pt-1">
+                    <label for="" style="font-size-: 12px;">เลขบัตรประจำตัวประชาชน <span class="text-danger">*</span> </label>
+                    <input type="text" id="txtCid" class="form-control custom-input-1" data-role="none">
+                  </div>
+
+                  <div class="row">
+                    <div class="form-group pt-1 col-12 col-sm-6">
+                      <label for="" style="font-size-: 12px;">ชื่อ <span class="text-danger">*</span> </label>
+                      <input type="text" id="txtFname" class="form-control custom-input-1" data-role="none">
+                    </div>
+
+                    <div class="form-group pt-1 col-12 col-sm-6">
+                      <label for="" style="font-size-: 12px;">นามสกุล <span class="text-danger">*</span> </label>
+                      <input type="text" id="txtLname" class="form-control custom-input-1" data-role="none">
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-12">
+                        <div class="form-group mb-0" style="font-size: 12px;">
+                          <label for="" style="font-size-: 12px;">วัน/เดือน/ปีเกิด : <span class="text-danger">*</span></label>
+                        </div>
+                    </div>
+                    <div class="col-3 pr-0">
+                        <div class="form-group pt-1">
+                            <select name="txtDD" id="txtDD" class="form-control custom-input-1 txtDD ageElement" data-role="none">
+                              <option value="" selected>วัน</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <div class="form-group pt-1">
+                            <select name="txtMM" id="txtMM" class="form-control custom-input-1 ageElement" data-role="none">
+                                <option value="" selected>เดือน</option>
+                              </select>
+                        </div>
+                    </div>
+                    <div class="col-4 pl-0">
+                        <div class="form-group pt-1">
+                            <select name="txtYY" id="txtYY" class="form-control custom-input-1 ageElement" data-role="none">
+                                <option value="">ปี</option>
+                              </select>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="form-group col-12">
+                          <label for="" style="font-size-: 12px;">อายุปัจจุบัน (ปี) : <span class="text-danger">*</span></label>
+                          <input type="number" id="txtAge" class="form-control custom-input-1" placeholder="ระบบคำนวนอัตโนมัติ แก้ไขหากไม่ถูกต้อง ..." data-role="none">
+                      </div>
+                  </div>
+
+                  <div class="form-group" id="radiogroup-sex">
+                      <label for="" style="font-size-: 12px;">เพศ : <span class="text-danger">*</span></label>
+                      <div class="selectgroup selectgroup-pills">
+                        <div class="row">
+                          <div class="col-2 col-sm-1">
+                              <label class="selectgroup-item">
+                                  <input type="radio" name="icon-input-sex" value="M" class="selectgroup-input" data-role="none">
+                                  <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                              </label>
+                          </div>
+                          <div class="col-4 col-sm-3" style="padding-top: 12px;">ชาย</div>
+
+                          <div class="col-2 col-sm-1">
+                              <label class="selectgroup-item">
+                                  <input type="radio" name="icon-input-sex" value="F" class="selectgroup-input"  data-role="none">
+                                  <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                              </label>
+                          </div>
+                          <div class="col-4 col-sm-3" style="padding-top: 12px;">หญิง</div>
+
+                          <div class="col-2 col-sm-1">
+                                  <label class="selectgroup-item">
+                                      <input type="radio" name="icon-input-sex" value="Other" class="selectgroup-input"  data-role="none">
+                                      <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                                  </label>
+                          </div>
+                          <div class="col-4 col-sm-3" style="padding-top: 12px;">อื่น ๆ</div>
+
+                        </div>
+                      </div>
+                  </div>
+
+                  <div class="hdSex dn">
+
+                      <div class="form-group"  id="radiogroup-preg">
+                          <label for="">หญิงตั้งครรภ์ : <span class="text-danger">*</span></label>
+                          <div class="selectgroup selectgroup-pills">
+                            <div class="row">
+                              <div class="col-2 col-sm-1">
+                                  <label class="selectgroup-item">
+                                      <input type="radio" name="icon-input-preg" value="0" class="selectgroup-input" checked="" data-role="none">
+                                      <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                                  </label>
+                              </div>
+                              <div class="col-4 col-sm-3" style="padding-top: 12px;">ไม่ใช่</div>
+
+                              <div class="col-2 col-sm-1">
+                                  <label class="selectgroup-item">
+                                      <input type="radio" name="icon-input-preg" value="1" class="selectgroup-input"  data-role="none">
+                                      <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                                  </label>
+                              </div>
+                              <div class="col-4 col-sm-3" style="padding-top: 12px;">ใช่</div>
+                            </div>
+
+                            <div class="hdQ2 dn">
+                                <div class="form-group pt-2">
+                                    <select name="txtQ2" id="txtQ2" class="form-control custom-input-1 ageElement" data-role="none">
+                                      <option value="" selected>เลือกจำนวนเดือนที่ตั้งครรภ์</option>
+                                      <option value="0"> น้อยกว่า 1 เดือน </option>
+                                      <option value="1"> 1 เดือน </option>
+                                      <option value="2"> 2 เดือน </option>
+                                      <option value="3"> 3 เดือน </option>
+                                      <option value="4"> 4 เดือน </option>
+                                      <option value="5"> 5 เดือน </option>
+                                      <option value="6"> 6 เดือน </option>
+                                      <option value="7"> 7 เดือน </option>
+                                      <option value="8"> 8 เดือน </option>
+                                      <option value="9"> 9 เดือน </option>
+                                      <option value="99"> ไม่ทราบ </option>
+                                    </select>
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+
+                      <div class="form-group"  id="radiogroup-feed">
+                          <label for="">หญิงกำลังให้นมบุตร : <span class="text-danger">*</span></label>
+                          <div class="selectgroup selectgroup-pills">
+                            <div class="row">
+                              <div class="col-2 col-sm-1">
+                                  <label class="selectgroup-item">
+                                      <input type="radio" name="icon-input-feed" value="0" class="selectgroup-input" data-role="none" checked="">
+                                      <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                                  </label>
+                              </div>
+                              <div class="col-4 col-sm-3" style="padding-top: 12px;">ไม่ใช่</div>
+
+                              <div class="col-2 col-sm-1">
+                                  <label class="selectgroup-item">
+                                      <input type="radio" name="icon-input-feed" value="1" class="selectgroup-input"  data-role="none">
+                                      <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                                  </label>
+                              </div>
+                              <div class="col-4 col-sm-3" style="padding-top: 12px;">ใช่</div>
+                            </div>
+                          </div>
+                      </div>
+
+                  </div>
+
+                  <div class="form-group"  id="radiogroup-status">
+                      <label for="">สถานะภาพ : <span class="text-danger">*</span></label>
+                      <div class="selectgroup selectgroup-pills">
+                        <div class="row">
+                          <div class="col-2 col-sm-1">
+                              <label class="selectgroup-item">
+                                  <input type="radio" name="icon-input-status" value="1" class="selectgroup-input" data-role="none">
+                                  <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                              </label>
+                          </div>
+                          <div class="col-4 col-sm-3" style="padding-top: 12px;">โสด</div>
+
+                          <div class="col-2 col-sm-1">
+                              <label class="selectgroup-item">
+                                  <input type="radio" name="icon-input-status" value="2" class="selectgroup-input"  data-role="none">
+                                  <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                              </label>
+                          </div>
+                          <div class="col-4 col-sm-3" style="padding-top: 12px;">สมรส</div>
+
+                          <div class="col-2 col-sm-1">
+                              <label class="selectgroup-item">
+                                  <input type="radio" name="icon-input-status" value="3" class="selectgroup-input"  data-role="none">
+                                  <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                              </label>
+                          </div>
+                          <div class="col-4 col-sm-3" style="padding-top: 12px;">หม้าย/หย่า/แยกกันอยู่</div>
+                        </div>
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="">จำนวนสมาชิกในครอบครัว (รวมผู้ตอบแบบสัมภาษณ์/แบบสอบถาม) <span class="text-danger">*</span></label>
+                      <select name="txtQ4" id="txtQ4" class="form-control custom-input-1 ageElement" data-role="none">
+                          <option value="" selected>เลือกจำนวน</option>
+                          <option value="1"> 1 คน</option>
+                          <option value="2"> 2 คน </option>
+                          <option value="3"> 3 คน </option>
+                          <option value="4"> 4 คน </option>
+                          <option value="5"> 5 คน </option>
+                          <option value="6"> 6 คน </option>
+                          <option value="7"> 7 คน </option>
+                          <option value="8"> 8 คน </option>
+                          <option value="9"> 9 คน </option>
+                          <option value="10"> 10 คน </option>
+                          <option value="11"> 11 คน </option>
+                          <option value="12"> 12 คน </option>
+                          <option value="99"> มากกว่า 12 คน </option>
+                        </select>
+                  </div>
+
+                  <div class="row">
+                      <div class="form-group col-6">
+                          <label for="">เป็นเพศชาย <span class="text-danger">*</span></label>
+                          <select name="txtQ4" id="txtQ4_1" class="form-control custom-input-1 ageElement" data-role="none">
+                              <option value="" selected>เลือกจำนวน</option>
+                              <option value="0"> 0 คน</option>
+                              <option value="1"> 1 คน</option>
+                              <option value="2"> 2 คน </option>
+                              <option value="3"> 3 คน </option>
+                              <option value="4"> 4 คน </option>
+                              <option value="5"> 5 คน </option>
+                              <option value="6"> 6 คน </option>
+                              <option value="7"> 7 คน </option>
+                              <option value="8"> 8 คน </option>
+                              <option value="9"> 9 คน </option>
+                              <option value="10"> 10 คน </option>
+                              <option value="11"> 11 คน </option>
+                              <option value="12"> 12 คน </option>
+                              <option value="99"> มากกว่า 12 คน </option>
+                            </select>
+                      </div>
+
+                      <div class="form-group col-6">
+                          <label for="">เป็นเพศหญิง <span class="text-danger">*</span></label>
+                          <select name="txtQ4" id="txtQ4_2" class="form-control custom-input-1 ageElement" data-role="none">
+                              <option value="" selected>เลือกจำนวน</option>
+                              <option value="0"> 0 คน</option>
+                              <option value="1"> 1 คน</option>
+                              <option value="2"> 2 คน </option>
+                              <option value="3"> 3 คน </option>
+                              <option value="4"> 4 คน </option>
+                              <option value="5"> 5 คน </option>
+                              <option value="6"> 6 คน </option>
+                              <option value="7"> 7 คน </option>
+                              <option value="8"> 8 คน </option>
+                              <option value="9"> 9 คน </option>
+                              <option value="10"> 10 คน </option>
+                              <option value="11"> 11 คน </option>
+                              <option value="12"> 12 คน </option>
+                              <option value="99"> มากกว่า 12 คน </option>
+                            </select>
+                      </div>
+                  </div>
+
+                  <div class="form-group" id="radiogroup-q5">
+                      <label for="">นับถือศาสนา : <span class="text-danger">*</span></label>
+                      <div class="selectgroup selectgroup-pills">
+                        <div class="row">
+                          <div class="col-2 col-sm-1">
+                              <label class="selectgroup-item">
+                                  <input type="radio" name="icon-input-q5" value="1" class="selectgroup-input" data-role="none">
+                                  <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                              </label>
+                          </div>
+                          <div class="col-4 col-sm-3" style="padding-top: 12px;">พุทธ</div>
+
+                          <div class="col-2 col-sm-1">
+                              <label class="selectgroup-item">
+                                  <input type="radio" name="icon-input-q5" value="2" class="selectgroup-input"  data-role="none">
+                                  <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                              </label>
+                          </div>
+                          <div class="col-4 col-sm-3" style="padding-top: 12px;">อิสลาม</div>
+
+                          <div class="col-2 col-sm-1">
+                              <label class="selectgroup-item">
+                                  <input type="radio" name="icon-input-q5" value="3" class="selectgroup-input"  data-role="none">
+                                  <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                              </label>
+                          </div>
+                          <div class="col-4 col-sm-3" style="padding-top: 12px;">คริสต์</div>
+
+                          <div class="col-2 col-sm-1">
+                              <label class="selectgroup-item">
+                                  <input type="radio" name="icon-input-q5" value="99" class="selectgroup-input"  data-role="none">
+                                  <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                              </label>
+                          </div>
+                          <div class="col-4 col-sm-3" style="padding-top: 12px;">อื่น ๆ</div>
+
+                        </div>
+                      </div>
+                      <div class="hdQ5 dn">
+                          <div class="form-group pt-2">
+                              <input type="text" id="txtQ5" class="form-control custom-input-1" placeholder="กรอกชื่อศาสนาอื่น ๆ ... " data-role="none">
+                          </div>
+                      </div>
+                  </div>
+
+
+
+                  <div class="form-group" id="radiogroup-q6">
+                      <label for="">ความเพียงพอของรายได้ : <span class="text-danger">*</span></label>
+                      <div class="selectgroup selectgroup-pills">
+                        <div class="row">
+                          <div class="col-2 col-sm-1">
+                              <label class="selectgroup-item">
+                                  <input type="radio" name="icon-input-q6" value="1" class="selectgroup-input" data-role="none">
+                                  <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                              </label>
+                          </div>
+                          <div class="col-10 col-sm-3" style="padding-top: 12px;">มีหนี้</div>
+                          <div class="col-2 col-sm-1">
+                              <label class="selectgroup-item">
+                                  <input type="radio" name="icon-input-q6" value="2" class="selectgroup-input"  data-role="none">
+                                  <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                              </label>
+                          </div>
+                          <div class="col-10 col-sm-3" style="padding-top: 12px;">ไม่มีหนี้</div>
+
+                          <!-- <div class="col-2 col-sm-1">
+                              <label class="selectgroup-item">
+                                  <input type="radio" name="icon-input-q6" value="3" class="selectgroup-input"  data-role="none">
+                                  <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                              </label>
+                          </div>
+                          <div class="col-10 col-sm-3" style="padding-top: 12px;">เหลือเก็บ (มีเงินออม)</div> -->
+
+                        </div>
+                      </div>
+                  </div>
+
+                  <div class="form-group" id="radiogroup-q7">
+                      <label for="">ระดับการศึกษาสูงสุด : <span class="text-danger">*</span></label>
+                      <div class="selectgroup selectgroup-pills">
+                        <div class="row">
+                            <div class="col-2 col-sm-1">
+                                <label class="selectgroup-item">
+                                    <input type="radio" name="icon-input-q7" value="0" class="selectgroup-input" data-role="none">
+                                    <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                                </label>
+                            </div>
+                            <div class="col-10 col-sm-3" style="padding-top: 12px;">ไม่ได้ศึกษา</div>
+
+                            <div class="col-2 col-sm-1">
+                              <label class="selectgroup-item">
+                                  <input type="radio" name="icon-input-q7" value="1" class="selectgroup-input" data-role="none">
+                                  <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                              </label>
+                          </div>
+                          <div class="col-10 col-sm-3" style="padding-top: 12px;">ประถมศึกษา</div>
+
+                          <div class="col-2 col-sm-1">
+                              <label class="selectgroup-item">
+                                  <input type="radio" name="icon-input-q7" value="2" class="selectgroup-input" data-role="none">
+                                  <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                              </label>
+                          </div>
+                          <div class="col-10 col-sm-3" style="padding-top: 12px;">มัธยมศึกษาตอนต้น</div>
+
+                          <div class="col-2 col-sm-1">
+                              <label class="selectgroup-item">
+                                  <input type="radio" name="icon-input-q7" value="3" class="selectgroup-input"  data-role="none">
+                                  <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                              </label>
+                          </div>
+                          <div class="col-10 col-sm-3" style="padding-top: 12px;">มัธยมศึกษาตอนปลาย/ปวช.</div>
+
+                          <div class="col-2 col-sm-1">
+                              <label class="selectgroup-item">
+                                  <input type="radio" name="icon-input-q7" value="4" class="selectgroup-input"  data-role="none">
+                                  <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                              </label>
+                          </div>
+                          <div class="col-10 col-sm-3" style="padding-top: 12px;">อนุปริญญา/ปวส.</div>
+
+                          <div class="col-2 col-sm-1">
+                              <label class="selectgroup-item">
+                                  <input type="radio" name="icon-input-q7" value="5" class="selectgroup-input"  data-role="none">
+                                  <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                              </label>
+                          </div>
+                          <div class="col-10 col-sm-3" style="padding-top: 12px;">ปริญญาตรีหรือสูงกว่า</div>
+
+                        </div>
+                      </div>
+                  </div>
+
+                  <div class="form-group mb-3" id="radiogroup-q8">
+                      <label for="">สิทธิการรักษาพยาบาล : <span class="text-danger">*</span></label>
+                      <div class="selectgroup selectgroup-pills">
+                        <div class="row">
+
+                          <div class="col-2 col-sm-1">
+                              <label class="selectgroup-item">
+                                  <input type="radio" name="icon-input-q8" value="1" class="selectgroup-input" data-role="none">
+                                  <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                              </label>
+                          </div>
+                          <div class="col-10 col-sm-3" style="padding-top: 12px;">ไม่มีสิทธิการรักษา</div>
+
+                          <div class="col-2 col-sm-1">
+                              <label class="selectgroup-item">
+                                  <input type="radio" name="icon-input-q8" value="2" class="selectgroup-input" data-role="none">
+                                  <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                              </label>
+                          </div>
+                          <div class="col-10 col-sm-3" style="padding-top: 12px;">บัตรประกันสุขภาพถ้วนหน้า (บัตรทอง 30 บาท)</div>
+
+                          <div class="col-2 col-sm-1">
+                              <label class="selectgroup-item">
+                                  <input type="radio" name="icon-input-q8" value="3" class="selectgroup-input"  data-role="none">
+                                  <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                              </label>
+                          </div>
+                          <div class="col-10 col-sm-3" style="padding-top: 12px;">ประกันสังคม</div>
+
+                          <div class="col-2 col-sm-1">
+                              <label class="selectgroup-item">
+                                  <input type="radio" name="icon-input-q8" value="4" class="selectgroup-input"  data-role="none">
+                                  <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                              </label>
+                          </div>
+                          <div class="col-10 col-sm-3" style="padding-top: 12px;">สิทธิข้าราชการทุกประเภท</div>
+
+                          <div class="col-2 col-sm-1">
+                              <label class="selectgroup-item">
+                                  <input type="radio" name="icon-input-q8" value="5" class="selectgroup-input"  data-role="none">
+                                  <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                              </label>
+                          </div>
+                          <div class="col-10 col-sm-3" style="padding-top: 12px;">บัตรประกันสุขภาพแรงงานข้ามชาติ</div>
+
+                          <!-- <div class="col-2 col-sm-1">
+                              <label class="selectgroup-item">
+                                  <input type="radio" name="icon-input-q8" value="99" class="selectgroup-input"  data-role="none">
+                                  <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                              </label>
+                          </div>
+                          <div class="col-10 col-sm-3" style="padding-top: 12px;">อื่น ๆ</div> -->
+
+                        </div>
+                      </div>
+
+                      <div class="hdQ8 dn">
+                          <div class="form-group pt-2">
+                              <input type="text" id="txtQ8" class="form-control custom-input-1" placeholder="กรอกชื่อสิทธิ ... " data-role="none">
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="form-group col-12 col-sm-6">
+                          <label for="">น้ำหนัก (kg.) : <span class="text-danger">*</span></label>
+                          <input type="number" id="txtQ9" class="form-control custom-input-1" placeholder="กรอกเป็นกิโลกรัม ..." data-role="none">
+                      </div>
+                      <div class="form-group col-12 col-sm-6">
+                          <label for="">ส่วนสูง (cm.) : <span class="text-danger">*</span></label>
+                          <input type="number" id="txtQ10" class="form-control custom-input-1" placeholder="กรอกเป็นหน่วยเซนติเมตร ..." data-role="none">
+                      </div>
+                  </div>
+
+                  <div class="form-group pb-5">
+                    <button class="btn btn-primary btn-block btn-lg" data-role="none" onclick="labor.saveDemographic()">บันทึก</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <script type="text/javascript" src="../cordova.js"></script> -->
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSfKxbsrDqlaQnnZEktT3dyT2V1g_cXoA" async defer></script>
+      <script type="text/javascript" src="../node_modules/jquery.mobile-1.4.5/js/jquery.min.js"></script>
+      <script type="text/javascript" src="../node_modules/jquery.mobile-1.4.5/js/jquery.mobile-1.4.5.js"></script>
+      <script type="text/javascript" src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+      <script type="text/javascript" src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
+      <script type="text/javascript" src="../node_modules/moment/min/moment.min.js"></script>
+      <script type="text/javascript" src="../node_modules/sweetalert/dist/sweetalert.min.js"></script>
+      <script type="text/javascript" src="../node_modules/preload.js/dist/js/preload.js"></script>
+
+      <!-- Ststem core -->
+      <script type="text/javascript" src="../assets/custom/js/config.js" ></script>
+      <script type="text/javascript" src="../assets/custom/js/core.js" ></script>
+      <script type="text/javascript" src="../assets/custom/js/authen.js" ></script>
+      <script type="text/javascript" src="../assets/custom/js/patient-1.0.js"></script>
+      <script>
+
+        $(document).ready(function(){
+          $w_window = $(window).height();
+          $w_app = $('#app').height();
+          $('#app').css('margin-top', ($w_window/2) - ($w_app/2) - 20 + 'px')
+
+          setTimeout(function(){
+            // initMap()
+            authen.user()
+            preload.hide()
+          }, 000)
+        })
+
+        $(function(){
+
+        })
+
+        function initMap(){
+          map = new google.maps.Map(document.getElementById('map'), {
+                    center: {lat: -34.397, lng: 150.644},
+                    zoom: 13,
+                    // disableDefaultUI: true
+          });
+
+          // Try HTML5 geolocation.
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+              var pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+              };
+              map.setCenter(pos);
+              $('#txtLat1').val(pos.lat)
+              $('#txtLng1').val(pos.lng)
+
+              var marker = new google.maps.Marker({
+                position: pos
+              });
+
+
+              marker.setMap(map)
+
+              // getMyMarker(map)
+
+            }, function() {
+              // handleLocationError(true, infoWindow, map.getCenter());
+            });
+          }
+        }
+
+        function searchMapall(){
+
+        }
+
+        function onAddNewLabor(){
+
+        }
+      </script>
+    </body>
+</html>
+
+
+<!-- Modal -->
+<div class="modal fade" id="admissionModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h3 class="modal-title mb-2" id="exampleModalLongTitle">Patient' search</h3>
+        <p>
+          Im this patient's HN is on during admission, system will fetch recent data to continous recording.
+        </p>
+        <form class="searchHnForm" onsubmit="return false;" autocomplete="off">
+          <div class="form-group">
+            <label for="">HN : <span class="text-danger">*</span> </label>
+            <input type="text" class="form-control custom-input-1 text-center" data-role="none" id="txtHn1" placeholder="Enter HN here ..." autofocus>
+          </div>
+
+          <div class="form-group">
+            <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-search"></i> Search</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="admissionNewcaseModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="text-center">
+          <div class="row">
+            <div class="col-12 pb-3 pt-4">
+              <img src="../img/alert.png" alt="" style="max-width: 100px;">
+            </div>
+          </div>
+          <h4>Notice</h4>
+          <p class="text-muted" style="font-size: 16px;">This is a new patient, click below.</p>
+          <div class="text-center pb-2">
+            <button class="btn btn-danger btn-block btn-lg" data-role="none" onclick="gotoAddnewData()">Enter data</button>
+            <button class="btn btn-secondary- btn-block btn-lg" data-role="none" data-dismiss="modal" >Revise HN</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="admissionReviewstagecaseModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="text-center">
+          <div class="row">
+            <div class="col-12 pb-3 pt-4">
+              <img src="../img/alert.png" alt="" style="max-width: 100px;">
+            </div>
+          </div>
+          <h4>Notice</h4>
+          <p class="text-muted" style="font-size: 16px;">This case is in review stage by doctor.</p>
+          <div class="text-center pb-2">
+            <button class="btn btn-danger btn-block btn-lg" data-role="none" data-dismiss="modal" >Enter new patient</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="notify1Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="text-center">
+          <h4>ขออภัย</h4>
+          <p>ไม่สามารถดำเนินการได้</p>
+          <div class="text-center">
+            <button class="btn btn-danger btn-block" data-role="none" data-dismiss="modal">รับทราบ</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="notifySuccessModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="text-center">
+          <img src="../img/success.png" alt="" width="120px;" class="pt-4 pb-4">
+          <h4>สำเร็จ</h4>
+          <p>รหัสผ่านของคุณได้ถูกเปลี่ยนเรียบร้อยแล้ว</p>
+          <div class="text-center">
+            <button class="btn btn-success btn-block" data-role="none" data-dismiss="modal">รับทราบ</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="notify2Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="text-center">
+          <h4>ขออภัย</h4>
+          <p>ข้อมุลนี้มีบัญชีผู้ใช้อื่นได้ใช้ไปแล้ว</p>
+          <div class="text-center">
+            <button class="btn btn-danger btn-block" data-role="none" data-dismiss="modal">รับทราบ</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade mt-5" id="modalVersion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="padding-bottom: 100px !important;">
+  <div class="modal-dialog modal-dialog-centered- modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="text-center">
+          <div class="row">
+            <div class="col-12 pb-3 pt-4">
+              <img src="../img/alert.png" alt="" style="max-width: 100px;">
+            </div>
+          </div>
+          <h4>คำเตือน</h4>
+          <p class="text-muted" style="font-size: 16px;">มีเวอร์ชันใหม่รอการอัพเดท</p>
+          <div class="text-center pb-2">
+            <button class="btn btn-danger btn-block btn-lg" data-role="none" onclick="gotoUpdate()">อัพเดท</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade mt-5" id="modalAddnewNotify" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 999999999 !important;">
+  <div class="modal-dialog modal-dialog-centered- modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="text-center">
+          <div class="row">
+            <div class="col-12 pb-3 pt-4">
+              <img src="../img/alert.png" alt="" style="max-width: 100px;">
+            </div>
+          </div>
+          <h4>คำเตือน</h4>
+          <p class="text-muted" style="font-size: 16px;">การเพิ่มข้อมูลนี้เป็นการเพิ่มข้อมูลแรงงานใหม่ในจังหวัดของท่าน กด "ตกลง" เพื่อดำเนินการต่อ หรือ "ยกเลิก" เพื่อตรวจสอบเลขบัตรประจำตัวประชาชนอีกครั้ง</p>
+          <div class="text-center pb-2">
+            <button class="btn btn-danger btn-block btn-lg btnCloseModal" data-role="none" onclick="onAddNewLabor()">ตกลง</button>
+            <button class="btn btn-danger- btn-block btn-lg" data-role="none" data-dismiss="modal">ยกเลิก</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalFullname" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="padding-bottom: 100px !important;">
+  <div class="modal-dialog modal-dialog-centered- modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-dark tsdn" id="exampleModalLabel">แก้ไขข้อมูลส่วนตัว</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit='return false;'>
+          <div class="form-group">
+            <label for="">ชื่อ <span class="text-danger">*</span></label>
+            <input type="text" class="form-control custom-input-1 text-center" id="txtFnameProfile">
+          </div>
+
+          <div class="form-group">
+            <label for="">นามสกุล <span class="text-danger">*</span></label>
+            <input type="text" class="form-control custom-input-1 text-center" id="txtLnameProfile">
+          </div>
+
+          <div class="form-group">
+            <button class="btn btn-primary btn-block" onclick="authen.updateFullname()">บันทึก</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalInstitution" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="padding-bottom: 100px !important;">
+  <div class="modal-dialog modal-dialog-centered- modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-dark tsdn" id="exampleModalLabel">แก้ไขข้อมูลหน่วยงานที่สังกัด</h5>
+        <button type="button" class="close btnCloseModal" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit='return false;'>
+          <div class="form-group">
+            <label for="">ชื่อหน่วยงานที่สังกัด <span class="text-danger">*</span></label>
+            <textarea name="txtInstitutionProfile" id="txtInstitutionProfile" rows="3" cols="80" class="form-control custom-input-1-"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="">จังหวัด <span class="text-danger">*</span></label>
+            <select class="form-control cusom-input-1 text-center txtProvince" name="txtProvince" id="txtProvince" style="text-align-last:center; padding-left: 29px;">
+              <option value="" class="text-center">-- เลือกจังหวัดที่รับผิดชอบ --</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="">อำเภอ <span class="text-danger">*</span></label>
+            <select class="form-control cusom-input-1 text-center" name="txtDistrict" id="txtDistrict" data-role="none" style="text-align-last:center; padding-left: 29px;">
+              <option value="" class="text-center">-- เลือกอำเภอ --</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="">ตำบล <span class="text-danger">*</span></label>
+            <select class="form-control cusom-input-1 text-center" name="txtSubdistrict" id="txtSubdistrict" data-role="none" style="text-align-last:center; padding-left: 29px;">
+              <option value="" class="text-center">-- เลือกตำบล --</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <button class="btn btn-primary btn-block" onclick="authen.updateInstitution()">บันทึก</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalEmail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="padding-bottom: 100px !important;">
+  <div class="modal-dialog modal-dialog-centered- modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-dark tsdn" id="exampleModalLabel">แก้ไขอีเมลแอดเดรส</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit='return false;'>
+          <div class="form-group">
+            <label for="">E-mail address <span class="text-danger">*</span></label>
+            <input type="text" class="form-control custom-input-1 text-center" id="txtEmailProfile">
+          </div>
+          <p class="text-danger">
+            ** หากท่านใช้ E-mail address เป็นบัญชีผู้ใช้สำหรับการเข้าสู่ระบบ ระบบจะทำการเปลี่ยน E-mail address สำหรับการเข้าสู่ระบบด้วย
+          </p>
+          <div class="form-group">
+            <button class="btn btn-primary btn-block" onclick="authen.updateEmail()">บันทึก</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalPhone" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="padding-bottom: 100px !important;">
+  <div class="modal-dialog modal-dialog-centered- modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-dark tsdn" id="exampleModalLabel">แก้ไขหมายเลขโทรศัพท์</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit='return false;'>
+          <div class="form-group">
+            <label for="">หมายเลขโทรศัพท์ <span class="text-danger">*</span></label>
+            <input type="text" class="form-control custom-input-1 text-center" id="txtPhoneProfile">
+          </div>
+          <p class="text-danger">
+            ** หากท่านใช้หมายเลขโทรศัพท์เป็นบัญชีผู้ใช้สำหรับการเข้าสู่ระบบ ระบบจะทำการเปลี่ยนหมายเลขโทรศัพท์สำหรับการเข้าสู่ระบบด้วย
+          </p>
+          <div class="form-group">
+            <button class="btn btn-primary btn-block" onclick="authen.updatePhone()">บันทึก</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalPassword" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="padding-bottom: 100px !important;">
+  <div class="modal-dialog modal-dialog-centered- modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-dark tsdn" id="exampleModalLabel">เปลี่ยนรหัสผ่าน</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit='return false;'>
+          <div class="form-group">
+            <label for="">ตั้งรหัสผ่านใหม่ <span class="text-danger">*</span></label>
+            <input type="text" class="form-control custom-input-1 text-center" id="txtNewpassword">
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary btn-block" onclick="authen.updatePassword()">บันทึก</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
