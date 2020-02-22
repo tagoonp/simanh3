@@ -182,7 +182,7 @@ $(function(){
       gravid: $gravid,
       parity: $parity,
       abortion: $abortion,
-      and: $('#txtAnc').val(),
+      anc: $('#txtAnc').val(),
       ga1anc: $('#txt1GA').val(),
       num_anc: $('#txtNumAnc').val(),
       tls: $("input[name='icon-input-tl']:checked").val(),

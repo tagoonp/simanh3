@@ -66,28 +66,28 @@ if($stage == 'add_new_patient'){
   $gravid = mysqli_real_escape_string($conn, $_POST['gravid']);
   $parity = mysqli_real_escape_string($conn, $_POST['parity']);
   $abortion = mysqli_real_escape_string($conn, $_POST['abortion']);
-  $ = mysqli_real_escape_string($conn, $_POST['']);
-  $ = mysqli_real_escape_string($conn, $_POST['']);
-  $ = mysqli_real_escape_string($conn, $_POST['']);
-  $ = mysqli_real_escape_string($conn, $_POST['']);
-  $ = mysqli_real_escape_string($conn, $_POST['']);
-  $ = mysqli_real_escape_string($conn, $_POST['']);
-  $ = mysqli_real_escape_string($conn, $_POST['']);
-  $ = mysqli_real_escape_string($conn, $_POST['']);
-  $ = mysqli_real_escape_string($conn, $_POST['']);
-  $ = mysqli_real_escape_string($conn, $_POST['']);
-  $ = mysqli_real_escape_string($conn, $_POST['']);
-  $ = mysqli_real_escape_string($conn, $_POST['']);
-  $ = mysqli_real_escape_string($conn, $_POST['']);
-  $ = mysqli_real_escape_string($conn, $_POST['']);
-  $ = mysqli_real_escape_string($conn, $_POST['']);
-  $ = mysqli_real_escape_string($conn, $_POST['']);
-  $ = mysqli_real_escape_string($conn, $_POST['']);
-  $ = mysqli_real_escape_string($conn, $_POST['']);
-  $ = mysqli_real_escape_string($conn, $_POST['']);
-  $ = mysqli_real_escape_string($conn, $_POST['']);
-  $ = mysqli_real_escape_string($conn, $_POST['']);
-  $ = mysqli_real_escape_string($conn, $_POST['']);
+  $anc = mysqli_real_escape_string($conn, $_POST['anc']);
+  $ga1anc = mysqli_real_escape_string($conn, $_POST['ga1anc']);
+  $num_anc = mysqli_real_escape_string($conn, $_POST['num_anc']);
+  $tls = mysqli_real_escape_string($conn, $_POST['tls']);
+  $hiv = mysqli_real_escape_string($conn, $_POST['hiv']);
+  $syp = mysqli_real_escape_string($conn, $_POST['syp']);
+  $hep = mysqli_real_escape_string($conn, $_POST['hep']);
+  $anc_sys = mysqli_real_escape_string($conn, $_POST['anc_sys']);
+  $anc_dia = mysqli_real_escape_string($conn, $_POST['anc_dia']);
+  $urine = mysqli_real_escape_string($conn, $_POST['urine']);
+  $adm_sys = mysqli_real_escape_string($conn, $_POST['adm_sys']);
+  $adm_dia = mysqli_real_escape_string($conn, $_POST['adm_dia']);
+  $pr = mysqli_real_escape_string($conn, $_POST['pr']);
+  $bt = mysqli_real_escape_string($conn, $_POST['bt']);
+  $fhr = mysqli_real_escape_string($conn, $_POST['fhr']);
+  $lbstage = mysqli_real_escape_string($conn, $_POST['lbstage']);
+  $date_labor_start = mysqli_real_escape_string($conn, $_POST['date_labor_start']);
+  $time_labor_start = mysqli_real_escape_string($conn, $_POST['time_labor_start']);
+  $date_membranes_ruptured = mysqli_real_escape_string($conn, $_POST['date_membranes_ruptured']);
+  $time_membranes_ruptured = mysqli_real_escape_string($conn, $_POST['time_membranes_ruptured']);
+
+  $strSQL = "SELECT * FROM  s6x_patient WHERE hn = '$hn' AND status = '' AND hos_id = ''"
 
 
 }
