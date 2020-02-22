@@ -173,7 +173,7 @@ $(function(){
       province: $('#txtProvince').val(),
       district: $('#txtDistrict').val(),
       date_dob: $('#txtYY2').val() + '-' + $('#txtMM2').val() + '-' + $('#txtDD2').val(),
-      age: $('#txtAge'),
+      age: $('#txtAge').val(),
       rel: $("input[name='icon-input-rel']:checked").val(),
       edu: $("input[name='icon-input-education']:checked").val(),
       dm: $("input[name='icon-input-dm']:checked").val(),
@@ -204,7 +204,11 @@ $(function(){
       time_membranes_ruptured : $('#txtHH4').val() + ':' + $('#txtMIN4').val() + ':00'
     }
 
-    
+    preload.show()
+
+    var jxr = $.post(conf.api + 'patient?stage=add_new_patient', param , function(){}, 'json')
+
+
 
 
   })
