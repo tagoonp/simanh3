@@ -5,6 +5,9 @@ body{
   font-weight: 300 !important;
 }
 
+.modal{
+  z-index: 999999999 !important;
+}
 .fb{ font-weight: 400 !important;}
 /*
 .bg_custom{
@@ -317,4 +320,229 @@ body{
 	background-image: -ms-repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(255,252,252,0.08) 5px, rgba(252,252,252,0.08) 10px) !important;
 	background-image: -o-repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(255,252,252,0.08) 5px, rgba(252,252,252,0.08) 10px) !important;
 	background-image: -webkit-repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(255,252,252,0.08) 5px, rgba(252,252,252,0.08) 10px) !important;
+}
+
+
+
+
+
+
+
+.modal div.ui-slider {
+	height: 30px;
+	margin: .5em 0;
+	padding: 0;
+	-ms-touch-action: pan-y pinch-zoom double-tap-zoom;
+}
+.modal div.ui-slider:before,
+.modal div.ui-slider:after {
+	content: "";
+	display: table;
+}
+.modal div.ui-slider:after {
+	clear: both;
+}
+.modal input.ui-slider-input {
+	display: block;
+	float: left;
+	font-size: 14px;
+	font-weight: bold;
+	margin: 0;
+	padding: 4px;
+	width: 40px;
+	height: 20px;
+	line-height: 20px;
+	border-width: 1px;
+	border-style: solid;
+	outline: 0;
+	text-align: center;
+	vertical-align: text-bottom;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+.modal .ui-slider-input::-webkit-outer-spin-button,
+.modal .ui-slider-input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+.modal .ui-slider-track {
+	position: relative;
+	overflow: visible;
+	border-width: 1px;
+	border-style: solid;
+	height: 15px;
+	margin: 0 15px 0 68px;
+	top: 6px;
+}
+.modal .ui-slider-track.ui-mini {
+	height: 12px;
+	top: 8px;
+}
+.modal .ui-slider-track .ui-slider-bg {
+	height: 100%;
+}
+/* High level of specificity to override button margins in grids */
+.modal .ui-slider-track .ui-btn.ui-slider-handle {
+	position: absolute;
+	z-index: 1;
+	top: 50%;
+	width: 28px;
+	height: 28px;
+	margin: -15px 0 0 -15px;
+	outline: 0;
+	padding: 0;
+}
+.modal .ui-slider-track.ui-mini .ui-slider-handle {
+	height: 14px;
+	width: 14px;
+	margin: -8px 0 0 -8px;
+}
+.modal select.ui-slider-switch {
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	clip: rect(1px,1px,1px,1px);
+}
+.modal div.ui-slider-switch {
+	display: inline-block;
+	height: 32px;
+	width: 5.8em;
+	top: 0;
+}
+/* reset the clearfix */
+.modal div.ui-slider-switch:before,
+.modal div.ui-slider-switch:after {
+	display: none;
+	clear: none;
+}
+.modal div.ui-slider-switch.ui-mini {
+	height: 29px;
+	top: 0;
+}
+.modal .ui-slider-inneroffset {
+	margin: 0 16px;
+	position: relative;
+	z-index: 1;
+}
+.modal .ui-slider-switch.ui-mini .ui-slider-inneroffset {
+	margin: 0 15px 0 14px;
+}
+.modal .ui-slider-switch .ui-btn.ui-slider-handle {
+	margin: 1px 0 0 -15px;
+}
+.modal .ui-slider-switch.ui-mini .ui-slider-handle {
+	width: 25px;
+	height: 25px;
+	margin: 1px 0 0 -13px;
+	padding: 0;
+}
+.modal .ui-slider-handle-snapping {
+	-webkit-transition: left 70ms linear;
+	-moz-transition: left 70ms linear;
+	transition: left 70ms linear;
+}
+.modal .ui-slider-switch .ui-slider-label {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	overflow: hidden;
+	font-size: 16px;
+	top: 0;
+	line-height: 2;
+	min-height: 100%;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.modal .ui-slider-switch.ui-mini .ui-slider-label {
+	font-size: 14px;
+}
+.modal .ui-slider-switch .ui-slider-label-a {
+	z-index: 1;
+	left: 0;
+	text-indent: -1.5em;
+}
+.modal .ui-slider-switch .ui-slider-label-b {
+	z-index: 0;
+	right: 0;
+	text-indent: 1.5em;
+}
+/* The corner radii for ui-slider-switch/track can be specified in theme CSS. The bg and handle inherits. */
+.modal .ui-slider-track .ui-slider-bg,
+.modal .ui-slider-switch .ui-slider-label,
+.modal .ui-slider-switch .ui-slider-inneroffset,
+.modal .ui-slider-handle {
+	-webkit-border-radius: inherit;
+	border-radius: inherit;
+}
+.modal .ui-field-contain div.ui-slider-switch {
+	margin: 0;
+}
+/* ui-hide-label deprecated in 1.4. TODO: Remove in 1.5 */
+.modal .ui-field-contain div.ui-slider-switch,
+.modal .ui-field-contain.ui-hide-label div.ui-slider-switch,
+html .ui-popup .ui-field-contain div.ui-slider-switch {
+	display: inline-block;
+	width: 5.8em;
+}
+/* slider tooltip
+-----------------------------------------------------------------------------------------------------------*/
+.modal .ui-slider-popup {
+	width: 64px;
+	height: 64px;
+	font-size: 36px;
+	padding-top: 14px;
+	opacity: 0.8;
+}
+.modal .ui-slider-popup {
+	position: absolute !important;
+	text-align: center;
+	z-index: 100;
+}
+.modal .ui-slider-track .ui-btn.ui-slider-handle {
+	font-size: .9em;
+	line-height: 30px;
+}
+.modal .ui-rangeslider {
+	margin: .5em 0;
+}
+.modal .ui-rangeslider:before,
+.modal .ui-rangeslider:after {
+	content: "";
+	display: table;
+}
+.modal .ui-rangeslider:after {
+	clear: both;
+}
+.modal .ui-rangeslider .ui-slider-input.ui-rangeslider-last {
+	float: right;
+}
+.modal .ui-rangeslider .ui-rangeslider-sliders {
+	position: relative;
+	overflow: visible;
+	height: 30px;
+	margin: 0 68px;
+}
+.modal .ui-rangeslider .ui-rangeslider-sliders .ui-slider-track {
+	position: absolute;
+	top: 6px;
+	right: 0;
+	left: 0;
+	margin: 0;
+}
+.modal .ui-rangeslider.ui-mini .ui-rangeslider-sliders .ui-slider-track {
+	top: 8px;
+}
+.modal .ui-rangeslider .ui-slider-track:first-child .ui-slider-bg {
+	display: none;
+}
+.modal .ui-rangeslider .ui-rangeslider-sliders .ui-slider-track:first-child {
+	background-color: transparent;
+	background: none;
+	border-width: 0;
+	height: 0;
 }

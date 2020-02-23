@@ -31,5 +31,5 @@ $conn->set_charset("utf8");
 $sysdate = date('Y-m-d');
 $sysdatetime = date('Y-m-d H:i:s');
 $sysdateu = date('U');
-$client_ip = $_SERVER['REMOTE_ADDR'];
+$ip = $_SERVER['REMOTE_ADDR'];
 ?>

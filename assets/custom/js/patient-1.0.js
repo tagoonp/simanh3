@@ -1,7 +1,161 @@
+var patient = {
+  getPrevData(){
+    var param = {
+      uid: current_user,
+      role: current_role,
+      hn: current_hn
+    }
+    var jxr = $.post(conf.api + 'patient?stage=check_prev_info', param , function(){}, 'json')
+              .always(function(snap){
+                if(fnc.json_exist(snap)){
+                  snap.forEach(i=>{
+
+                    if((i.dateadm != null) && (i.dateadm != '0000-00-00')){
+                      $b = i.dateadm.split('-')
+                      $('#txtDD1').val($b[2]); $('#txtMM1').val($b[1]); $('#txtYY1').val($b[0])
+                    }
+
+                    if(i.timeadm != null){
+                      $b = i.timeadm.split(':')
+                      $('#txtHH1').val($b[0])
+                      $('#txtMIN1').val($b[1])
+                    }
+
+                    $('input[name=icon-input-refer][value=' + i.refer + ']').prop('checked', true)
+                    if(i.refer == '1'){
+                      $('.referHidden').removeClass('dn')
+                      $('input[name=icon-input-referstatus][value=' + i.refer_status + ']').prop('checked', true)
+                      if(i.refer_status == 'in'){
+                        $('#txtFacility').val(i.refer_f)
+                      }else if(i.refer_status == 'out'){
+                        $('#txtFacility').val(i.refer_t)
+                      }
+                    }
+
+
+                    $('#txtCid').val(i.idno)
+
+                    if((i.datebr != null) && (i.datebr != '0000-00-00')){
+                      $b = i.datebr.split('-')
+                      $('#txtDD2').val($b[2]); $('#txtMM2').val($b[1]); $('#txtYY2').val($b[0])
+                    }
+
+                    $('#txtAge').val(i.age_e)
+                    $('#txtProvince').val(i.p_province)
+                    core.get_district('txtProvince', 'txtDistrict')
+                    setTimeout(function(){
+                      $('#txtDistrict').val(i.p_district)
+                    }, 1000)
+
+                    $('input[name=icon-input-rel][value=' + i.rel + ']').prop('checked', true)
+                    $('input[name=icon-input-education][value=' + i.edu + ']').prop('checked', true)
+                    $('input[name=icon-input-dm][value=' + i.dm + ']').prop('checked', true)
+                    $('input[name=icon-input-ht][value=' + i.ht + ']').prop('checked', true)
+                    $('input[name=icon-input-hd][value=' + i.hd + ']').prop('checked', true)
+
+                    $('#txtGravid').val(i.grav)
+                    $('#txtGravid').slider('refresh');
+
+                    $('#txtParity').val(i.para)
+                    $('#txtParity').slider('refresh');
+
+                    $('#txtAbort').val(i.abor)
+                    $('#txtAbort').slider('refresh');
+
+                    $('#txtAnc').val(i.anc)
+                    if(i.anc != '0'){
+                      $('.ancHidden').removeClass('dn')
+
+                      if(i.ga1st == '99'){
+                        $('#txt1GA').val(''); $('#txt1GA').slider('refresh'); $('#txt1GA').val('');
+                      }else{
+                        $('#txt1GA').val(i.ga1st); $('#txt1GA').slider('refresh');
+                      }
+
+                      if(i.noanc == '99'){
+                        $('#txtNumAnc').val(''); $('#txtNumAnc').slider('refresh'); $('#txtNumAnc').val('');
+                      }else{
+                        $('#txtNumAnc').val(i.noanc); $('#txtNumAnc').slider('refresh');
+                      }
+
+                      $('input[name=icon-input-tl][value=' + i.tyl + ']').prop('checked', true)
+                      $('input[name=icon-input-hiv][value=' + i.hiv + ']').prop('checked', true)
+                      $('input[name=icon-input-syp][value=' + i.syp + ']').prop('checked', true)
+                      $('input[name=icon-input-hep][value=' + i.hep + ']').prop('checked', true);
+
+                      $('#txtAncSys').val(i.sbp)
+                      $('#txtAncDia').val(i.dbp)
+
+                      $('input[name=icon-input-urine][value=' + i.prot + ']').prop('checked', true);
+                    }
+
+                    $('#txtAdmSts').val(i.sbpad)
+                    $('#txtAdmDia').val(i.dbpad)
+                    $('#txtPr').val(i.pr)
+                    $('#txtBt').val(i.bt)
+                    $('#txtFhr').val(i.fhr)
+
+                    $('input[name=icon-input-solb][value=' + i.labora + ']').prop('checked', true);
+                    if(i.labora != '0'){
+                      $('.laborHidden').removeClass('dn')
+                      if((i.date_lbstart != null) && (i.date_lbstart != '0000-00-00')){
+                        $b = i.date_lbstart.split('-'); $('#txtDD3').val($b[2]); $('#txtMM3').val($b[1]); $('#txtYY3').val($b[0]);
+                      }
+
+                      if(i.time_lbstart != null){
+                        $b = i.time_lbstart.split(':'); $('#txtHH3').val($b[0]); $('#txtMIN3').val($b[1])
+                      }
+
+                      if((i.date_mbrup != null) && (i.date_mbrup != '0000-00-00')){
+                        $b = i.date_mbrup.split('-'); $('#txtDD4').val($b[2]); $('#txtMM4').val($b[1]); $('#txtYY4').val($b[0]);
+                      }
+
+                      if(i.time_mbrup != null){
+                        $b = i.time_mbrup.split(':'); $('#txtHH4').val($b[0]); $('#txtMIN4').val($b[1])
+                      }
+
+                      if(i.gaadm == '99'){
+                        $('#txtGaAdm').val(''); $('#txtGaAdm').slider('refresh'); $('#txtGaAdm').val('');
+                      }else{
+                        $('#txtGaAdm').val(i.gaadm); $('#txtGaAdm').slider('refresh');
+                      }
+
+
+                    }
+                  })
+                  preload.hide()
+                }else{
+                  preload.hide()
+                }
+                console.log(snap);
+              })
+  }
+}
 $(function(){
 
    $('#txtProvince').change(function(){
      core.get_district('txtProvince', 'txtDistrict')
+   })
+
+   $("input[name=icon-input-solb]").click(function(){
+     $value = $("input[name='icon-input-solb']:checked").val();
+     if($value == '0'){
+       $('.laborHidden').addClass('dn')
+       $('input[name=icon-input-referstatus][value=na]').prop('checked', true)
+       $('#txtDD3').val('')
+       $('#txtMM3').val('')
+       $('#txtYY3').val('')
+       $('#txtHH3').val('')
+       $('#txtMIN3').val('')
+       $('#txtDD4').val('')
+       $('#txtMM4').val('')
+       $('#txtYY4').val('')
+       $('#txtHH4').val('')
+       $('#txtMIN4').val('')
+       setNodataSlider('txtGaAdm')
+     }else{
+       $('.laborHidden').removeClass('dn')
+     }
    })
 
    $("input[name=icon-input-refer]").click(function(){
@@ -194,6 +348,7 @@ $(function(){
       urine: $("input[name='icon-input-urine']:checked").val(),
       adm_sys: $('#txtAdmSts').val(),
       adm_dia: $('#txtAdmDia').val(),
+      adm_ga: $('#txtGaAdm').val(),
       pr: $('#txtPr').val(),
       bt: $('#txtBt').val(),
       fhr: $('#txtFhr').val(),
@@ -204,15 +359,44 @@ $(function(){
       time_membranes_ruptured : $('#txtHH4').val() + ':' + $('#txtMIN4').val() + ':00'
     }
 
+    // console.log(param); return ;
+
     preload.show()
 
-    var jxr = $.post(conf.api + 'patient?stage=add_new_patient', param , function(){}, 'json')
+    var jxr = $.post(conf.api + 'patient?stage=add_new_patient', param , function(){})
+               .always(function(resp){
+                 console.log(resp);
+                 if(resp == 'Y'){
+                   $.mobile.changePage( "#deliver_part", {
+                     transition: "slide",
+                     reverse: false,
+                     changeHash: false
+                   });
+                   preload.hide()
+                 }else{
+                   preload.hide()
+                   alert('Error')
+                   $('#notifyError').modal()
+                 }
+               })
+  })
 
-
-
-
+  $('.deliveryForm').submit(function(){
+    $.mobile.changePage( "#complication_part", {
+      transition: "slide",
+      reverse: false,
+      changeHash: false
+    });
   })
 })
+
+function confirm2mainapp(){
+  $.mobile.changePage( "#app", {
+    transition: "slide",
+    reverse: true,
+    changeHash: false
+  });
+}
 
 function confirm2Home(){
   $('#backtohomeModal').modal()
