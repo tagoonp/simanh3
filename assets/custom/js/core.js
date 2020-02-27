@@ -191,4 +191,12 @@ function slide2(div, reversetrue){
     reverse: reverse,
     changeHash: false
   });
+  if(div == 'delivery_part'){
+    if(($ga_del != 0) && ($ga_del != '')){
+      $('#txtGaDel').val($ga_del)
+    }else{
+      $('#txtGaDel').val($('#txtGaAdm').val())
+    }
+    $('#txtGaDel').slider('refresh');
+  }
 }

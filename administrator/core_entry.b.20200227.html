@@ -27,10 +27,8 @@
             <div class="col-8 text-center d-block d-sm-none" style="padding-top: 5px;">
               <h4 class="mb-0">Admission data</h4>
             </div>
-            <div class="col-2 text-right">
-              <div class="dn pr-3" id="btn-deli-next" onclick="slide2('delivery_part', false)" style="cursor: pointer;">
-                <button type="button" name="button" class="btn btn-icon text-white" data-role="none" style=""><i class="fas fa-chevron-right"></i></button>
-              </div>
+            <div class="col-2">
+
             </div>
           </div>
         </div>
@@ -131,7 +129,7 @@
                     </div>
 
                     <div class="form-group row">
-                      <label for="" class="col-form-label col-12 col-sm-4">Refer : </label>
+                      <label for="" class="col-form-label col-12 col-sm-4">Refer ? : </label>
                       <div class="col-12 col-sm-8">
                         <div class="selectgroup selectgroup-pills">
                           <div class="row">
@@ -229,9 +227,6 @@
                               <option value="">-- Select district --</option>
                             </select>
                           </div>
-                          <div class="col-12">
-                            <small class="text-danger">** ที่อยู่ปัจจุบัน</small>
-                          </div>
                         </div>
                       </div>
                     </div>
@@ -254,9 +249,6 @@
                             <select class="form-control custom-input-1 text-center age_input" name="txtYY2" id="txtYY2" data-role="none" tabindex="11">
                               <option value="">-- YYYY --</option>
                             </select>
-                          </div>
-                          <div class="col-12">
-                            <small class="text-danger">** หากลงวัน เดือน ปีเกิด ไม่ได้ ให้ใส่ 1 มกราคม ของปีเกิด</small>
                           </div>
                         </div>
                       </div>
@@ -1090,10 +1082,8 @@
             <div class="col-8 text-center d-block d-sm-none" style="padding-top: 5px;">
               <h4 class="mb-0">Delivery outcome</h4>
             </div>
-            <div class="col-2 text-right">
-              <div class="dn pr-3" id="btn-comp-next" onclick="slide2('complication_part', false)" style="cursor: pointer;">
-                <button type="button" name="button" class="btn btn-icon text-white" data-role="none" style=""><i class="fas fa-chevron-right"></i></button>
-              </div>
+            <div class="col-2">
+
             </div>
           </div>
         </div>
@@ -1147,8 +1137,8 @@
                   </div>
                   <div class="card-body">
                     <div class="form-group row">
-                      <label for="" class="col-form-label col-12 col-sm-3">Mode of delivery : <span class="text-danger">*</span> </label>
-                      <div class="col-12 col-sm-9">
+                      <label for="" class="col-form-label col-12 col-sm-4">Mode of delivery : <span class="text-danger">*</span> </label>
+                      <div class="col-12 col-sm-8">
                         <div class="selectgroup selectgroup-pills">
                           <div class="row">
                             <div class="col-2 col-sm-1">
@@ -1199,8 +1189,8 @@
                     <!-- .form-group -->
 
                     <div class="form-group row">
-                      <label for="" class="col-form-label col-12 col-sm-3">GA at delivery : <span class="text-danger">*</span> </label>
-                      <div class="col-12 col-sm-9">
+                      <label for="" class="col-form-label col-12 col-sm-4">GA at delivery : <span class="text-danger">*</span> </label>
+                      <div class="col-12 col-sm-8">
                         <div class="row">
                           <div class="col-12 pr-0">
                             <input type="range" min="0" max="50" class="form-control" id="txtGaDel" data-rangeSlider value="0">
@@ -1214,8 +1204,8 @@
                     <!-- .form-group -->
 
                     <div class="form-group row">
-                      <label for="" class="col-form-label col-12 col-sm-3">Date of delivery : <span class="text-danger">*</span> </label>
-                      <div class="col-12 col-sm-9">
+                      <label for="" class="col-form-label col-12 col-sm-4">Date of delivery : <span class="text-danger">*</span> </label>
+                      <div class="col-12 col-sm-8">
                         <div class="row">
                           <div class="col-4">
                             <select class="form-control custom-input-1 text-center" name="txtDD5" id="txtDD5" data-role="none" tabindex="25">
@@ -1237,8 +1227,8 @@
                     </div>
 
                     <div class="form-group row">
-                      <label for="" class="col-form-label col-12 col-sm-3">Time of delivery : <span class="text-danger">*</span> </label>
-                      <div class="col-12 col-sm-9">
+                      <label for="" class="col-form-label col-12 col-sm-4">Time of delivery : <span class="text-danger">*</span> </label>
+                      <div class="col-12 col-sm-8">
                         <div class="row">
                           <div class="col-6">
                             <select class="form-control custom-input-1 text-center" name="txtHH5" id="txtHH5" data-role="none" tabindex="28">
@@ -1259,16 +1249,16 @@
                     <!-- .form-group -->
 
                     <div class="form-group row">
-                      <label for="" class="col-form-label col-12 col-sm-3">Name of birth attendant  : </label>
-                      <div class="col-12 col-sm-9">
+                      <label for="" class="col-form-label col-12 col-sm-4">Name of birth attendant  : </label>
+                      <div class="col-12 col-sm-8">
                           <input type="text"  class="form-control custom-input-1" data-role="none" id="txtBa" tabindex="14" >
                       </div>
                     </div>
                     <!-- .form-group -->
 
                     <div class="form-group row">
-                      <label for="" class="col-form-label col-12 col-sm-3">Type of birth attendant : </label>
-                      <div class="col-12 col-sm-9">
+                      <label for="" class="col-form-label col-12 col-sm-4">Type of birth attendant : </label>
+                      <div class="col-12 col-sm-8">
                         <div class="selectgroup selectgroup-pills">
                           <div class="row">
                             <div class="col-2 col-sm-1">
@@ -1343,8 +1333,8 @@
                     <!-- .form-group -->
 
                     <div class="form-group row">
-                      <label for="" class="col-form-label col-12 col-sm-3">Blood loss at delivery and after delivery within 24 hours : <span class="text-danger">*</span> </label>
-                      <div class="col-12 col-sm-9">
+                      <label for="" class="col-form-label col-12 col-sm-4">Blood loss at delivery and after delivery within 2 hours : <span class="text-danger">*</span> </label>
+                      <div class="col-12 col-sm-8">
                         <div class="row">
                           <div class="col-12 pr-0">
                             <input type="number" min="0" max="99999" class="form-control custom-input-1" id="txtBloodloss" step="any" data-role="none">
@@ -1370,8 +1360,8 @@
                       <div class="col-12">
                         <div class="form-group">
                           <div class="form-group row">
-                            <label for="" class="col-form-label col-12 col-sm-3">Birth weight : <span class="text-danger">*</span> </label>
-                            <div class="col-12 col-sm-9">
+                            <label for="" class="col-form-label col-12 col-sm-4">Birth weight : <span class="text-danger">*</span> </label>
+                            <div class="col-12 col-sm-8">
                               <div class="row">
                                 <div class="col-12">
                                   <input type="number" min="0" max="9999" class="form-control custom-input-1" id="txtBwAdd1" data-role="none">
@@ -1382,8 +1372,8 @@
                           <!-- .form-group -->
 
                           <div class="form-group row">
-                            <label for="" class="col-form-label col-12 col-sm-3">Sign of viability (Heart rate, Breath and movement) : </label>
-                            <div class="col-12 col-sm-9">
+                            <label for="" class="col-form-label col-12 col-sm-4">Sign of viability (Heart rate, Breath and movement) : </label>
+                            <div class="col-12 col-sm-8">
                               <div class="selectgroup selectgroup-pills">
                                 <div class="row">
                                   <div class="col-2 col-sm-1">
@@ -1396,7 +1386,7 @@
 
                                   <div class="col-2 col-sm-1">
                                       <label class="selectgroup-item">
-                                          <input type="radio" name="icon-input-nbsign-add1" value="0" class="selectgroup-input"  data-role="none" onclick="showStillbirthModal()">
+                                          <input type="radio" name="icon-input-nbsign-add1" value="0" class="selectgroup-input"  data-role="none">
                                           <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
                                       </label>
                                   </div>
@@ -1418,8 +1408,8 @@
                           <!-- .form-group -->
 
                           <div class="form-group row">
-                            <label for="" class="col-form-label col-12 col-sm-3">Apgar score 1 min : <span class="text-danger">*</span> </label>
-                            <div class="col-12 col-sm-9">
+                            <label for="" class="col-form-label col-12 col-sm-4">Apgar score 1 min : <span class="text-danger">*</span> </label>
+                            <div class="col-12 col-sm-8">
                               <div class="selectgroup selectgroup-pills">
                                 <div class="row">
                                   <div class="col-2 col-sm-1 dn">
@@ -1506,8 +1496,8 @@
                           <!-- .form-group -->
 
                           <div class="form-group row">
-                            <label for="" class="col-form-label col-12 col-sm-3">Apgar score 5 min : <span class="text-danger">*</span> </label>
-                            <div class="col-12 col-sm-9">
+                            <label for="" class="col-form-label col-12 col-sm-4">Apgar score 5 min : <span class="text-danger">*</span> </label>
+                            <div class="col-12 col-sm-8">
                               <div class="selectgroup selectgroup-pills">
                                 <div class="row">
                                   <div class="col-2 col-sm-1 dn">
@@ -1608,8 +1598,8 @@
                       <div class="col-12">
                         <div class="form-group">
                           <div class="form-group row">
-                            <label for="" class="col-form-label col-12 col-sm-3">Birth weight : <span class="text-danger"></span> </label>
-                            <div class="col-12 col-sm-9">
+                            <label for="" class="col-form-label col-12 col-sm-4">Birth weight : <span class="text-danger"></span> </label>
+                            <div class="col-12 col-sm-8">
                               <div class="row">
                                 <div class="col-12">
                                   <input type="number" min="0" max="9999" class="form-control custom-input-1" id="txtBwAdd2" data-role="none">
@@ -1620,8 +1610,8 @@
                           <!-- .form-group -->
 
                           <div class="form-group row">
-                            <label for="" class="col-form-label col-12 col-sm-3">Sign of viability (Heart rate, Breath and movement) : </label>
-                            <div class="col-12 col-sm-9">
+                            <label for="" class="col-form-label col-12 col-sm-4">Sign of viability (Heart rate, Breath and movement) : </label>
+                            <div class="col-12 col-sm-8">
                               <div class="selectgroup selectgroup-pills">
                                 <div class="row">
                                   <div class="col-2 col-sm-1">
@@ -1634,7 +1624,7 @@
 
                                   <div class="col-2 col-sm-1">
                                       <label class="selectgroup-item">
-                                          <input type="radio" name="icon-input-nbsign-add2" value="0" class="selectgroup-input"  data-role="none" onclick="showStillbirthModal()">
+                                          <input type="radio" name="icon-input-nbsign-add2" value="0" class="selectgroup-input"  data-role="none">
                                           <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
                                       </label>
                                   </div>
@@ -1656,8 +1646,8 @@
                           <!-- .form-group -->
 
                           <div class="form-group row">
-                            <label for="" class="col-form-label col-12 col-sm-3">Apgar score 1 min : <span class="text-danger"></span> </label>
-                            <div class="col-12 col-sm-9">
+                            <label for="" class="col-form-label col-12 col-sm-4">Apgar score 1 min : <span class="text-danger"></span> </label>
+                            <div class="col-12 col-sm-8">
                               <div class="selectgroup selectgroup-pills">
                                 <div class="row">
                                   <div class="col-2 col-sm-1 dn">
@@ -1744,8 +1734,8 @@
                           <!-- .form-group -->
 
                           <div class="form-group row">
-                            <label for="" class="col-form-label col-12 col-sm-3">Apgar score 5 min : <span class="text-danger"></span> </label>
-                            <div class="col-12 col-sm-9">
+                            <label for="" class="col-form-label col-12 col-sm-4">Apgar score 5 min : <span class="text-danger"></span> </label>
+                            <div class="col-12 col-sm-8">
                               <div class="selectgroup selectgroup-pills">
                                 <div class="row">
                                   <div class="col-2 col-sm-1 dn">
@@ -1847,8 +1837,8 @@
                       <div class="col-12">
                         <div class="form-group">
                           <div class="form-group row">
-                            <label for="" class="col-form-label col-12 col-sm-3">Birth weight : <span class="text-danger"></span> </label>
-                            <div class="col-12 col-sm-9">
+                            <label for="" class="col-form-label col-12 col-sm-4">Birth weight : <span class="text-danger"></span> </label>
+                            <div class="col-12 col-sm-8">
                               <div class="row">
                                 <div class="col-12">
                                   <input type="number" min="0" max="9999" class="form-control custom-input-1" id="txtBwAdd3" data-role="none">
@@ -1859,8 +1849,8 @@
                           <!-- .form-group -->
 
                           <div class="form-group row">
-                            <label for="" class="col-form-label col-12 col-sm-3">Sign of viability (Heart rate, Breath and movement) : </label>
-                            <div class="col-12 col-sm-9">
+                            <label for="" class="col-form-label col-12 col-sm-4">Sign of viability (Heart rate, Breath and movement) : </label>
+                            <div class="col-12 col-sm-8">
                               <div class="selectgroup selectgroup-pills">
                                 <div class="row">
                                   <div class="col-2 col-sm-1">
@@ -1873,7 +1863,7 @@
 
                                   <div class="col-2 col-sm-1">
                                       <label class="selectgroup-item">
-                                          <input type="radio" name="icon-input-nbsign-add3" value="0" class="selectgroup-input"  data-role="none" onclick="showStillbirthModal()">
+                                          <input type="radio" name="icon-input-nbsign-add3" value="0" class="selectgroup-input"  data-role="none">
                                           <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
                                       </label>
                                   </div>
@@ -1895,8 +1885,8 @@
                           <!-- .form-group -->
 
                           <div class="form-group row">
-                            <label for="" class="col-form-label col-12 col-sm-3">Apgar score 1 min : <span class="text-danger"></span> </label>
-                            <div class="col-12 col-sm-9">
+                            <label for="" class="col-form-label col-12 col-sm-4">Apgar score 1 min : <span class="text-danger"></span> </label>
+                            <div class="col-12 col-sm-8">
                               <div class="selectgroup selectgroup-pills">
                                 <div class="row">
                                   <div class="col-2 col-sm-1 dn">
@@ -1983,8 +1973,8 @@
                           <!-- .form-group -->
 
                           <div class="form-group row">
-                            <label for="" class="col-form-label col-12 col-sm-3">Apgar score 5 min : <span class="text-danger"></span> </label>
-                            <div class="col-12 col-sm-9">
+                            <label for="" class="col-form-label col-12 col-sm-4">Apgar score 5 min : <span class="text-danger"></span> </label>
+                            <div class="col-12 col-sm-8">
                               <div class="selectgroup selectgroup-pills">
                                 <div class="row">
                                   <div class="col-2 col-sm-1 dn">
@@ -1996,7 +1986,7 @@
 
                                   <div class="col-2 col-sm-1">
                                       <label class="selectgroup-item">
-                                          <input type="radio" name="icon-input-apgar5-nb3" value="0" class="selectgroup-input"  data-role="none" onclick="showStillbirthModal()">
+                                          <input type="radio" name="icon-input-apgar5-nb3" value="0" class="selectgroup-input"  data-role="none">
                                           <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;">0</span>
                                       </label>
                                   </div>
@@ -2086,8 +2076,8 @@
                       <div class="col-12">
                         <div class="form-group">
                           <div class="form-group row">
-                            <label for="" class="col-form-label col-12 col-sm-3">Birth weight : <span class="text-danger"></span> </label>
-                            <div class="col-12 col-sm-9">
+                            <label for="" class="col-form-label col-12 col-sm-4">Birth weight : <span class="text-danger"></span> </label>
+                            <div class="col-12 col-sm-8">
                               <div class="row">
                                 <div class="col-12">
                                   <input type="number" min="0" max="9999" class="form-control custom-input-1" id="txtBwAdd4" data-role="none">
@@ -2098,8 +2088,8 @@
                           <!-- .form-group -->
 
                           <div class="form-group row">
-                            <label for="" class="col-form-label col-12 col-sm-3">Sign of viability (Heart rate, Breath and movement) : </label>
-                            <div class="col-12 col-sm-9">
+                            <label for="" class="col-form-label col-12 col-sm-4">Sign of viability (Heart rate, Breath and movement) : </label>
+                            <div class="col-12 col-sm-8">
                               <div class="selectgroup selectgroup-pills">
                                 <div class="row">
                                   <div class="col-2 col-sm-1">
@@ -2134,8 +2124,8 @@
                           <!-- .form-group -->
 
                           <div class="form-group row">
-                            <label for="" class="col-form-label col-12 col-sm-3">Apgar score 1 min : <span class="text-danger"></span> </label>
-                            <div class="col-12 col-sm-9">
+                            <label for="" class="col-form-label col-12 col-sm-4">Apgar score 1 min : <span class="text-danger"></span> </label>
+                            <div class="col-12 col-sm-8">
                               <div class="selectgroup selectgroup-pills">
                                 <div class="row">
                                   <div class="col-2 col-sm-1 dn">
@@ -2222,8 +2212,8 @@
                           <!-- .form-group -->
 
                           <div class="form-group row">
-                            <label for="" class="col-form-label col-12 col-sm-3">Apgar score 5 min : <span class="text-danger"></span> </label>
-                            <div class="col-12 col-sm-9">
+                            <label for="" class="col-form-label col-12 col-sm-4">Apgar score 5 min : <span class="text-danger"></span> </label>
+                            <div class="col-12 col-sm-8">
                               <div class="selectgroup selectgroup-pills">
                                 <div class="row">
                                   <div class="col-2 col-sm-1 dn">
@@ -2316,11 +2306,11 @@
                 </div>
                 <!-- .card -->
 
-                <div class="d-none d-sm-block text-center pb-5" style="margin-bottom: 100px;">
+                <div class="d-none d-sm-block text-center pb-5">
                   <button type="button" name="button" class="btn btn-secondary" data-role="none" onclick="confirm2Home()">Back to main menu</button>
                   <button type="submit" name="button" class="btn btn-success" data-role="none" >Save and enter complication part</button>
                 </div>
-                <div class="d-block d-sm-none pb-5" style="margin-bottom: 100px;">
+                <div class="d-block d-sm-none pb-5">
                   <button type="submit" name="button" class="btn btn-success btn-block" data-role="none" >Save and enter complication part</button>
                   <button type="button" name="button" class="btn btn-secondary btn-block" data-role="none" onclick="confirm2Home()">Back to main menu</button>
                 </div>
@@ -2541,8 +2531,6 @@
                           </div>
                           <!-- .selectgroup -->
                         </div>
-
-                        <div class="col-12 dn" id="complication_md"></div>
                       </div>
                       <!-- .form-group -->
 
@@ -2612,7 +2600,7 @@
                               <div class="col-4 col-sm-5 pl-4" style="padding-top: 12px;">No</div>
                               <div class="col-2 col-sm-1">
                                   <label class="selectgroup-item">
-                                      <input type="radio" name="icon-input-still" value="1" class="selectgroup-input"  data-role="none" onclick="showStillbirthModal()">
+                                      <input type="radio" name="icon-input-still" value="1" class="selectgroup-input"  data-role="none">
                                       <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
                                   </label>
                               </div>
@@ -2621,7 +2609,6 @@
                           </div>
                           <!-- .selectgroup -->
                         </div>
-                        <div class="col-12 dn" id="complication_stillbirth"></div>
                       </div>
                       <!-- .form-group -->
 
@@ -2658,10 +2645,10 @@
 
                 <div class="d-none d-sm-block text-center pb-5">
                   <button type="button" name="button" class="btn btn-secondary" data-role="none" onclick="confirm2Home()">Back to main menu</button>
-                  <button type="submit" name="button" class="btn btn-success" data-role="none" onclick="slide2('review_part', false)" >Save and review</button>
+                  <button type="submit" name="button" class="btn btn-success" data-role="none" >Save and review</button>
                 </div>
                 <div class="d-block d-sm-none pb-5">
-                  <button type="submit" name="button" class="btn btn-success btn-block" data-role="none" onclick="slide2('review_part', false)">Save and review</button>
+                  <button type="submit" name="button" class="btn btn-success btn-block" data-role="none" >Save and review</button>
                   <button type="button" name="button" class="btn btn-secondary btn-block" data-role="none" onclick="confirm2Home()">Back to main menu</button>
                 </div>
 
@@ -2693,278 +2680,301 @@
           <form class="complicationForm" onsubmit="return false;">
             <div class="row">
               <div class="col-12">
+                <h4>HN : <span class="textHn"></span> </h4>
                 <div class="card mb-3" style="border: none;">
                   <div class="card-header" style="background: rgb(62, 78, 85);">
-                    <h5 class="mb-0 text-white fb">Admission data</h5>
+                    <h5 class="mb-0 text-white fb">Outcome</h5>
                   </div>
                   <div class="card-body">
-                    <h5>Main admission data</h5>
-                    <table class="table table-bordered">
-                      <tbody>
-                        <tr>
-                          <td style="width: 30%;">HN :</td>
-                          <td class="textHn"></td>
-                        </tr>
-                        <tr>
-                          <td>Refer information :</td>
-                          <td class="textRefer"></td>
-                        </tr>
-                      </tbody>
-                    </table>
+                    <div class="form-group row">
+                      <label for="" class="col-form-label col-12 col-sm-4">Normal : <span class="text-danger">*</span> </label>
+                      <div class="col-12 col-sm-8">
+                        <div class="selectgroup selectgroup-pills">
+                          <div class="row">
+                            <div class="col-2 col-sm-1">
+                                <label class="selectgroup-item">
+                                    <input type="radio" name="icon-input-moddel" value="0" class="selectgroup-input" data-role="none">
+                                    <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                                </label>
+                            </div>
+                            <div class="col-4 col-sm-5 pl-4" style="padding-top: 12px;">No</div>
+                            <div class="col-2 col-sm-1">
+                                <label class="selectgroup-item">
+                                    <input type="radio" name="icon-input-moddel" value="1" class="selectgroup-input"  data-role="none" checked="">
+                                    <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                                </label>
+                            </div>
+                            <div class="col-4 col-sm-5 pl-4" style="padding-top: 12px;">Yes</div>
+                          </div>
+                        </div>
+                        <!-- .selectgroup -->
+                      </div>
+                    </div>
+                    <!-- .form-group -->
 
-                    <h5>Dempgraphic data</h5>
-                    <table class="table table-bordered">
-                      <tbody>
-                        <tr>
-                          <td style="width: 30%;">Identification number / Migrant Resident Cert. / VISA :</td>
-                          <td class="textCid"></td>
-                        </tr>
-                        <tr>
-                          <td>Address  :</td>
-                          <td class="textAddress"></td>
-                        </tr>
-                        <tr>
-                          <td>Date of birth  :</td>
-                          <td class="textDob"></td>
-                        </tr>
-                        <tr>
-                          <td>Current age  :</td>
-                          <td class="textAge"></td>
-                        </tr>
-                        <tr>
-                          <td>Relegion :</td>
-                          <td class="textRelegion"></td>
-                        </tr>
-                        <tr>
-                          <td>Education :</td>
-                          <td class="textEducation"></td>
-                        </tr>
-                      </tbody>
-                    </table>
 
-                    <h5>Medical underlying diseases</h5>
-                    <table class="table table-bordered">
-                      <tbody>
-                        <tr>
-                          <td style="width: 30%;">DM :</td>
-                          <td class="textDm"></td>
-                        </tr>
-                        <tr>
-                          <td>HT :</td>
-                          <td class="textHt"></td>
-                        </tr>
-                        <tr>
-                          <td>HD :</td>
-                          <td class="textHd"></td>
-                        </tr>
-                      </tbody>
-                    </table>
 
-                    <h5>Obstertric information</h5>
-                    <table class="table table-bordered">
-                      <tbody>
-                        <tr>
-                          <td style="width: 30%;">Gravid :</td>
-                          <td class="textGravid"></td>
-                        </tr>
-                        <tr>
-                          <td>Parity :</td>
-                          <td class="textParity"></td>
-                        </tr>
-                        <tr>
-                          <td>Abortion :</td>
-                          <td class="textAbortion"></td>
-                        </tr>
-                        <tr>
-                          <td>Place of antenatal care :</td>
-                          <td class="textPlaceAnc"></td>
-                        </tr>
-                        <tr class="anc_detail dn">
-                          <td>Gestational age at 1<sup>st</sup> ANC :</td>
-                          <td class="textGa1Anc"></td>
-                        </tr>
-                        <tr class="anc_detail dn">
-                          <td>Thalassemia Screening :</td>
-                          <td class="textTls"></td>
-                        </tr>
-                        <tr class="anc_detail dn">
-                          <td>HIV Screening :</td>
-                          <td class="textHiv"></td>
-                        </tr>
-                        <tr class="anc_detail dn">
-                          <td>Syphilis Screening :</td>
-                          <td class="textSyp"></td>
-                        </tr>
-                        <tr class="anc_detail dn">
-                          <td>Hepatitis Screening :</td>
-                          <td class="textHep"></td>
-                        </tr>
-                        <tr class="anc_detail dn">
-                          <td>BP at last ANC :</td>
-                          <td class="textBpAnc"></td>
-                        </tr>
-                        <tr class="anc_detail dn">
-                          <td>Urine protein at last ANC :</td>
-                          <td class="textUtine"></td>
-                        </tr>
-                      </tbody>
-                    </table>
+                    <div class="abnormalHidden dn">
+                      <div class="form-group row">
+                        <label for="" class="col-form-label col-12 col-sm-4">Severe Preeclampsia/Eclampsia : <span class="text-danger">*</span> </label>
+                        <div class="col-12 col-sm-8">
+                          <div class="selectgroup selectgroup-pills">
+                            <div class="row">
+                              <div class="col-2 col-sm-1">
+                                  <label class="selectgroup-item">
+                                      <input type="radio" name="icon-input-eclampsia" value="0" class="selectgroup-input" data-role="none" checked="">
+                                      <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                                  </label>
+                              </div>
+                              <div class="col-4 col-sm-5 pl-4" style="padding-top: 12px;">No</div>
+                              <div class="col-2 col-sm-1">
+                                  <label class="selectgroup-item">
+                                      <input type="radio" name="icon-input-eclampsia" value="1" class="selectgroup-input"  data-role="none">
+                                      <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                                  </label>
+                              </div>
+                              <div class="col-4 col-sm-5 pl-4" style="padding-top: 12px;">Yes</div>
+                            </div>
+                          </div>
+                          <!-- .selectgroup -->
+                        </div>
+                      </div>
+                      <!-- .form-group -->
 
-                    <h5>Vital sign at admission</h5>
-                    <table class="table table-bordered">
-                      <tbody>
-                        <tr>
-                          <td style="width: 30%;">BP at admission :</td>
-                          <td class="textBpAdm"></td>
-                        </tr>
-                        <tr>
-                          <td>Pulse rate :</td>
-                          <td class="textPr"></td>
-                        </tr>
-                        <tr>
-                          <td>Body Temperature :</td>
-                          <td class="textBt"></td>
-                        </tr>
-                        <tr>
-                          <td>Fetal heart rate :</td>
-                          <td class="textFhr"></td>
-                        </tr>
-                        <tr>
-                          <td>Stage of labor :</td>
-                          <td class="textStageOfLabor"></td>
-                        </tr>
-                        <tr class="laborHidden dn">
-                          <td>Gestational age admission :</td>
-                          <td class="textGaAdm"></td>
-                        </tr>
-                        <tr class="laborHidden dn">
-                          <td>Date and time of labor started :</td>
-                          <td class="textDateOfLabor"></td>
-                        </tr>
-                        <tr class="laborHidden dn">
-                          <td>Date and time of membranes ruptured :</td>
-                          <td class="textDateOfMembrane"></td>
-                        </tr>
-                      </tbody>
-                    </table>
+                      <div class="form-group row">
+                        <label for="" class="col-form-label col-12 col-sm-4">Postpartum hemorrahge : <span class="text-danger">*</span> </label>
+                        <div class="col-12 col-sm-8">
+                          <div class="selectgroup selectgroup-pills">
+                            <div class="row">
+                              <div class="col-2 col-sm-1">
+                                  <label class="selectgroup-item">
+                                      <input type="radio" name="icon-input-ph" value="0" class="selectgroup-input" data-role="none" checked="">
+                                      <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                                  </label>
+                              </div>
+                              <div class="col-4 col-sm-5 pl-4" style="padding-top: 12px;">No</div>
+                              <div class="col-2 col-sm-1">
+                                  <label class="selectgroup-item">
+                                      <input type="radio" name="icon-input-ph" value="1" class="selectgroup-input"  data-role="none">
+                                      <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                                  </label>
+                              </div>
+                              <div class="col-4 col-sm-5 pl-4" style="padding-top: 12px;">Yes</div>
+                            </div>
+                          </div>
+                          <!-- .selectgroup -->
+                        </div>
+                      </div>
+                      <!-- .form-group -->
 
-                  </div>
-                </div>
-                <!-- .card -->
+                      <div class="form-group row">
+                        <label for="" class="col-form-label col-12 col-sm-4">Sepsis : <span class="text-danger">*</span> </label>
+                        <div class="col-12 col-sm-8">
+                          <div class="selectgroup selectgroup-pills">
+                            <div class="row">
+                              <div class="col-2 col-sm-1">
+                                  <label class="selectgroup-item">
+                                      <input type="radio" name="icon-input-sepsis" value="0" class="selectgroup-input" data-role="none" checked="">
+                                      <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                                  </label>
+                              </div>
+                              <div class="col-4 col-sm-5 pl-4" style="padding-top: 12px;">No</div>
+                              <div class="col-2 col-sm-1">
+                                  <label class="selectgroup-item">
+                                      <input type="radio" name="icon-input-sepsis" value="1" class="selectgroup-input"  data-role="none">
+                                      <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                                  </label>
+                              </div>
+                              <div class="col-4 col-sm-5 pl-4" style="padding-top: 12px;">Yes</div>
+                            </div>
+                          </div>
+                          <!-- .selectgroup -->
+                        </div>
+                      </div>
+                      <!-- .form-group -->
 
-                <div class="card mb-3" style="border: none;">
-                  <div class="card-header" style="background: rgb(62, 78, 85);">
-                    <h5 class="mb-0 text-white fb">Pregnancy and Delivery</h5>
-                  </div>
-                  <div class="card-body">
-                    <h5>Delivery data</h5>
-                    <table class="table table-bordered">
-                      <tbody>
-                        <tr>
-                          <td style="width: 30%;">Mode of delivery :</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>Gestational age at delivery :</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>Date and time of delivery :</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>Birth attendant :</td>
-                          <td></td>
-                        </tr>
-                      </tbody>
-                    </table>
+                      <div class="form-group row">
+                        <label for="" class="col-form-label col-12 col-sm-4">Obstructed labor : <span class="text-danger">*</span> </label>
+                        <div class="col-12 col-sm-8">
+                          <div class="selectgroup selectgroup-pills">
+                            <div class="row">
+                              <div class="col-2 col-sm-1">
+                                  <label class="selectgroup-item">
+                                      <input type="radio" name="icon-input-obstructed" value="0" class="selectgroup-input" data-role="none" checked="">
+                                      <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                                  </label>
+                              </div>
+                              <div class="col-4 col-sm-5 pl-4" style="padding-top: 12px;">No</div>
+                              <div class="col-2 col-sm-1">
+                                  <label class="selectgroup-item">
+                                      <input type="radio" name="icon-input-obstructed" value="1" class="selectgroup-input"  data-role="none">
+                                      <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                                  </label>
+                              </div>
+                              <div class="col-4 col-sm-5 pl-4" style="padding-top: 12px;">Yes</div>
+                            </div>
+                          </div>
+                          <!-- .selectgroup -->
+                        </div>
+                      </div>
+                      <!-- .form-group -->
 
-                    <h5>Newborn charatoristics</h5>
-                    <table class="table table-bordered">
-                      <tbody>
-                        <tr>
-                          <td style="width: 30%;">Mode of delivery :</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>Gestational age at delivery :</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>Date and time of delivery :</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>Birth attendant :</td>
-                          <td></td>
-                        </tr>
-                      </tbody>
-                    </table>
+                      <div class="form-group row">
+                        <label for="" class="col-form-label col-12 col-sm-4">Cesarean delivery : <span class="text-danger">*</span> </label>
+                        <div class="col-12 col-sm-8">
+                          <div class="selectgroup selectgroup-pills">
+                            <div class="row">
+                              <div class="col-2 col-sm-1">
+                                  <label class="selectgroup-item">
+                                      <input type="radio" name="icon-input-cesarean" value="0" class="selectgroup-input" data-role="none" checked="">
+                                      <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                                  </label>
+                              </div>
+                              <div class="col-4 col-sm-5 pl-4" style="padding-top: 12px;">No</div>
+                              <div class="col-2 col-sm-1">
+                                  <label class="selectgroup-item">
+                                      <input type="radio" name="icon-input-cesarean" value="1" class="selectgroup-input"  data-role="none">
+                                      <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                                  </label>
+                              </div>
+                              <div class="col-4 col-sm-5 pl-4" style="padding-top: 12px;">Yes</div>
+                            </div>
+                          </div>
+                          <!-- .selectgroup -->
+                        </div>
+                      </div>
+                      <!-- .form-group -->
 
-                  </div>
-                </div>
-                <!-- .card -->
+                      <div class="form-group row">
+                        <label for="" class="col-form-label col-12 col-sm-4">Maternal death : <span class="text-danger">*</span> </label>
+                        <div class="col-12 col-sm-8">
+                          <div class="selectgroup selectgroup-pills">
+                            <div class="row">
+                              <div class="col-2 col-sm-1">
+                                  <label class="selectgroup-item">
+                                      <input type="radio" name="icon-input-md" value="0" class="selectgroup-input" data-role="none" checked="">
+                                      <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                                  </label>
+                              </div>
+                              <div class="col-4 col-sm-5 pl-4" style="padding-top: 12px;">No</div>
+                              <div class="col-2 col-sm-1">
+                                  <label class="selectgroup-item">
+                                      <input type="radio" name="icon-input-md" value="1" class="selectgroup-input"  data-role="none">
+                                      <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                                  </label>
+                              </div>
+                              <div class="col-4 col-sm-5 pl-4" style="padding-top: 12px;">Yes</div>
+                            </div>
+                          </div>
+                          <!-- .selectgroup -->
+                        </div>
+                      </div>
+                      <!-- .form-group -->
 
-                <div class="card mb-3" style="border: none;">
-                  <div class="card-header" style="background: rgb(62, 78, 85);">
-                    <h5 class="mb-0 text-white fb">Complication data</h5>
-                  </div>
-                  <div class="card-body">
-                    <h5>Outcome status</h5>
-                    <table class="table table-bordered">
-                      <tbody>
-                        <tr>
-                          <td style="width: 30%;">Normal :</td>
-                          <td></td>
-                        </tr>
-                      </tbody>
-                    </table>
+                      <div class="form-group row">
+                        <label for="" class="col-form-label col-12 col-sm-4">Preterm birth : <span class="text-danger">*</span> </label>
+                        <div class="col-12 col-sm-8">
+                          <div class="selectgroup selectgroup-pills">
+                            <div class="row">
+                              <div class="col-2 col-sm-1">
+                                  <label class="selectgroup-item">
+                                      <input type="radio" name="icon-input-preterm" value="0" class="selectgroup-input" data-role="none" checked="">
+                                      <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                                  </label>
+                              </div>
+                              <div class="col-4 col-sm-5 pl-4" style="padding-top: 12px;">No</div>
+                              <div class="col-2 col-sm-1">
+                                  <label class="selectgroup-item">
+                                      <input type="radio" name="icon-input-preterm" value="1" class="selectgroup-input"  data-role="none">
+                                      <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                                  </label>
+                              </div>
+                              <div class="col-4 col-sm-5 pl-4" style="padding-top: 12px;">Yes</div>
+                            </div>
+                          </div>
+                          <!-- .selectgroup -->
+                        </div>
+                      </div>
+                      <!-- .form-group -->
 
-                    <h5>Complications</h5>
-                    <table class="table table-bordered">
-                      <tbody>
-                        <tr>
-                          <td style="width: 30%;">Severe Preeclampsia/Eclampsia :</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>Postpartum hemorrahge :</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>Sepsis :</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>Obstructed labor :</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>Cesarean delivery :</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>Maternal death :</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>Preterm birth :</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>Low birth weight :</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>Stillbirth :</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>Neonatal death :</td>
-                          <td></td>
-                        </tr>
-                      </tbody>
-                    </table>
+                      <div class="form-group row">
+                        <label for="" class="col-form-label col-12 col-sm-4">Low birth weight : <span class="text-danger">*</span> </label>
+                        <div class="col-12 col-sm-8">
+                          <div class="selectgroup selectgroup-pills">
+                            <div class="row">
+                              <div class="col-2 col-sm-1">
+                                  <label class="selectgroup-item">
+                                      <input type="radio" name="icon-input-lbw" value="0" class="selectgroup-input" data-role="none" checked="">
+                                      <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                                  </label>
+                              </div>
+                              <div class="col-4 col-sm-5 pl-4" style="padding-top: 12px;">No</div>
+                              <div class="col-2 col-sm-1">
+                                  <label class="selectgroup-item">
+                                      <input type="radio" name="icon-input-lbw" value="1" class="selectgroup-input"  data-role="none">
+                                      <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                                  </label>
+                              </div>
+                              <div class="col-4 col-sm-5 pl-4" style="padding-top: 12px;">Yes</div>
+                            </div>
+                          </div>
+                          <!-- .selectgroup -->
+                        </div>
+                      </div>
+                      <!-- .form-group -->
+
+                      <div class="form-group row">
+                        <label for="" class="col-form-label col-12 col-sm-4">Stillbirth : <span class="text-danger">*</span> </label>
+                        <div class="col-12 col-sm-8">
+                          <div class="selectgroup selectgroup-pills">
+                            <div class="row">
+                              <div class="col-2 col-sm-1">
+                                  <label class="selectgroup-item">
+                                      <input type="radio" name="icon-input-still" value="0" class="selectgroup-input" data-role="none" checked="">
+                                      <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                                  </label>
+                              </div>
+                              <div class="col-4 col-sm-5 pl-4" style="padding-top: 12px;">No</div>
+                              <div class="col-2 col-sm-1">
+                                  <label class="selectgroup-item">
+                                      <input type="radio" name="icon-input-still" value="1" class="selectgroup-input"  data-role="none">
+                                      <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                                  </label>
+                              </div>
+                              <div class="col-4 col-sm-5 pl-4" style="padding-top: 12px;">Yes</div>
+                            </div>
+                          </div>
+                          <!-- .selectgroup -->
+                        </div>
+                      </div>
+                      <!-- .form-group -->
+
+                      <div class="form-group row">
+                        <label for="" class="col-form-label col-12 col-sm-4">Neonatal death : <span class="text-danger">*</span> </label>
+                        <div class="col-12 col-sm-8">
+                          <div class="selectgroup selectgroup-pills">
+                            <div class="row">
+                              <div class="col-2 col-sm-1">
+                                  <label class="selectgroup-item">
+                                      <input type="radio" name="icon-input-neonate" value="0" class="selectgroup-input" data-role="none" checked="">
+                                      <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                                  </label>
+                              </div>
+                              <div class="col-4 col-sm-5 pl-4" style="padding-top: 12px;">No</div>
+                              <div class="col-2 col-sm-1">
+                                  <label class="selectgroup-item">
+                                      <input type="radio" name="icon-input-neonate" value="1" class="selectgroup-input"  data-role="none">
+                                      <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
+                                  </label>
+                              </div>
+                              <div class="col-4 col-sm-5 pl-4" style="padding-top: 12px;">Yes</div>
+                            </div>
+                          </div>
+                          <!-- .selectgroup -->
+                        </div>
+                      </div>
+                      <!-- .form-group -->
+                    </div>
 
                   </div>
                 </div>
@@ -2972,10 +2982,10 @@
 
                 <div class="d-none d-sm-block text-center pb-5">
                   <button type="button" name="button" class="btn btn-secondary" data-role="none" onclick="confirm2Home()">Back to main menu</button>
-                  <button type="submit" name="button" class="btn btn-success" data-role="none" onclick="confirmRecordToActor()" >Confirm and send</button>
+                  <button type="submit" name="button" class="btn btn-success" data-role="none" >Confirm and send</button>
                 </div>
                 <div class="d-block d-sm-none pb-5">
-                  <button type="submit" name="button" class="btn btn-success btn-block" data-role="none" onclick="confirmRecordToActor()" >Confirm and send</button>
+                  <button type="submit" name="button" class="btn btn-success btn-block" data-role="none" >Confirm and send</button>
                   <button type="button" name="button" class="btn btn-secondary btn-block" data-role="none" onclick="confirm2Home()">Back to main menu</button>
                 </div>
 
@@ -2984,6 +2994,12 @@
           </form>
         </div>
       </div>
+
+
+
+
+
+
 
       <!-- <script type="text/javascript" src="../cordova.js"></script> -->
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSfKxbsrDqlaQnnZEktT3dyT2V1g_cXoA" async defer></script>
@@ -3032,24 +3048,6 @@
           fnc.setHourInput('#txtHH5')
           fnc.setMinInput('#txtMIN5')
 
-          fnc.setDateInput('#txtDD6')
-          fnc.setMonthInput('#txtMM6')
-          fnc.setYearInput('#txtYY6')
-          fnc.setHourInput('#txtHH6')
-          fnc.setMinInput('#txtMIN6')
-
-          fnc.setDateInput('#txtDD10')
-          fnc.setMonthInput('#txtMM10')
-          fnc.setYearInput('#txtYY10')
-          fnc.setHourInput('#txtHH10')
-          fnc.setMinInput('#txtMIN10')
-
-          fnc.setDateInput('#txtDD13')
-          fnc.setMonthInput('#txtMM13')
-          fnc.setYearInput('#txtYY13')
-          fnc.setHourInput('#txtHH13')
-          fnc.setMinInput('#txtMIN13')
-
           core.get_province('txtProvince')
 
 
@@ -3069,17 +3067,9 @@
             $('#txtMM5').val($today[1])
             $('#txtYY5').val($today[0])
 
-            $('#txtMM10').val($today[1])
-            $('#txtYY10').val($today[0])
-
             patient.getPrevData()
 
           }, 000)
-
-          setInterval(function(){
-            patient.saveAdmDraft()
-            patient.saveDelDraft()
-          }, 15000);
         })
 
         $(function(){
@@ -3103,10 +3093,10 @@
             </div>
           </div>
           <h4>Warning</h4>
-          <p class="text-muted" style="font-size: 16px;">If this record is in progess. Are you sure to go to home page.</p>
+          <p class="text-muted" style="font-size: 16px;">If this record is in progess, all data will be deleted.</p>
           <div class="text-center pb-2">
-            <!-- <button class="btn btn-success btn-block" data-role="none" onclick="backtomenu(1)">Save and Back to menu</button> -->
-            <button class="btn btn-success btn-block" data-role="none"  onclick="backtomenu(2)">Confirm</button>
+            <button class="btn btn-success btn-block" data-role="none" onclick="backtomenu(1)">Save and Back to menu</button>
+            <button class="btn btn-secondary btn-block" data-role="none"  onclick="backtomenu(2)">Back to menu without save</button>
             <button class="btn btn-secondary- btn-block" data-role="none" data-dismiss="modal">Cancel</button>
           </div>
         </div>
@@ -3132,8 +3122,8 @@
               <div class="col-12">
                 <div class="form-group">
                   <div class="form-group row">
-                    <label for="" class="col-form-label col-12 col-sm-3">Birth weight : <span class="text-danger">*</span> </label>
-                    <div class="col-12 col-sm-9">
+                    <label for="" class="col-form-label col-12 col-sm-4">Birth weight : <span class="text-danger">*</span> </label>
+                    <div class="col-12 col-sm-8">
                       <div class="row">
                         <div class="col-12">
                           <input type="range" min="0" max="9999" class="form-control" id="txtBwAdd" data-rangeSlider value="0">
@@ -3144,8 +3134,8 @@
                   <!-- .form-group -->
 
                   <div class="form-group row">
-                    <label for="" class="col-form-label col-12 col-sm-3">Sign of viability (Heart rate, Breath and movement) : </label>
-                    <div class="col-12 col-sm-9">
+                    <label for="" class="col-form-label col-12 col-sm-4">Sign of viability (Heart rate, Breath and movement) : </label>
+                    <div class="col-12 col-sm-8">
                       <div class="selectgroup selectgroup-pills">
                         <div class="row">
                           <div class="col-2 col-sm-2">
@@ -3180,8 +3170,8 @@
                   <!-- .form-group -->
 
                   <div class="form-group row">
-                    <label for="" class="col-form-label col-12 col-sm-3">Apgar score 1 min : <span class="text-danger">*</span> </label>
-                    <div class="col-12 col-sm-9">
+                    <label for="" class="col-form-label col-12 col-sm-4">Apgar score 1 min : <span class="text-danger">*</span> </label>
+                    <div class="col-12 col-sm-8">
                       <div class="row">
                         <div class="col-12">
                           <input type="range" min="0" max="10" class="form-control" id="txtApgar1Add" data-rangeSlider value="">
@@ -3272,24 +3262,6 @@
           <p>รหัสผ่านของคุณได้ถูกเปลี่ยนเรียบร้อยแล้ว</p>
           <div class="text-center">
             <button class="btn btn-success btn-block" data-role="none" data-dismiss="modal">รับทราบ</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="modalConfirmsending" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <div class="text-center">
-          <img src="../img/send-1.png" alt="" width="120px;" class="pt-4 pb-4">
-          <h4>Are you sure?</h4>
-          <p>You can not update or do any process after confirm this record.</p>
-          <div class="text-center">
-            <button class="btn btn-damger btn-block" data-role="none" onclick="">Confirm and Send</button>
-            <button class="btn btn-success- btn-block" data-role="none" data-dismiss="modal">Cancel</button>
           </div>
         </div>
       </div>
@@ -3419,1049 +3391,12 @@
           </div>
           <!-- .form-group -->
 
-          <div class="form-group row">
-            <label for="" class="col-form-label col-12 col-sm-4">Status  of diseases during pregnancy before this admission : <span class="text-danger">*</span> </label>
-            <div class="col-12 col-sm-8">
-              <div class="selectgroup selectgroup-pills">
-                <div class="row">
-                  <div class="col-2">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-eclampsia-status" value="99" class="selectgroup-input" data-role="none" checked="">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10" style="padding-top: 12px;">No data</div>
-                  <div class="col-2">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-eclampsia-status" value="0" class="selectgroup-input" data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10" style="padding-top: 12px;">No</div>
-                  <div class="col-2">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-eclampsia-status" value="1" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10" style="padding-top: 12px;">Chronic hypertension</div>
-                  <div class="col-2">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-eclampsia-status" value="2" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10" style="padding-top: 12px;">Gestational hypertension</div>
-                  <div class="col-2">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-eclampsia-status" value="3" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10" style="padding-top: 12px;">Mild preeclampsia</div>
-                  <div class="col-2">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-eclampsia-status" value="4" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10" style="padding-top: 12px;">Severe preeclampsia</div>
-
-                </div>
-              </div>
-              <!-- .selectgroup -->
-            </div>
-          </div>
-          <!-- .form-group -->
-
-
-          <h4>Delivery State</h4>
-          <div class="form-group row">
-            <label for="" class="col-form-label col-12 col-sm-4">Delivery within 24 hours after diagnosis if GA 34 weeks or more : </label>
-            <div class="col-12 col-sm-8">
-              <div class="selectgroup selectgroup-pills">
-                <div class="row">
-                  <div class="col-2">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-eclampsia-del-1" value="0" class="selectgroup-input" data-role="none" checked>
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10" style="padding-top: 12px;">No</div>
-                  <div class="col-2">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-eclampsia-del-1" value="1" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10" style="padding-top: 12px;">Yes</div>
-                  <div class="col-2">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-eclampsia-del-1" value="99" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10" style="padding-top: 12px;">No data</div>
-
-
-                </div>
-              </div>
-              <!-- .selectgroup -->
-            </div>
-          </div>
-          <!-- .form-group -->
-
-          <div class="form-group row">
-            <label for="" class="col-form-label col-12 col-sm-4">Delivery after antenatal corticosteroids if GA 24 - <34 weeks : </label>
-            <div class="col-12 col-sm-8">
-              <div class="selectgroup selectgroup-pills">
-                <div class="row">
-                  <div class="col-2">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-eclampsia-del-2" value="0" class="selectgroup-input" data-role="none" checked>
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10" style="padding-top: 12px;">No</div>
-                  <div class="col-2">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-eclampsia-del-2" value="1" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10" style="padding-top: 12px;">Yes</div>
-                  <div class="col-2">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-eclampsia-del-2" value="99" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10" style="padding-top: 12px;">No data</div>
-                </div>
-              </div>
-              <!-- .selectgroup -->
-            </div>
-          </div>
-          <!-- .form-group -->
-
-
-          <h4>Outcome of pregnancy and delivery</h4>
-          <div class="form-group row">
-            <label for="" class="col-form-label col-12 col-sm-4">Newborn : </label>
-            <div class="col-12 col-sm-8">
-              <div class="selectgroup selectgroup-pills">
-                <div class="row">
-                  <div class="col-2">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-eclampsia-del-3" value="1" class="selectgroup-input" data-role="none" checked>
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10" style="padding-top: 12px;">Live birth</div>
-                  <div class="col-2">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-eclampsia-del-3" value="2" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10" style="padding-top: 12px;">Stillbirth</div>
-                  <div class="col-2">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-eclampsia-del-3" value="3" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10" style="padding-top: 12px;">Intrapartum fetal death</div>
-
-                  <div class="col-2">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-eclampsia-del-3" value="99" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10" style="padding-top: 12px;">No data</div>
-                </div>
-              </div>
-              <!-- .selectgroup -->
-            </div>
-          </div>
-          <!-- .form-group -->
-
-          <div class="form-group row">
-            <label for="" class="col-form-label col-12 col-sm-4">Mother : </label>
-            <div class="col-12 col-sm-8">
-              <div class="selectgroup selectgroup-pills">
-                <div class="row">
-                  <div class="col-2">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-eclampsia-del-4" value="1" class="selectgroup-input" data-role="none" checked>
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10" style="padding-top: 12px;">Survived </div>
-                  <div class="col-2">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-eclampsia-del-4" value="2" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10" style="padding-top: 12px;">Mother died before delivery</div>
-                  <div class="col-2">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-eclampsia-del-4" value="3" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10" style="padding-top: 12px;">Mother died after delivery</div>
-
-                  <div class="col-2">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-eclampsia-del-4" value="99" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10" style="padding-top: 12px;">No data</div>
-                </div>
-              </div>
-              <!-- .selectgroup -->
-            </div>
-          </div>
-          <!-- .form-group -->
 
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary- text-dark" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-success">Save</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="modalMotherDeath" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Maternal death diagnosis</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="cancelStatus('icon-input-md')">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form class="formMotherDeath" onsubmit="return false;">
-          <div class="form-group row">
-            <label for="" class="col-form-label col-12 col-sm-4">Date of diagnosis : <span class="text-danger">*</span> </label>
-            <div class="col-12 col-sm-8">
-              <div class="row">
-                <div class="col-4">
-                  <select class="form-control custom-input-1 text-center" name="txtDD10" id="txtDD10" data-role="none" tabindex="25">
-                    <option value="">-- DD --</option>
-                  </select>
-                </div>
-                <div class="col-4 pl-0 pr-0">
-                  <select class="form-control custom-input-1 text-center" name="txtMM10" id="txtMM10" data-role="none" tabindex="26">
-                    <option value="">-- MM --</option>
-                  </select>
-                </div>
-                <div class="col-4">
-                  <select class="form-control custom-input-1 text-center" name="txtYY10" id="txtYY10" data-role="none" tabindex="27">
-                    <option value="">-- YYYY --</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- .form-group -->
-
-          <div class="form-group row">
-            <label for="" class="col-form-label col-12 col-sm-4">Time of diagnosis : <span class="text-danger">*</span> </label>
-            <div class="col-12 col-sm-8">
-              <div class="row">
-                <div class="col-6">
-                  <select class="form-control custom-input-1 text-center" name="txtHH10" id="txtHH10" data-role="none" tabindex="28">
-                    <option value="">-- HH --</option>
-                  </select>
-                </div>
-                <div class="col-6 pl-0">
-                  <select class="form-control custom-input-1 text-center" name="txtMIN10" id="txtMIN10" data-role="none" tabindex="29">
-                    <option value="">-- MIN --</option>
-                  </select>
-                </div>
-                <div class="col-12 text-danger">
-                  <small>** หากเป็นเวลาเที่ยงคืน ให้เลือก 00:00</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- .form-group -->
-
-          <div class="form-group row">
-            <label for="" class="col-form-label col-12 col-sm-4">Clinical status at first admission :  </label>
-            <div class="col-12 col-sm-8">
-              <div class="selectgroup selectgroup-pills">
-                <div class="row">
-                  <div class="col-2">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-md-status-1" value="1" class="selectgroup-input" data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10" style="padding-top: 12px;">Full conscious healthy</div>
-                  <div class="col-2">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-md-status-1" value="2" class="selectgroup-input" data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10" style="padding-top: 12px;">Not fully consciousness</div>
-                  <div class="col-2">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-md-status-1" value="3" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10" style="padding-top: 12px;">Severe conditions</div>
-                  <div class="col-2">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-md-status-1" value="99" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10" style="padding-top: 12px;">No data</div>
-
-                </div>
-              </div>
-              <!-- .selectgroup -->
-            </div>
-          </div>
-          <!-- .form-group -->
-
-          <div class="form-group row">
-            <label for="" class="col-form-label col-12 col-sm-4">Died at which stage :  </label>
-            <div class="col-12 col-sm-8">
-              <div class="selectgroup selectgroup-pills">
-                <div class="row">
-                  <div class="col-2">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-md-status-2" value="1" class="selectgroup-input" data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10" style="padding-top: 12px;">Antepartum </div>
-                  <div class="col-2">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-md-status-2" value="2" class="selectgroup-input" data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10" style="padding-top: 12px;">Intrapartum</div>
-                  <div class="col-2">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-md-status-2" value="3" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10" style="padding-top: 12px;">Postpartum </div>
-                  <div class="col-2">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-md-status-2" value="99" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10" style="padding-top: 12px;">No data</div>
-
-                </div>
-              </div>
-              <!-- .selectgroup -->
-            </div>
-          </div>
-          <!-- .form-group -->
-
-          <h4>Outcome of pregnancy and delivery</h4>
-          <div class="form-group row">
-            <label for="" class="col-form-label col-12 col-sm-4">Newborn : </label>
-            <div class="col-12 col-sm-8">
-              <div class="selectgroup selectgroup-pills">
-                <div class="row">
-                  <div class="col-2">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-md-status-3" value="1" class="selectgroup-input" data-role="none" checked>
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10" style="padding-top: 12px;">Live birth</div>
-                  <div class="col-2">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-md-status-3" value="2" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10" style="padding-top: 12px;">Stillbirth</div>
-                  <div class="col-2">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-md-status-3" value="3" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10" style="padding-top: 12px;">Intrapartum fetal death</div>
-
-                  <div class="col-2">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-md-status-3" value="99" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10" style="padding-top: 12px;">No data</div>
-                </div>
-              </div>
-              <!-- .selectgroup -->
-            </div>
-          </div>
-          <!-- .form-group -->
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary- text-dark" data-dismiss="modal" onclick="cancelStatus('icon-input-md')">Close</button>
-        <button type="button" class="btn btn-success" onclick="complication.save_md()">Save</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="modalStillbirth" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Stillbirth diagnosis</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="cancelStatus('icon-input-md')">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form class="formMotherDeath" onsubmit="return false;">
-          <div class="form-group row">
-            <label for="" class="col-form-label col-12 col-sm-4">Date of diagnosis : <span class="text-danger">*</span> </label>
-            <div class="col-12 col-sm-8">
-              <div class="row">
-                <div class="col-4">
-                  <select class="form-control custom-input-1 text-center" name="txtDD13" id="txtDD13" data-role="none" tabindex="25">
-                    <option value="">-- DD --</option>
-                  </select>
-                </div>
-                <div class="col-4 pl-0 pr-0">
-                  <select class="form-control custom-input-1 text-center" name="txtMM13" id="txtMM13" data-role="none" tabindex="26">
-                    <option value="">-- MM --</option>
-                  </select>
-                </div>
-                <div class="col-4">
-                  <select class="form-control custom-input-1 text-center" name="txtYY13" id="txtYY13" data-role="none" tabindex="27">
-                    <option value="">-- YYYY --</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- .form-group -->
-
-          <div class="form-group row">
-            <label for="" class="col-form-label col-12 col-sm-4">Time of diagnosis : <span class="text-danger">*</span> </label>
-            <div class="col-12 col-sm-8">
-              <div class="row">
-                <div class="col-6">
-                  <select class="form-control custom-input-1 text-center" name="txtHH13" id="txtHH13" data-role="none" tabindex="28">
-                    <option value="">-- HH --</option>
-                  </select>
-                </div>
-                <div class="col-6 pl-0">
-                  <select class="form-control custom-input-1 text-center" name="txtMIN13" id="txtMIN13" data-role="none" tabindex="29">
-                    <option value="">-- MIN --</option>
-                  </select>
-                </div>
-                <div class="col-12 text-danger">
-                  <small>** หากเป็นเวลาเที่ยงคืน ให้เลือก 00:00</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- .form-group -->
-          <div class="form-group row">
-            <label for="" class="col-form-label col-12 col-sm-4">Gestational age when stillbirth detection (weeks) :  </label>
-            <div class="col-12 col-sm-8">
-              <input type="number" min="0" max="60" name="txtSillGa" id="txtSillGa" class="form-control custom-input-1">
-            </div>
-          </div>
-
-          <h4>Maternal conditions at pregnancy</h4>
-          <div class="form-group row">
-            <label for="" class="col-form-label col-12 col-sm-12">Diabetes :  </label>
-            <div class="col-12 col-sm-12">
-              <div class="selectgroup selectgroup-pills">
-                <div class="row">
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-1" value="0" class="selectgroup-input" data-role="none" checked>
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">No</div>
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-1" value="1" class="selectgroup-input" data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">Yes</div>
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-1" value="99" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">No data</div>
-
-                </div>
-              </div>
-              <!-- .selectgroup -->
-            </div>
-          </div>
-          <!-- .form-group -->
-
-          <div class="form-group row">
-            <label for="" class="col-form-label col-12 col-sm-12">Hypertensive disorders in pregnancy :  </label>
-            <div class="col-12 col-sm-12">
-              <div class="selectgroup selectgroup-pills">
-                <div class="row">
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-2" value="0" class="selectgroup-input" data-role="none" checked>
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">No</div>
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-2" value="1" class="selectgroup-input" data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">Yes</div>
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-2" value="99" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">No data</div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- .form-group -->
-
-          <div class="form-group row">
-            <label for="" class="col-form-label col-12">Systemic lupus erythematosus :  </label>
-            <div class="col-12">
-              <div class="selectgroup selectgroup-pills">
-                <div class="row">
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-3" value="0" class="selectgroup-input" data-role="none" checked>
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">No</div>
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-3" value="1" class="selectgroup-input" data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">Yes</div>
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-3" value="99" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">No data</div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- .form-group -->
-
-          <div class="form-group row">
-            <label for="" class="col-form-label col-12">Other autoimmune diseases :  </label>
-            <div class="col-12">
-              <div class="selectgroup selectgroup-pills">
-                <div class="row">
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-4" value="0" class="selectgroup-input" data-role="none" checked>
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">No</div>
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-4" value="1" class="selectgroup-input" data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">Yes</div>
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-4" value="99" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">No data</div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- .form-group -->
-
-          <div class="form-group row">
-            <label for="" class="col-form-label col-12">Renal disease :  </label>
-            <div class="col-12">
-              <div class="selectgroup selectgroup-pills">
-                <div class="row">
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-5" value="0" class="selectgroup-input" data-role="none" checked>
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">No</div>
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-5" value="1" class="selectgroup-input" data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">Yes</div>
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-5" value="99" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">No data</div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- .form-group -->
-
-          <div class="form-group row">
-            <label for="" class="col-form-label col-12">Thyroid disorders :  </label>
-            <div class="col-12">
-              <div class="selectgroup selectgroup-pills">
-                <div class="row">
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-6" value="0" class="selectgroup-input" data-role="none" checked>
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">No</div>
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-6" value="1" class="selectgroup-input" data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">Yes</div>
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-6" value="99" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">No data</div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- .form-group -->
-
-          <div class="form-group row">
-            <label for="" class="col-form-label col-12">Poor nutrition (BMI <18.5 or >30) :  </label>
-            <div class="col-12">
-              <div class="selectgroup selectgroup-pills">
-                <div class="row">
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-7" value="0" class="selectgroup-input" data-role="none" checked>
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">No</div>
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-7" value="1" class="selectgroup-input" data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">Yes</div>
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-7" value="99" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">No data</div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- .form-group -->
-
-          <div class="form-group row">
-            <label for="" class="col-form-label col-12">Placental abnormalities :  </label>
-            <div class="col-12">
-              <div class="selectgroup selectgroup-pills">
-                <div class="row">
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-8" value="0" class="selectgroup-input" data-role="none" checked>
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">No</div>
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-8" value="1" class="selectgroup-input" data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">Yes</div>
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-8" value="99" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">No data</div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- .form-group -->
-
-          <div class="form-group row">
-            <label for="" class="col-form-label col-12">HIV infection :  </label>
-            <div class="col-12">
-              <div class="selectgroup selectgroup-pills">
-                <div class="row">
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-9" value="0" class="selectgroup-input" data-role="none" checked>
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">No</div>
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-9" value="1" class="selectgroup-input" data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">Yes</div>
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-9" value="99" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">No data</div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- .form-group -->
-
-          <div class="form-group row">
-            <label for="" class="col-form-label col-12">Infections such as syphilis, virus, streptococcal :  </label>
-            <div class="col-12">
-              <div class="selectgroup selectgroup-pills">
-                <div class="row">
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-10" value="0" class="selectgroup-input" data-role="none" checked>
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">No</div>
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-10" value="1" class="selectgroup-input" data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">Yes</div>
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-10" value="99" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">No data</div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- .form-group -->
-
-          <h4>Fetal conditions</h4>
-          <div class="form-group row">
-            <label for="" class="col-form-label col-12">Multiple gestation :  </label>
-            <div class="col-12">
-              <div class="selectgroup selectgroup-pills">
-                <div class="row">
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-11" value="0" class="selectgroup-input" data-role="none" checked>
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">No</div>
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-11" value="1" class="selectgroup-input" data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">Yes</div>
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-11" value="99" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">No data</div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- .form-group -->
-
-          <div class="form-group row">
-            <label for="" class="col-form-label col-12">Congenital anomalies :  </label>
-            <div class="col-12">
-              <div class="selectgroup selectgroup-pills">
-                <div class="row">
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-12" value="0" class="selectgroup-input" data-role="none" checked>
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">No</div>
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-12" value="1" class="selectgroup-input" data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">Yes</div>
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-12" value="99" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">No data</div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- .form-group -->
-
-          <div class="form-group row">
-            <label for="" class="col-form-label col-12">Chromosome abnormalities :  </label>
-            <div class="col-12">
-              <div class="selectgroup selectgroup-pills">
-                <div class="row">
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-13" value="0" class="selectgroup-input" data-role="none" checked>
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">No</div>
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-13" value="1" class="selectgroup-input" data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">Yes</div>
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-13" value="99" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">No data</div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- .form-group -->
-
-          <div class="form-group row">
-            <label for="" class="col-form-label col-12">Growth restriction :  </label>
-            <div class="col-12">
-              <div class="selectgroup selectgroup-pills">
-                <div class="row">
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-14" value="0" class="selectgroup-input" data-role="none" checked>
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">No</div>
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-14" value="1" class="selectgroup-input" data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">Yes</div>
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-14" value="99" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">No data</div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- .form-group -->
-
-          <div class="form-group row">
-            <label for="" class="col-form-label col-12">Oligohydramnios :  </label>
-            <div class="col-12">
-              <div class="selectgroup selectgroup-pills">
-                <div class="row">
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-15" value="0" class="selectgroup-input" data-role="none" checked>
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">No</div>
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-15" value="1" class="selectgroup-input" data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">Yes</div>
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-15" value="99" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">No data</div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- .form-group -->
-
-          <div class="form-group row">
-            <label for="" class="col-form-label col-12">Syphilis infections :  </label>
-            <div class="col-12">
-              <div class="selectgroup selectgroup-pills">
-                <div class="row">
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-16" value="0" class="selectgroup-input" data-role="none" checked>
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">No</div>
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-16" value="1" class="selectgroup-input" data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">Yes</div>
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-16" value="99" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">No data</div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- .form-group -->
-
-          <div class="form-group row">
-            <label for="" class="col-form-label col-12">Viral or bacterial infections :  </label>
-            <div class="col-12">
-              <div class="selectgroup selectgroup-pills">
-                <div class="row">
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-17" value="0" class="selectgroup-input" data-role="none" checked>
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">No</div>
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-17" value="1" class="selectgroup-input" data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">Yes</div>
-                  <div class="col-2 col-sm-1">
-                      <label class="selectgroup-item">
-                          <input type="radio" name="icon-input-still-status-17" value="99" class="selectgroup-input"  data-role="none">
-                          <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                      </label>
-                  </div>
-                  <div class="col-10 col-sm-3 pl-4" style="padding-top: 12px;">No data</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- .form-group -->
-
-
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary- text-dark" data-dismiss="modal" onclick="cancelStatus('icon-input-md')">Close</button>
-        <button type="button" class="btn btn-success" onclick="complication.save_stillbirth()">Save</button>
       </div>
     </div>
   </div>

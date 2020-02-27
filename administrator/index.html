@@ -61,7 +61,7 @@
                       <div class="pt-2 pl-3 pr-3 pb-2">
                         <img src="../img/btn-4.png" alt="" class="img-fluid">
                       </div>
-                      <div class="pb-3" style="font-size: 0.8em;">Confirm record</div>
+                      <div class="pb-3" style="font-size: 0.8em;">Confirm/In-progress<br>record <span id="nnumberofInprogress"></span> </div>
                     </div>
 
                     <div class="col-4 col-sm-3 text-center" style="cursor: pointer;" onclick="slide2('notification')">
@@ -112,7 +112,36 @@
       </div>
       <!-- .app -->
 
-      <div data-role="page" id="profile" style="background: #f4f4f4;">
+      <!-- confirm_record -->
+      <div data-role="page" id="confirm_record" style="background: #e8e8e8;">
+        <div class="container pt-2">
+          <div class="row">
+            <div class="col-12 text-left" onclick="slide2('app', true)">
+              <i class="fas fa-chevron-left"></i>
+              <img src="../img/simanh-logo-1.png" alt="" width="200" style="cursor: pointer;" >
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-12">
+              <h3>Non-comfirmed record</h3>
+              <div class="non-record-list-card">
+                <div class="card c-drop-shadow-" style="border:none;">
+                  <div class="card-body text-center pt-3 pb-3">
+                    <h5>No reord found</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+      <!-- .confirm_record -->
+
+      <div data-role="page" id="profile" style="background: #fff;">
         <div class="container pt-5">
           <div class="row">
             <div class="col-12 col-sm-4 offset-sm-4">
@@ -820,9 +849,9 @@
       <script>
 
         $(document).ready(function(){
-          $w_window = $(window).height();
-          $w_app = $('#app').height();
-          $('#app').css('margin-top', ($w_window/2) - ($w_app/2) - 20 + 'px')
+
+          patient.checkInprogressNum()
+          patient.checkInprogressList()
 
           setTimeout(function(){
             // initMap()
