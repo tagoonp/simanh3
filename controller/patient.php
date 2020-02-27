@@ -16,7 +16,8 @@ if($stage == 'check_1'){
   $hn = mysqli_real_escape_string($conn, $_POST['hn']);
   $hn = base64_encode($hn);
   $hos_id = get_hospcode($conn, $uid);
-  $strSQL = "SELECT ind_id, status FROM s6x_inddata WHERE hn = '$hn' AND hos_id = '$hos_id' AND status IN ('0', '1')";$result = mysqli_query($conn, $strSQL);
+  $strSQL = "SELECT ind_id, status FROM s6x_patient WHERE hn = '$hn' AND hos_id = '$hos_id' AND status IN ('0', '1')";
+  $result = mysqli_query($conn, $strSQL);
   if(($result) && (mysqli_num_rows($result) > 0)){
     while ($row = mysqli_fetch_array($result)) {
       $buf = array();
@@ -28,6 +29,8 @@ if($stage == 'check_1'){
       $return[] = $buf;
       echo json_encode($return);
     }
+  }else{
+    echo $strSQL;
   }
 
   mysqli_close($conn); die();

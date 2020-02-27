@@ -178,8 +178,11 @@ $(function(){
     preload.show()
 
     var param = { hn: $('#txtHn1').val(), uid: current_user , role: current_role }
+    console.log(param);
     var jxr = $.post(conf.api + 'patient?stage=check_1', param , function(){}, 'json')
               .always(function(snap){
+                // console.log(snap);
+                // return ;
                 setTimeout(function(){
                   preload.hide()
                   $('#admissionModalCenter').modal('hide')
@@ -367,11 +370,15 @@ $(function(){
                .always(function(resp){
                  console.log(resp);
                  if(resp == 'Y'){
-                   $.mobile.changePage( "#deliver_part", {
+                   $.mobile.changePage( "#delivery_part", {
                      transition: "slide",
                      reverse: false,
                      changeHash: false
                    });
+
+                   $('#txtGaDel').val($('#txtGaAdm').val())
+                   $('#txtGaDel').slider('refresh');
+
                    preload.hide()
                  }else{
                    preload.hide()
@@ -382,6 +389,38 @@ $(function(){
   })
 
   $('.deliveryForm').submit(function(){
+
+    $check = 0
+    $('.form-control').removeClass('is-invalid')
+    if($('#txtDD5').val() == ''){ $check++; $('#txtDD5').addClass('is-invalid'); }
+    if($('#txtMM5').val() == ''){ $check++; $('#txtMM5').addClass('is-invalid'); }
+    if($('#txtYY5').val() == ''){ $check++; $('#txtYY5').addClass('is-invalid'); }
+    if($('#txtHH5').val() == ''){ $check++; $('#txtHH5').addClass('is-invalid'); }
+    if($('#txtMIN5').val() == ''){ $check++; $('#txtMIN5').addClass('is-invalid'); }
+    if($('#txtBwAdd1').val() == ''){ $check++; $('#txtBwAdd1').addClass('is-invalid'); }
+    if($('#txtApgar1Add1').val() == ''){ $check++; $('#txtApgar1Add1').addClass('is-invalid'); }
+    if($('#txtApgar5Add1').val() == ''){ $check++; $('#txtApgar5Add1').addClass('is-invalid'); }
+
+
+
+    if($check != 0){ swal("Good job!", "You clicked the button!", "success"); $('html,body').animate({ scrollTop: 0 }, 'slow'); return ; }
+
+    if($('#txtGaDel').val() < $('#txtGaAdm').val()){
+      swal({    title: "Error",
+              text: "Invalid GA of Delivery. Must be greater than GA of admission ( >= '" + $('#txtGaAdm').val() + "')",
+              type: "error",
+              showCancelButton: false,
+              confirmButtonColor: "#DD6B55",
+              confirmButtonText: "OK",
+              closeOnConfirm: true },
+              function(){
+                $('#txtGaDel').val($('#txtGaAdm').val())
+                $('#txtGaDel').slider('refresh');
+                $('html,body').animate({ scrollTop: 0 }, 'slow'); return ;
+              });
+      return ;
+    }
+
     $.mobile.changePage( "#complication_part", {
       transition: "slide",
       reverse: false,
