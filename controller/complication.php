@@ -174,8 +174,8 @@ if($stage == 'add_stillbirth'){
                   stl_q6, stl_q7, stl_q8, stl_q9, stl_q10, stl_q11, stl_q12, stl_q13, stl_q14, stl_q15, stl_q16, stl_q17, stl_ind_id
                 )
                VALUES
-               ('$dod', '$tod', '$stillga', '$c1', '$c2', '$c3', '$c3', '$c3',
-                '$c3', '$c3', '$c3', '$c3', '$c3', '$c3', '$c3', '$c3', '$c3', '$c3', '$c3', '$c3','$pat_ind_id')
+               ('$dod', '$tod', '$stillga', '$c1', '$c2', '$c3', '$c4', '$c5',
+                '$c6', '$c7', '$c8', '$c9', '$c10', '$c11', '$c12', '$c13', '$c14', '$c15', '$c16', '$c17','$pat_ind_id')
               ";
     $resultInsert = mysqli_query($conn, $strSQL);
     if($resultInsert){

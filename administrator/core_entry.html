@@ -2525,14 +2525,14 @@
                             <div class="row">
                               <div class="col-2 col-sm-1">
                                   <label class="selectgroup-item">
-                                      <input type="radio" name="icon-input-md" value="0" class="selectgroup-input" data-role="none" checked="">
+                                      <input type="radio" name="icon-input-md" value="0" class="selectgroup-input" data-role="none" checked="" onclick="disabledMdModal()">
                                       <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
                                   </label>
                               </div>
                               <div class="col-4 col-sm-5 pl-4" style="padding-top: 12px;">No</div>
                               <div class="col-2 col-sm-1">
                                   <label class="selectgroup-item">
-                                      <input type="radio" name="icon-input-md" value="1" class="selectgroup-input"  data-role="none">
+                                      <input type="radio" name="icon-input-md" value="1" class="selectgroup-input"  data-role="none" id="showMotherDeathModal()">
                                       <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
                                   </label>
                               </div>
@@ -2605,7 +2605,7 @@
                             <div class="row">
                               <div class="col-2 col-sm-1">
                                   <label class="selectgroup-item">
-                                      <input type="radio" name="icon-input-still" value="0" class="selectgroup-input" data-role="none" checked="">
+                                      <input type="radio" name="icon-input-still" value="0" class="selectgroup-input" data-role="none" checked="" onclick="disabledStillbirthModal()">
                                       <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
                                   </label>
                               </div>
@@ -2656,12 +2656,21 @@
                 </div>
                 <!-- .card -->
 
-                <div class="d-none d-sm-block text-center pb-5">
+                <!-- <div class="d-none d-sm-block text-center pb-5">
                   <button type="button" name="button" class="btn btn-secondary" data-role="none" onclick="confirm2Home()">Back to main menu</button>
                   <button type="submit" name="button" class="btn btn-success" data-role="none" onclick="slide2('review_part', false)" >Save and review</button>
                 </div>
                 <div class="d-block d-sm-none pb-5">
                   <button type="submit" name="button" class="btn btn-success btn-block" data-role="none" onclick="slide2('review_part', false)">Save and review</button>
+                  <button type="button" name="button" class="btn btn-secondary btn-block" data-role="none" onclick="confirm2Home()">Back to main menu</button>
+                </div> -->
+
+                <div class="d-none d-sm-block text-center pb-5">
+                  <button type="button" name="button" class="btn btn-secondary" data-role="none" onclick="confirm2Home()">Back to main menu</button>
+                  <button type="submit" name="button" class="btn btn-success" data-role="none" onclick="patient.save_complication()" >Save and review</button>
+                </div>
+                <div class="d-block d-sm-none pb-5">
+                  <button type="submit" name="button" class="btn btn-success btn-block" data-role="none" onclick="patient.save_complication()">Save and review</button>
                   <button type="button" name="button" class="btn btn-secondary btn-block" data-role="none" onclick="confirm2Home()">Back to main menu</button>
                 </div>
 

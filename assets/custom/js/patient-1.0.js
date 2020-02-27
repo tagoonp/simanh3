@@ -136,13 +136,14 @@ var complication = {
                                .always(function(snap){
                                  if(fnc.json_exist(snap)){
                                    snap.forEach(i=>{
-                                     
-                                     $('#txtYY13').val()
-                                     $('#txtMM13').val()
-                                     $('#txtDD13').val()
 
-                                     $('#txtHH13').val()
-                                     $('#txtMIN13').val()
+                                     if((i.stl_dod != null) && (i.stl_dod != '0000-00-00')){
+                                       $b = i.stl_dod.split('-'); $('#txtDD13').val($b[2]); $('#txtMM13').val($b[1]); $('#txtYY13').val($b[0]);
+                                       if(i.stl_tod != null){
+                                         $b = i.stl_tod.split(':'); $('#txtHH13').val($b[0]); $('#txtMIN13').val($b[1])
+                                       }
+                                     }
+
                                      $('#txtSillGa').val(i.stl_ga)
                                      $('input[name=icon-input-still-status-1][value=' + i.stl_q1 + ']').prop('checked', true)
                                      $('input[name=icon-input-still-status-2][value=' + i.stl_q2 + ']').prop('checked', true)
@@ -487,7 +488,11 @@ var patient = {
                     $('#txtBloodloss').val(i.bll2h)
 
                     if(i.indicator_status == '0'){
+                      $('input[name=icon-input-comstatus][value=0]').prop('checked', true);
                       $('.abnormalHidden').removeClass('dn')
+                    }else{
+                      $('input[name=icon-input-comstatus][value=1]').prop('checked', true);
+                      $('.abnormalHidden').addClass('dn')
                     }
                   })
                   preload.hide()
@@ -599,6 +604,33 @@ var patient = {
     }
 
     var jxr = $.post(conf.api + 'patient?stage=add_delivery_info', param , function(){})
+               .always(function(resp){
+                 console.log(resp);
+                 if(resp == 'Y'){
+                   console.log('Draft saved delivery');
+                   console.log(param);
+                 }
+               })
+  },
+  save_complication(){
+    var param = {
+      uid: current_user,
+      role: current_role,
+      hn: current_hn,
+      normal: $("input[name='icon-input-comstatus']:checked").val(),
+      eclampsia: $("input[name='icon-input-eclampsia']:checked").val(),
+      pph: $("input[name='icon-input-ph']:checked").val(),
+      sepsis : $("input[name='icon-input-sepsis']:checked").val(),
+      obl: $("input[name='icon-input-obstructed']:checked").val(),
+      cesarean : $("input[name='icon-input-cesarean']:checked").val(),
+      md: $("input[name='icon-input-md']:checked").val(),
+      preterm : $("input[name='icon-input-preterm']:checked").val(),
+      lbw: $("input[name='icon-input-lbw']:checked").val(),
+      stillbirth : $("input[name='icon-input-still']:checked").val(),
+      neonatal : $("input[name='icon-input-neonate']:checked").val()
+    }
+
+    var jxr = $.post(conf.api + 'patient?stage=add_complication', param , function(){})
                .always(function(resp){
                  console.log(resp);
                  if(resp == 'Y'){
@@ -730,14 +762,6 @@ $(function(){
     }
   })
 
-  $('input[name=icon-input-md]').click(function(){
-    $data = $("input[name='icon-input-md']:checked").val()
-    if($data == '1'){
-      $('#modalMotherDeath').modal({backdrop: 'static', keyboard: false})
-    }else{
-      $('#modalMotherDeath').modal('hide')
-    }
-  })
 
   $('.age_input').change(function(){
     $dd = $('#txtDD2').val()
@@ -1066,6 +1090,77 @@ function confirmRecordToActor2(){
   patient.confirmRecordByEnter()
 }
 
+
+// $('input[name=icon-input-md]').click(function(){
+//   $data = $("input[name='icon-input-md']:checked").val()
+//   if($data == '1'){
+//     $('#modalMotherDeath').modal({backdrop: 'static', keyboard: false})
+//   }else{
+//     $('#modalMotherDeath').modal('hide')
+//   }
+// })
+
+
+function showMotherDeathModal(){
+  if($('#complication_md').html() == ''){
+      $('#modalMotherDeath').modal({backdrop: 'static', keyboard: false})
+  }
+}
+
+function disabledMdModal(){
+  if($('#complication_md').html() != ''){
+    swal({
+      title: "Are you sure?",
+      text: "You will not be able to recover this complication's record!",
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#DD6B55",
+      confirmButtonText: "Yes, delete it!",
+      closeOnConfirm: true
+    },function(isConfirm){
+      if (isConfirm) {
+        $('#complication_md').html('')
+      }else{
+        preload.show()
+        $('.abnormalHidden').addClass('dn')
+        setTimeout(function(){
+          $('input[name=icon-input-md][value=1]').prop('checked', true)
+          $('.abnormalHidden').removeClass('dn')
+          preload.hide()
+        }, 100)
+      }
+    });
+  }
+}
+
 function showStillbirthModal(){
-  $('#modalStillbirth').modal({backdrop: 'static', keyboard: false})
+  if($('#complication_stillbirth').html() == ''){
+      $('#modalStillbirth').modal({backdrop: 'static', keyboard: false})
+  }
+}
+
+function disabledStillbirthModal(){
+  if($('#complication_stillbirth').html() != ''){
+    swal({
+      title: "Are you sure?",
+      text: "You will not be able to recover this complication's record!",
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#DD6B55",
+      confirmButtonText: "Yes, delete it!",
+      closeOnConfirm: true
+    },function(isConfirm){
+      if (isConfirm) {
+        $('#complication_stillbirth').html('')
+      }else{
+        preload.show()
+        $('.abnormalHidden').addClass('dn')
+        setTimeout(function(){
+          $('input[name=icon-input-still][value=1]').prop('checked', true)
+          $('.abnormalHidden').removeClass('dn')
+          preload.hide()
+        }, 500)
+      }
+    });
+  }
 }
