@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
         <link rel="stylesheet" href="../node_modules/jquery.mobile-1.4.5/jquery.mobile-1.4.5.css">
         <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" >
@@ -41,6 +42,13 @@
                         <img src="../img/addlabor.png" alt="" class="img-fluid">
                       </div>
                       <div class="pb-3" style="font-size: 0.8em;">Enter individual data</div>
+                    </div>
+
+                    <div class="col-4 col-sm-3 text-center" style="cursor: pointer;"  onclick="slide2('actor_index')">
+                      <div class="pt-2 pl-3 pr-3 pb-2">
+                        <img src="../img/actor-dashboard-1.png" alt="" class="img-fluid">
+                      </div>
+                      <div class="pb-3" style="font-size: 0.8em;">Actor dashboard</div>
                     </div>
 
                     <div class="col-4 col-sm-3 text-center" style="cursor: pointer;"  onclick="slide2('aggregate')">
@@ -134,12 +142,144 @@
               </div>
             </div>
           </div>
-
-
-
         </div>
       </div>
       <!-- .confirm_record -->
+
+      <div data-role="page" id="actor_index" style="background: #e8e8e8;">
+        <div class="container pt-2">
+          <div class="row">
+            <div class="col-12 text-left" onclick="slide2('app', true)">
+              <i class="fas fa-chevron-left"></i>
+              <img src="../img/simanh-logo-1.png" alt="" width="200" style="cursor: pointer;" >
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-12">
+              <h3>Indicator statistics</h3>
+              <div class="card mb-5">
+                <div class="card-body p-0">
+                  <div class="table-responsive">
+                    <table class="table table-striped mb-0 tsdn">
+                      <thead>
+                        <tr class="bg-success">
+                          <th class="text-white">Indicators</th>
+                          <th class="text-white text-center">Wait for action<br><span style="font-weight: 300;"><small>Non-act</small></span></th>
+                          <th class="text-white text-center">Yesterday<br><span style="font-weight: 300;"><small>Non-act / Total</small></span></th>
+                          <th class="text-white text-center">Today<br><span style="font-weight: 300;"><small>Non-act / Total</small></span></th>
+                          <th class="text-white text-center">Monthly<br><span style="font-weight: 300;"><small>Acted</small></span></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Severe Preeclampsia/Eclampsia</td>
+                          <td class="text-center">-</td>
+                          <td class="text-center">-</td>
+                          <td class="text-center">-</td>
+                          <td class="text-center">-</td>
+                        </tr>
+                        <tr>
+                          <td>Postpartum hemorrahge</td>
+                          <td class="text-center">-</td>
+                          <td class="text-center">-</td>
+                          <td class="text-center">-</td>
+                          <td class="text-center">-</td>
+                        </tr>
+                        <tr>
+                          <td>Sepsis</td>
+                          <td class="text-center">-</td>
+                          <td class="text-center">-</td>
+                          <td class="text-center">-</td>
+                          <td class="text-center">-</td>
+                        </tr>
+                        <tr>
+                          <td>Obstructed labor</td>
+                          <td class="text-center">-</td>
+                          <td class="text-center">-</td>
+                          <td class="text-center">-</td>
+                          <td class="text-center">-</td>
+                        </tr>
+                        <tr>
+                          <td>Cesarean delivery</td>
+                          <td class="text-center">-</td>
+                          <td class="text-center">-</td>
+                          <td class="text-center">-</td>
+                          <td class="text-center">-</td>
+                        </tr>
+                        <tr>
+                          <td>Maternal death</td>
+                          <td class="text-center" id="textMd1">-</td>
+                          <td class="text-center" id="textMd2">-</td>
+                          <td class="text-center" id="textMd3">-</td>
+                          <td class="text-center" id="textMd4">-</td>
+                        </tr>
+                        <tr>
+                          <td>Preterm birth</td>
+                          <td class="text-center">-</td>
+                          <td class="text-center">-</td>
+                          <td class="text-center">-</td>
+                          <td class="text-center">-</td>
+                        </tr>
+                        <tr>
+                          <td>Low birth weight</td>
+                          <td class="text-center">-</td>
+                          <td class="text-center">-</td>
+                          <td class="text-center">-</td>
+                          <td class="text-center">-</td>
+                        </tr>
+                        <tr>
+                          <td>Stillbirth</td>
+                          <td class="text-center" id="textStill1">-</td>
+                          <td class="text-center" id="textStill2">-</td>
+                          <td class="text-center" id="textStill3">-</td>
+                          <td class="text-center" id="textStill4">-</td>
+                        </tr>
+                        <tr>
+                          <td>Neonatal death</td>
+                          <td class="text-center">-</td>
+                          <td class="text-center">-</td>
+                          <td class="text-center">-</td>
+                          <td class="text-center">-</td>
+                        </tr>
+                        <tr>
+                          <td>Total admitted</td>
+                          <td class="text-center" id="textAdmit1">-</td>
+                          <td class="text-center" id="textAdmit2">-</td>
+                          <td class="text-center" id="textAdmit3">-</td>
+                          <td class="text-center" id="textAdmit4">-</td>
+                        </tr>
+                        <tr>
+                          <td>Total delivery</td>
+                          <td class="text-center" id="textDelivery1">-</td>
+                          <td class="text-center" id="textDelivery2">-</td>
+                          <td class="text-center" id="textDelivery3">-</td>
+                          <td class="text-center" id="textDelivery4">-</td>
+                        </tr>
+                        <tr>
+                          <td>Total birth</td>
+                          <td class="text-center" id="textBirth1">-</td>
+                          <td class="text-center" id="textBirth2">-</td>
+                          <td class="text-center" id="textBirth3">-</td>
+                          <td class="text-center" id="textBirth4">-</td>
+                        </tr>
+                        <tr>
+                          <td>Total livebirth</td>
+                          <td class="text-center" id="textLiveBirth1">-</td>
+                          <td class="text-center" id="textLiveBirth2">-</td>
+                          <td class="text-center" id="textLiveBirth3">-</td>
+                          <td class="text-center" id="textLiveBirth4">-</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- .actor_index -->
 
       <div data-role="page" id="profile" style="background: #fff;">
         <div class="container pt-5">
@@ -846,16 +986,19 @@
       <script type="text/javascript" src="../assets/custom/js/core.js" ></script>
       <script type="text/javascript" src="../assets/custom/js/authen.js" ></script>
       <script type="text/javascript" src="../assets/custom/js/patient-1.0.js"></script>
+      <script type="text/javascript" src="../assets/custom/js/actor-1.0.js"></script>
       <script>
 
         $(document).ready(function(){
 
+          authen.user()
+
           patient.checkInprogressNum()
           patient.checkInprogressList()
+          actor.checkNumActor()
 
           setTimeout(function(){
             // initMap()
-            authen.user()
             preload.hide()
           }, 000)
         })

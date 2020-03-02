@@ -136,7 +136,6 @@ var complication = {
                                .always(function(snap){
                                  if(fnc.json_exist(snap)){
                                    snap.forEach(i=>{
-
                                      if((i.stl_dod != null) && (i.stl_dod != '0000-00-00')){
                                        $b = i.stl_dod.split('-'); $('#txtDD13').val($b[2]); $('#txtMM13').val($b[1]); $('#txtYY13').val($b[0]);
                                        if(i.stl_tod != null){
@@ -630,12 +629,43 @@ var patient = {
       neonatal : $("input[name='icon-input-neonate']:checked").val()
     }
 
+    // console.log(param); return ;
+
     var jxr = $.post(conf.api + 'patient?stage=add_complication', param , function(){})
                .always(function(resp){
                  console.log(resp);
                  if(resp == 'Y'){
-                   console.log('Draft saved delivery');
-                   console.log(param);
+                   $.mobile.changePage( "#review_part", {
+                     transition: "slide",
+                     reverse: false,
+                     changeHash: false
+                   });
+                   preload.hide()
+                 }else{
+                   preload.hide()
+                   alert('Error')
+                   $('#notifyError').modal()
+                 }
+               })
+  },
+  confirm_record(){
+    var param = {
+      uid: current_user,
+      role: current_role,
+      hn: current_hn
+    }
+
+    var jxr = $.post(conf.api + 'patient?stage=confirm_entry', param , function(){})
+               .always(function(resp){
+                 console.log(resp);
+                 if(resp == 'Y'){
+                   preload.hide()
+                   $('#modalConfirmsending').modal('hide')
+                   $('#modalConfirmsendingSuccess').modal({backdrop: 'static', keyboard: false})
+                 }else{
+                   preload.hide()
+                   $('#modalConfirmsending').modal('hide')
+                   $('#notifyError').modal()
                  }
                })
   }

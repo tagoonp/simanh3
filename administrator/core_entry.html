@@ -3297,8 +3297,25 @@
           <h4>Are you sure?</h4>
           <p>You can not update or do any process after confirm this record.</p>
           <div class="text-center">
-            <button class="btn btn-damger btn-block" data-role="none" onclick="">Confirm and Send</button>
+            <button class="btn btn-danger btn-block" data-role="none" onclick="patient.confirm_record()">Confirm and Send</button>
             <button class="btn btn-success- btn-block" data-role="none" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalConfirmsendingSuccess" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="text-center">
+          <img src="../img/send-1.png" alt="" width="120px;" class="pt-4 pb-4">
+          <h4>Sending success</h4>
+          <p>This record has been sent.</p>
+          <div class="text-center">
+            <button class="btn btn-success btn-block" data-role="none" onclick="window.location = './index.html'">Back to main menu</button>
           </div>
         </div>
       </div>

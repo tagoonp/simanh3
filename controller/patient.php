@@ -157,6 +157,104 @@ if($stage == 'check_prev_info'){
 
 }
 
+if($stage == 'confirm_entry'){
+  if((!isset($_POST['uid'])) || (!isset($_POST['role'])) || (!isset($_POST['hn']))){
+    mysqli_close($conn); die();
+  }
+
+  $uid = mysqli_real_escape_string($conn, $_POST['uid']);
+  $role = mysqli_real_escape_string($conn, $_POST['role']);
+  $hn = mysqli_real_escape_string($conn, $_POST['hn']);
+  $hn = base64_encode($hn);
+  $hos_id = get_hospcode($conn, $uid);
+
+  $strSQL = "SELECT * FROM s6x_patient WHERE hn = '$hn' AND status = '0' AND hos_id = '$hos_id' ORDER BY ind_id DESC LIMIT 1 ";
+  $resultCheck = mysqli_query($conn, $strSQL);
+  if(($resultCheck) && (mysqli_num_rows($resultCheck) > 0)){
+    $data = mysqli_fetch_assoc($resultCheck);
+    $pat_ind_id = $data['ind_id'];
+
+    $strSQL = "UPDATE s6x_patient SET status = '1', user_confirm_enter_datetime = '$sysdatetime' WHERE ind_id = '$pat_ind_id' AND hos_id = '$hos_id'";
+    $resultUpdate = mysqli_query($conn, $strSQL);
+    if($resultUpdate){
+      echo "Y";
+    }
+  }
+  mysqli_close($conn); die();
+}
+
+if($stage == 'add_complication'){
+  if((!isset($_POST['uid'])) || (!isset($_POST['role'])) || (!isset($_POST['hn']))){
+    mysqli_close($conn); die();
+  }
+
+  $uid = mysqli_real_escape_string($conn, $_POST['uid']);
+  $role = mysqli_real_escape_string($conn, $_POST['role']);
+  $hn = mysqli_real_escape_string($conn, $_POST['hn']);
+  $hn = base64_encode($hn);
+  $hos_id = get_hospcode($conn, $uid);
+
+  $normal = mysqli_real_escape_string($conn, $_POST['normal']);
+  $eclampsia = mysqli_real_escape_string($conn, $_POST['eclampsia']);
+  $pph = mysqli_real_escape_string($conn, $_POST['pph']);
+  $sepsis = mysqli_real_escape_string($conn, $_POST['sepsis']);
+  $obl = mysqli_real_escape_string($conn, $_POST['obl']);
+  $cesarean = mysqli_real_escape_string($conn, $_POST['cesarean']);
+  $md = mysqli_real_escape_string($conn, $_POST['md']);
+  $preterm = mysqli_real_escape_string($conn, $_POST['preterm']);
+  $lbw = mysqli_real_escape_string($conn, $_POST['lbw']);
+  $stillbirth = mysqli_real_escape_string($conn, $_POST['stillbirth']);
+  $neonatal = mysqli_real_escape_string($conn, $_POST['neonatal']);
+
+  $strSQL = "SELECT * FROM s6x_patient WHERE hn = '$hn' AND status = '0' AND hos_id = '$hos_id' ORDER BY ind_id DESC LIMIT 1 ";
+  $resultCheck = mysqli_query($conn, $strSQL);
+  if(($resultCheck) && (mysqli_num_rows($resultCheck) > 0)){
+    $data = mysqli_fetch_assoc($resultCheck);
+    $pat_ind_id = $data['ind_id'];
+
+    $strSQL = "DELETE FROM s6x_complication WHERE comp_ind_id = '$pat_ind_id'";
+    $resultDel = mysqli_query($conn, $strSQL);
+
+    if($normal == '0'){ // Have any complication
+      $strSQL = "INSERT INTO s6x_complication
+                (
+                  eclampsia, pph, sepsis, obl, cesarean, maternaldeath, preterm, lbw, stillbirth, neonataldeath,
+                  comp_uid, comp_udatetime, comp_ind_id
+                )
+                VALUES
+                (
+                  '$eclampsia', '$pph', '$sepsis', '$obl', '$cesarean', '$md', '$preterm', '$lbw', '$stillbirth', '$neonatal',
+                  '$uid', '$sysdatetime', '$pat_ind_id'
+                )";
+      $resultInsert = mysqli_query($conn, $strSQL);
+      if($resultInsert){
+        if($md == '1'){
+          $strSQL = "UPDATE s6x_comp_maternal_death SET md_status = '1' WHERE md_ind_id = '$pat_ind_id'";
+          $resultUpdate = mysqli_query($conn, $strSQL);
+        }
+
+        if($stillbirth == '1'){
+          $strSQL = "UPDATE s6x_comp_stillbirth SET stl_status = '1' WHERE stl_ind_id = '$pat_ind_id'";
+          $resultUpdate = mysqli_query($conn, $strSQL);
+        }
+        echo "Y";
+      }else{
+        echo $strSQL;
+      }
+    }else{ // This case is normal
+      $strSQL = "INSERT INTO s6x_complication (comp_uid, comp_udatetime, comp_ind_id) VALUES ('$uid', '$sysdatetime', '$pat_ind_id')";
+      $resultInsert = mysqli_query($conn, $strSQL);
+      if($resultInsert){
+        echo "Y";
+      }
+    }
+  }else{
+    echo "N1";
+  }
+  mysqli_close($conn);
+  die();
+}
+
 if($stage == 'add_new_patient'){
 
   if((!isset($_POST['uid'])) || (!isset($_POST['role'])) || (!isset($_POST['hn']))){
@@ -289,27 +387,37 @@ if($stage == 'add_new_patient'){
     }
 
   }else{
-    $strSQL = "INSERT INTO s6x_patient
-               (
-                 datetimeent, dateadm, timeadm, refer, refer_status, refer_f, refer_t, hn, idno, p_province,
-                 p_district, datebr, datebr_d, datebr_m, datebr_y, age_e, rel, edu, dm, ht,
-                 hd, grav, para, abor, anc, ga1st, noanc, tyl, hiv, syp,
-                 hep, sbp, dbp, prot, sbpad, dbpad, pr, bt, fhr, labora,
-                 date_lbstart, time_lbstart, date_mbrup, time_mbrup, gaadm, user_add, hos_id
-               )
-               VALUES
-               (
-                 '$sysdatetime', '$date_adm', '$time_adm', '$refer', '$refer_status', '$refer_in_facility', '$refer_out_facility', '$hn', '$cid', '$province',
-                 '$district', '$date_dob', '$dd', '$mm', '$yy', '$age', '$rel', '$edu', '$dm', '$ht',
-                 '$hd', '$gravid', '$parity', '$abortion', '$anc', '$ga1anc', '$num_anc', '$tls', '$hiv', '$syp',
-                 '$hep', '$anc_sys', '$anc_dia', '$urine', '$adm_sys', '$adm_dia', '$pr', '$bt', '$fhr', '$lbstage',
-                 '$date_labor_start', '$time_labor_start', '$date_membranes_ruptured', '$time_membranes_ruptured', '$adm_ga', '$uid', '$hos_id'
-               )
-              ";
-    $resultInsert = mysqli_query($conn, $strSQL);
-    if($resultInsert){
-      echo "Y";
+
+    $strSQL = "SELECT * FROM s6x_patient WHERE hn = '$hn' AND status IN ('1','2') AND hos_id = '$hos_id' ORDER BY ind_id DESC LIMIT 1 ";
+    $resultCheck2 = mysqli_query($conn, $strSQL);
+
+    if(($resultCheck2) && (mysqli_num_rows($resultCheck2) > 0)){
+
+    }else{
+      $strSQL = "INSERT INTO s6x_patient
+                 (
+                   datetimeent, dateadm, timeadm, refer, refer_status, refer_f, refer_t, hn, idno, p_province,
+                   p_district, datebr, datebr_d, datebr_m, datebr_y, age_e, rel, edu, dm, ht,
+                   hd, grav, para, abor, anc, ga1st, noanc, tyl, hiv, syp,
+                   hep, sbp, dbp, prot, sbpad, dbpad, pr, bt, fhr, labora,
+                   date_lbstart, time_lbstart, date_mbrup, time_mbrup, gaadm, user_add, hos_id
+                 )
+                 VALUES
+                 (
+                   '$sysdatetime', '$date_adm', '$time_adm', '$refer', '$refer_status', '$refer_in_facility', '$refer_out_facility', '$hn', '$cid', '$province',
+                   '$district', '$date_dob', '$dd', '$mm', '$yy', '$age', '$rel', '$edu', '$dm', '$ht',
+                   '$hd', '$gravid', '$parity', '$abortion', '$anc', '$ga1anc', '$num_anc', '$tls', '$hiv', '$syp',
+                   '$hep', '$anc_sys', '$anc_dia', '$urine', '$adm_sys', '$adm_dia', '$pr', '$bt', '$fhr', '$lbstage',
+                   '$date_labor_start', '$time_labor_start', '$date_membranes_ruptured', '$time_membranes_ruptured', '$adm_ga', '$uid', '$hos_id'
+                 )
+                ";
+      $resultInsert = mysqli_query($conn, $strSQL);
+      if($resultInsert){
+        echo "Y";
+      }
     }
+
+
   }
 
   mysqli_close($conn); die();
