@@ -169,6 +169,7 @@
                           <th class="text-white text-center">Yesterday<br><span style="font-weight: 300;"><small>Non-act / Total</small></span></th>
                           <th class="text-white text-center">Today<br><span style="font-weight: 300;"><small>Non-act / Total</small></span></th>
                           <th class="text-white text-center">Monthly<br><span style="font-weight: 300;"><small>Acted</small></span></th>
+                          <!-- <th class="text-right" style="width: 50px;"></th> -->
                         </tr>
                       </thead>
                       <tbody>
@@ -1374,6 +1375,66 @@
             <button class="btn btn-primary btn-block" onclick="authen.updatePassword()">บันทึก</button>
           </div>
         </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="nonactRecordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="padding-bottom: 100px !important;">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content tsdn" style="border: none;">
+      <div class="modal-header bg-success">
+        <h5 class="modal-title text-white tsdn" id="exampleModalLabel">Non-action record</h5>
+        <button type="button" class="close btnCloseModal text-white" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body p-0">
+        <table class="table table-striped mb-0">
+          <thead>
+            <tr>
+              <th style="width: 140px;">HN</th>
+              <th>Admission info</th>
+              <th style="width: 100px;">Status</th>
+              <th style="width: 60px;"></th>
+            </tr>
+          </thead>
+          <tbody id="nonactRecordResult">
+            <tr>
+              <td colspan="4" class="text-center">No record found.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="allRecordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="padding-bottom: 100px !important;">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content tsdn" style="border: none;">
+      <div class="modal-header bg-success">
+        <h5 class="modal-title text-white tsdn" id="exampleModalLabel">Non-action record</h5>
+        <button type="button" class="close btnCloseModal text-white" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body p-0">
+        <table class="table table-striped mb-0">
+          <thead>
+            <tr>
+              <th style="width: 140px;">HN</th>
+              <th>Information</th>
+              <th style="width: 100px;">Status</th>
+              <th style="width: 60px;"></th>
+            </tr>
+          </thead>
+          <tbody id="allRecordResult">
+            <tr>
+              <td colspan="4" class="text-center">No record found.</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>

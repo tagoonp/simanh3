@@ -111,3 +111,84 @@ var actor = {
                })
   }
 }
+
+function showNonactModal(comp, daystage){
+  // $('#nonactRecordModal').modal()
+  preload.show()
+  var param = {
+    uid: current_user,
+    role: current_role,
+    hn: current_hn,
+    complication: comp,
+    daystatus: daystage
+  }
+  var jxr = $.post(conf.api + 'actor_statistic?stage=get_nonact_record', param , function(){}, 'json')
+             .always(function(snap){
+               console.log(snap);
+               if(fnc.json_exist(snap)){
+                 $('#nonactRecordResult').empty()
+                 snap.forEach(i=>{
+                   $sta = 'Wait for response'
+                   if(i.status == '2'){
+                     $sta = 'Acted'
+                   }
+                   $data = '<tr>' +
+                              '<td><strong>' + i.rc_hn + '</strong></td>' +
+                              '<td>' +
+                                '<div>' +
+                                  'Admission : ' + i.dateadm + ' ' + i.timeadm +
+                                '</div>' +
+                              '</td>' +
+                              '<td>' + $sta + '</td>' +
+                              '<td><button class="btn btn-icon btn-secondary text-white btn-sm" type="button"><i class="fas fa-search"></i></button></td>' +
+                           '</tr>'
+                   $('#nonactRecordResult').append($data)
+                 })
+                 $('#nonactRecordModal').modal()
+                 preload.hide()
+               }else{
+                 $('#nonactRecordResult').html('<tr><td colspan="4" class="text-center">No record found.</td></tr>')
+                 $('#nonactRecordModal').modal()
+               }
+             })
+}
+
+function showRecordModal(comp){
+  preload.show()
+  var param = {
+    uid: current_user,
+    role: current_role,
+    hn: current_hn,
+    complication: comp
+  }
+  var jxr = $.post(conf.api + 'actor_statistic?stage=get_monthly_record', param , function(){}, 'json')
+             .always(function(snap){
+               console.log(snap);
+               if(fnc.json_exist(snap)){
+                 $('#allRecordResult').empty()
+                 snap.forEach(i=>{
+                   $sta = 'Wait for response'
+                   if(i.status == '2'){
+                     $sta = 'Acted'
+                   }
+                   $data = '<tr>' +
+                              '<td><strong>' + i.rc_hn + '</strong></td>' +
+                              '<td>' +
+                                '<div>' +
+                                  'Admission : ' + i.dateadm + ' ' + i.timeadm +
+                                '</div>' +
+                              '</td>' +
+                              '<td>' + $sta + '</td>' +
+                              '<td><button class="btn btn-icon btn-secondary text-white btn-sm" type="button"><i class="fas fa-search"></i></button></td>' +
+                           '</tr>'
+                   $('#allRecordResult').append($data)
+                 })
+                 $('#allRecordModal').modal()
+                 preload.hide()
+               }else{
+                 $('#allRecordResult').html('<tr><td colspan="4" class="text-center">No record found.</td></tr>')
+                 $('#allRecordModal').modal()
+               }
+             })
+
+}
