@@ -547,3 +547,129 @@ if($stage == 'get_nonact_record'){
   mysqli_close($conn);
   die();
 }
+
+if($stage == 'get_complication_action'){
+  if((!isset($_POST['uid'])) || (!isset($_POST['role'])) || (!isset($_POST['hn']))){   mysqli_close($conn); die(); }
+  $uid = mysqli_real_escape_string($conn, $_POST['uid']);
+  $role = mysqli_real_escape_string($conn, $_POST['role']);
+  $hn = mysqli_real_escape_string($conn, $_POST['hn']);
+  $hn = base64_encode($hn);
+  $hos_id = get_hospcode($conn, $uid);
+
+  $buff = array();
+
+  $strSQL = "SELECT ind_id FROM s6x_patient WHERE hn = '$hn' AND status = '1' AND hos_id = '$hos_id' ORDER BY ind_id DESC LIMIT 1";
+  $resultCheck = mysqli_query($conn, $strSQL);
+  if(($resultCheck) && (mysqli_num_rows($resultCheck) > 0)){
+    $data = mysqli_fetch_assoc($resultCheck);
+    $pat_ind_id = $data['ind_id'];
+    $strSQL = "SELECT * FROM s6x_complication WHERE comp_ind_id = '$pat_ind_id'";
+    $result = mysqli_query($conn, $strSQL);
+    if(($result) && (mysqli_num_rows($result) > 0)){
+      $dataComp = mysqli_fetch_assoc($result);
+      if($dataComp['eclampsia'] == '1'){
+
+      }
+
+      if($dataComp['pph'] == '1'){
+
+      }
+
+      if($dataComp['sepsis'] == '1'){
+
+      }
+
+      if($dataComp['obl'] == '1'){
+
+      }
+
+      if($dataComp['cesarean'] == '1'){
+
+      }
+
+      if($dataComp['maternaldeath'] == '1'){
+        $strSQL = "SELECT * FROM s6x_action_maternal_death WHERE act_md_ind_id = '$pat_ind_id'";
+        $resultAction = mysqli_query($conn, $strSQL);
+
+        if(($resultAction) && (mysqli_num_rows($resultAction) > 0)){
+          $div_command = '<div class="card mb-2" style="cursor: pointer;" onclick="slide2(\'revise_maternal_part\', false)">';
+          $div_command .= '<div class="card-body">';
+          $div_command .= '<div class="row">';
+          $div_command .= '<div class="col-3 col-sm-2"><img src="../img/success.png" class="img-fluid"></div>';
+          $div_command .= '<div class="col-9 col-sm-10">';
+          $div_command .= '<div class=""><small>Complication revise done</small></div>';
+          $div_command .= '<div class=""><h4>Maternal Death</h4></div>';
+          $div_command .= '</div>';
+          $div_command .= '</div>';
+          $div_command .= '</div>';
+          $div_command .= '</div>';
+          $buff['cmd'] = $div_command;
+        }else{
+          $div_command = '<div class="card mb-2" style="cursor: pointer;" onclick="slide2(\'revise_maternal_part\', false)">';
+          $div_command .= '<div class="card-body">';
+          $div_command .= '<div class="row">';
+          $div_command .= '<div class="col-3 col-sm-2"><img src="../img/register.png" class="img-fluid"></div>';
+          $div_command .= '<div class="col-9 col-sm-10">';
+          $div_command .= '<div class=""><small>Complication wait for revise</small></div>';
+          $div_command .= '<div class=""><h4>Maternal Death</h4></div>';
+          $div_command .= '</div>';
+          $div_command .= '</div>';
+          $div_command .= '</div>';
+          $div_command .= '</div>';
+          $buff['cmd'] = $div_command;
+        }
+        $return[] = $buff;
+      }
+
+      if($dataComp['preterm'] == '1'){
+
+      }
+
+      if($dataComp['lbw'] == '1'){
+
+      }
+
+      if($dataComp['stillbirth'] == '1'){
+        $strSQL = "SELECT * FROM s6x_action_stillbirth WHERE act_still_ind_id = '$pat_ind_id'";
+        $resultAction = mysqli_query($conn, $strSQL);
+
+        if(($resultAction) && (mysqli_num_rows($resultAction) > 0)){
+          $div_command = '<div class="card mb-2" style="cursor: pointer;" onclick="slide2(\'revise_still_part\', false)">';
+          $div_command .= '<div class="card-body">';
+          $div_command .= '<div class="row">';
+          $div_command .= '<div class="col-3 col-sm-2"><img src="../img/success.png" class="img-fluid"></div>';
+          $div_command .= '<div class="col-9 col-sm-10">';
+          $div_command .= '<div class=""><small>Complication revise done</small></div>';
+          $div_command .= '<div class=""><h4>Stillbirth</h4></div>';
+          $div_command .= '</div>';
+          $div_command .= '</div>';
+          $div_command .= '</div>';
+          $div_command .= '</div>';
+          $buff['cmd'] = $div_command;
+        }else{
+          $div_command = '<div class="card mb-2" style="cursor: pointer;" onclick="slide2(\'revise_still_part\', false)">';
+          $div_command .= '<div class="card-body">';
+          $div_command .= '<div class="row">';
+          $div_command .= '<div class="col-3 col-sm-2"><img src="../img/register.png" class="img-fluid"></div>';
+          $div_command .= '<div class="col-9 col-sm-10">';
+          $div_command .= '<div class=""><small>Complication wait for revise</small></div>';
+          $div_command .= '<div class=""><h4>Stillbirth</h4></div>';
+          $div_command .= '</div>';
+          $div_command .= '</div>';
+          $div_command .= '</div>';
+          $div_command .= '</div>';
+          $buff['cmd'] = $div_command;
+        }
+        $return[] = $buff;
+      }
+
+      if($dataComp['neonataldeath'] == '1'){
+
+      }
+
+
+    }
+  }
+  echo json_encode($return);
+  mysqli_close($conn); die();
+}

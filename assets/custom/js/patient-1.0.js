@@ -1106,6 +1106,11 @@ function gotoAddnewData(){
   window.location = 'core_entry.html'
 }
 
+function gotoActorData(hn){
+  window.localStorage.setItem(conf.prefix + 'hn', hn)
+  window.location = 'core_actor.html'
+}
+
 function cancelStatus(ele_name){
   $('input[name=' + ele_name + '][value=0]').prop('checked', true)
 }

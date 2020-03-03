@@ -203,7 +203,7 @@ body{
   .custom-switches-stacked .custom-switch {
     margin-bottom: .5rem; }
 
-.custom-switch-indicator {
+/* .custom-switch-indicator {
   display: inline-block;
   height: 1.25rem;
   width: 2.25rem;
@@ -230,7 +230,44 @@ body{
     left: calc(1rem + 1px); }
 
 .custom-switch-input:focus ~ .custom-switch-indicator {
-  border-color: #6777ef; }
+  border-color: #6777ef; } */
+
+  .custom-switch-indicator {
+    display: inline-block;
+    height: 2.25rem;
+    width: 2.25rem;
+    background: #fff;
+    border-radius: 50px;
+    position: relative;
+    vertical-align: bottom;
+    border: 1px solid rgba(0, 40, 100, 0.12);
+    transition: .3s border-color, .3s background-color;
+    padding-top: 6px;
+    padding-left: 10px;
+  }
+
+  .custom-switch-indicator:before {
+      content: '';
+      position: absolute;
+      /* height: calc(1.25rem - 4px);
+      width: calc(1.25rem - 4px); */
+
+      top: 8.7px;
+      left: 0.6rem;
+      background: #e9ecef;
+      border-radius: 50%;
+      transition: .3s left; }
+
+  .custom-switch-input:checked ~ .custom-switch-indicator {
+    background: #f51660;
+    color: #fff;
+  }
+    .custom-switch-input:checked ~ .custom-switch-indicator:before {
+      /* left: calc(2.25rem);  */
+    }
+
+  .custom-switch-input:focus ~ .custom-switch-indicator {
+    border-color: #f51660; }
 
 .custom-switch-description {
   margin-left: .5rem;
