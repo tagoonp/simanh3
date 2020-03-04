@@ -1,17 +1,6 @@
-var conf = {
-    domain: 'http://localhost/simanh3/',
-    api: 'http://localhost/simanh3/controller/',
-    prefix: 'sm6xr_',
-    current_version: '1.0.0',
-    device: 'web',
-    // devide: 'mobile'
-    // mail_user: 'rmismedpsu@gmail.com',
-    // mail_key: 'cm1pc21lZHBzdUBnbWFpbC5jb20yMDE5LTEwLTIyIDIxOjU4OjU3MTI0LjEyMi40Mi4yNDU=',
-}
-
 // var conf = {
-//     domain: 'http://simanh.psu.ac.th/simanh3/',
-//     api: 'http://simanh.psu.ac.th/simanh3/controller/',
+//     domain: 'http://localhost/simanh3/',
+//     api: 'http://localhost/simanh3/controller/',
 //     prefix: 'sm6xr_',
 //     current_version: '1.0.0',
 //     device: 'web',
@@ -19,6 +8,17 @@ var conf = {
 //     // mail_user: 'rmismedpsu@gmail.com',
 //     // mail_key: 'cm1pc21lZHBzdUBnbWFpbC5jb20yMDE5LTEwLTIyIDIxOjU4OjU3MTI0LjEyMi40Mi4yNDU=',
 // }
+
+var conf = {
+    domain: 'http://simanh.psu.ac.th/simanh3/',
+    api: 'http://simanh.psu.ac.th/simanh3/controller/',
+    prefix: 'sm6xr_',
+    current_version: '1.0.0',
+    device: 'web',
+    // devide: 'mobile'
+    // mail_user: 'rmismedpsu@gmail.com',
+    // mail_key: 'cm1pc21lZHBzdUBnbWFpbC5jb20yMDE5LTEwLTIyIDIxOjU4OjU3MTI0LjEyMi40Mi4yNDU=',
+}
 var current_user = window.localStorage.getItem(conf.prefix + 'uid')
 var current_role = window.localStorage.getItem(conf.prefix + 'role')
 var current_hn = window.localStorage.getItem(conf.prefix + 'hn')

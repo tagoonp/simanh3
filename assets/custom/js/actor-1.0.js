@@ -1,4 +1,17 @@
 var actor = {
+  save_action_6(){
+    $check = 0
+    $('.form-control').removeClass('dn')
+    if($('#txtDD6').val() == ''){ $check++; $('#txtDD6').addClass('is-invalid')}
+    if($('#txtMM6').val() == ''){ $check++; $('#txtMM6').addClass('is-invalid')}
+    if($('#txtYY6').val() == ''){ $check++; $('#txtYY6').addClass('is-invalid')}
+    if($('#txtHH6').val() == ''){ $check++; $('#txtHH6').addClass('is-invalid')}
+    if($('#txtMIN6').val() == ''){ $check++; $('#txtMIN6').addClass('is-invalid')}
+    if($check != 0){
+      $('html,body').animate({ scrollTop: 0 }, 'slow'); return ;
+      return ;
+    }
+  },
   getMaternalDeathCauseAll(group_id){
     preload.show()
     var param = {
@@ -20,16 +33,18 @@ var actor = {
                            '<span class="custom-switch-indicator"><i class="fas fa-check"></i></span>' +
                          '</label>' +
                        '</div>'
+
+                       $('#maternalGroup1').append('<tr ' + $bg + '>' +
+                         '<td style="width: 80px;">' +
+                            $select +
+                         '</td>' +
+                         '<td>' +
+                           '<div class="" style="font-weight: 400;">ICD : <span class="text-danger">' + i.ICDcode + '</span></div>' +
+                           '<h5>' + i.ICDDesc + '</h5>' +
+                         '</td>' +
+                       '</tr>')
                      }
-                     $('#maternalGroup1').append('<tr ' + $bg + '>' +
-                       '<td style="width: 80px;">' +
-                          $select +
-                       '</td>' +
-                       '<td>' +
-                         '<div class="" style="font-weight: 400;">ICD : <span class="text-danger">' + i.ICDcode + '</span></div>' +
-                         '<h5>' + i.ICDDesc + '</h5>' +
-                       '</td>' +
-                     '</tr>')
+
                    })
 
                    setTimeout(function(){
@@ -319,13 +334,133 @@ $(function(){
       $('#modalMaternalGroup1').modal({backdrop: 'static', keyboard: false})
       actor.getMaternalDeathCauseAll(1)
     }else{
-      $('.obstatricDiv').removeClass('dn')
-      // $('input[name=icon-input-act-md-14][value=na]').prop('checked', true)
-      // $('input[name=icon-input-act-md-15][value=na]').prop('checked', true)
-      // $('input[name=icon-input-act-md-16][value=na]').prop('checked', true)
-      // $('input[name=icon-input-act-md-17][value=na]').prop('checked', true)
-      // $('input[name=icon-input-act-md-18][value=na]').prop('checked', true)
-      // $('#txtQ21_40').val('')
+      $causeInfo = $('#textMdCauseList_1').html()
+      if($causeInfo != ''){
+        swal({
+          title: "Are you sure?",
+          text: "Your recorded cause will be delete.",
+          type: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#DD6B55",
+          confirmButtonText: "Confirm",
+          cancelButtonText: "Cancel",
+          closeOnConfirm: true
+        },
+        function(isConfirm){
+          if (isConfirm) {
+              $('#textMdCause_1').addClass('dn')
+              $('.obstatricDiv').removeClass('dn')
+          }else{
+              $('input[name=icon-input-act-md-13][value=1]').prop('checked', true)
+              $('input[name=icon-input-act-md-13]').addClass('dn')
+              setTimeout(function(){ $('input[name=icon-input-act-md-13]').removeClass('dn') }, 5000)
+          }
+        });
+      }else{
+        $('.obstatricDiv').removeClass('dn')
+      }
     }
   })
+
+  $('input[name=icon-input-act-md-14]').click(function(){
+    if($(this).val() == '1'){
+      $('#modalMaternalGroup1').modal({backdrop: 'static', keyboard: false})
+      actor.getMaternalDeathCauseAll(2)
+    }else{
+      $causeInfo = $('#textMdCauseList_2').html()
+      console.log($causeInfo);
+      if($causeInfo != ''){
+        swal({
+          title: "Are you sure?",
+          text: "Your recorded cause will be delete.",
+          type: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#DD6B55",
+          confirmButtonText: "Confirm",
+          cancelButtonText: "Cancel",
+          closeOnConfirm: true
+        },
+        function(isConfirm){
+          if (isConfirm) {
+              $('#textMdCause_2').addClass('dn')
+          }else{
+              $('input[name=icon-input-act-md-14][value=1]').prop('checked', true)
+              $('input[name=icon-input-act-md-14]').addClass('dn')
+              setTimeout(function(){ $('input[name=icon-input-act-md-14]').removeClass('dn') }, 5000)
+          }
+        });
+      }
+    }
+  })
+
+  $('input[name=icon-input-act-md-15]').click(function(){
+    console.log('a');
+    if($(this).val() == '1'){
+      $('#modalMaternalGroup1').modal({backdrop: 'static', keyboard: false})
+      actor.getMaternalDeathCauseAll(3)
+    }else{
+      // $('.obstatricDiv').removeClass('dn')
+    }
+  })
+
+  $('input[name=icon-input-act-md-16]').click(function(){
+    console.log('a');
+    if($(this).val() == '1'){
+      $('#modalMaternalGroup1').modal({backdrop: 'static', keyboard: false})
+      actor.getMaternalDeathCauseAll(4)
+    }else{
+      // $('.obstatricDiv').removeClass('dn')
+    }
+  })
+
+  $('input[name=icon-input-act-md-17]').click(function(){
+    console.log('a');
+    if($(this).val() == '1'){
+      $('#modalMaternalGroup1').modal({backdrop: 'static', keyboard: false})
+      actor.getMaternalDeathCauseAll(5)
+    }else{
+      // $('.obstatricDiv').removeClass('dn')
+    }
+  })
+
+  $('input[name=icon-input-act-md-18]').click(function(){
+    console.log('a');
+    if($(this).val() == '1'){
+      $('#modalMaternalGroup1').modal({backdrop: 'static', keyboard: false})
+      actor.getMaternalDeathCauseAll(6)
+    }else{
+      // $('.obstatricDiv').removeClass('dn')
+    }
+  })
+
+  $('input[name=icon-input-act-md-19]').click(function(){
+    console.log('a');
+    if($(this).val() == '1'){
+      $('#modalMaternalGroup1').modal({backdrop: 'static', keyboard: false})
+      actor.getMaternalDeathCauseAll(7)
+    }else{
+      // $('.obstatricDiv').removeClass('dn')
+    }
+  })
+
+  $('input[name=icon-input-act-md-20]').click(function(){
+    console.log('a');
+    if($(this).val() == '1'){
+      $('#modalMaternalGroup1').modal({backdrop: 'static', keyboard: false})
+      actor.getMaternalDeathCauseAll(8)
+    }else{
+      // $('.obstatricDiv').removeClass('dn')
+    }
+  })
+
+  $('input[name=icon-input-act-md-21]').click(function(){
+    console.log('a');
+    if($(this).val() == '1'){
+      $('#modalMaternalGroup1').modal({backdrop: 'static', keyboard: false})
+      actor.getMaternalDeathCauseAll(9)
+    }else{
+      // $('.obstatricDiv').removeClass('dn')
+    }
+  })
+
 })

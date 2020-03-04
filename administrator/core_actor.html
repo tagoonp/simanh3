@@ -314,11 +314,11 @@
                 <!-- .card -->
 
                 <div class="d-none d-sm-block text-center pb-5">
-                  <button type="button" name="button" class="btn btn-secondary" data-role="none" onclick="confirm2Home()">Back to main menu</button>
-                  <button type="submit" name="button" class="btn btn-success" data-role="none" onclick="confirmRecordToActor()" >Confirm and send</button>
+                  <button type="button" name="button" class="btn btn-secondary" data-role="none" onclick="gotoAct()">Back to main menu</button>
+                  <button type="submit" name="button" class="btn btn-success" data-role="none" onclick="gotoAct()" >Go to revise</button>
                 </div>
                 <div class="d-block d-sm-none pb-5">
-                  <button type="submit" name="button" class="btn btn-success btn-block" data-role="none" onclick="confirmRecordToActor()" >Confirm and send</button>
+                  <button type="submit" name="button" class="btn btn-success btn-block" data-role="none" onclick="slide2('action_part')" >Go to revise</button>
                   <button type="button" name="button" class="btn btn-secondary btn-block" data-role="none" onclick="confirm2Home()">Back to main menu</button>
                 </div>
 
@@ -346,43 +346,6 @@
             </div>
           </div>
         </div>
-
-        <!-- <div class="tsdn text-dark p-2 d-block d-sm-none" style="background: rgb(255, 255, 255); z-index: 900000; position: fixed; width: 100%; bottom: 0px;">
-          <div class="row">
-            <div class="col-3 text-center" onclick="slide2('app', true)">
-              <div class="pb-2">
-                <img src="../img/register.png" alt="" style="width: 30px;">
-              </div>
-              <div style="font-size: 0.8em; font-weight: 400;" >
-                Admission
-              </div>
-            </div>
-            <div class="col-3 text-center" onclick="slide2('delivery_part', false)">
-              <div class="pb-2">
-                <img src="../img/delivery.png" alt="" style="width: 30px;">
-              </div>
-              <div class="text-primary" style="font-size: 0.8em;">
-                Delivery
-              </div>
-            </div>
-            <div class="col-3 text-center">
-              <div class="pb-2">
-                <img src="../img/complication.png" alt="" style="width: 30px;">
-              </div>
-              <div class="" style="font-size: 0.8em;">
-                Complication
-              </div>
-            </div>
-            <div class="col-3 text-center">
-              <div class="pb-2">
-                <img src="../img/review.png" alt="" style="width: 30px;">
-              </div>
-              <div class="" style="font-size: 0.8em;">
-                Finalize
-              </div>
-            </div>
-          </div>
-        </div> -->
 
         <div class="container-fluid pt-3 tsdn" style="margin-top: 70px;">
           <div class="row">
@@ -905,7 +868,7 @@
                       </div>
 
                       <div class="col-12 dn" id="textMdCause_1">
-                        <div class="p-3" style="border: dashed; border-width: 2px; border-color: rgb(18, 158, 70); border-radius: 10px; background: rgb(244, 244, 244);">
+                        <div class="p-3 mt-2" style="border: dashed; border-width: 2px; border-color: rgb(18, 158, 70); border-radius: 10px; background: rgb(244, 244, 244);">
                           <strong>Causes :</strong><br>
                           <div id="textMdCauseList_1"></div>
                         </div>
@@ -944,6 +907,14 @@ and the puerperium : </label>
                         </div>
                         <!-- .selectgroup -->
                       </div>
+
+                      <div class="col-12 dn" id="textMdCause_2">
+                        <div class="p-3 mt-2" style="border: dashed; border-width: 2px; border-color: rgb(18, 158, 70); border-radius: 10px; background: rgb(244, 244, 244);">
+                          <strong>Causes :</strong><br>
+                          <div id="textMdCauseList_2"></div>
+                        </div>
+                      </div>
+
                     </div>
                     <!-- .form-group -->
 
@@ -976,6 +947,12 @@ and the puerperium : </label>
                         </div>
                         <!-- .selectgroup -->
                       </div>
+                      <div class="col-12 dn" id="textMdCause_3">
+                        <div class="p-3 mt-2" style="border: dashed; border-width: 2px; border-color: rgb(18, 158, 70); border-radius: 10px; background: rgb(244, 244, 244);">
+                          <strong>Causes :</strong><br>
+                          <div id="textMdCauseList_3"></div>
+                        </div>
+                      </div>
                     </div>
                     <!-- .form-group -->
 
@@ -1007,6 +984,12 @@ and the puerperium : </label>
                           </div>
                         </div>
                         <!-- .selectgroup -->
+                      </div>
+                      <div class="col-12 dn" id="textMdCause_4">
+                        <div class="p-3 mt-2" style="border: dashed; border-width: 2px; border-color: rgb(18, 158, 70); border-radius: 10px; background: rgb(244, 244, 244);">
+                          <strong>Causes :</strong><br>
+                          <div id="textMdCauseList_4"></div>
+                        </div>
                       </div>
                     </div>
                     <!-- .form-group -->
@@ -1041,6 +1024,12 @@ and the puerperium : </label>
                         </div>
                         <!-- .selectgroup -->
                       </div>
+                      <div class="col-12 dn" id="textMdCause_5">
+                        <div class="p-3 mt-2" style="border: dashed; border-width: 2px; border-color: rgb(18, 158, 70); border-radius: 10px; background: rgb(244, 244, 244);">
+                          <strong>Causes :</strong><br>
+                          <div id="textMdCauseList_5"></div>
+                        </div>
+                      </div>
                     </div>
                     <!-- .form-group -->
 
@@ -1072,6 +1061,12 @@ and the puerperium : </label>
                           </div>
                         </div>
                         <!-- .selectgroup -->
+                      </div>
+                      <div class="col-12 dn" id="textMdCause_6">
+                        <div class="p-3 mt-2" style="border: dashed; border-width: 2px; border-color: rgb(18, 158, 70); border-radius: 10px; background: rgb(244, 244, 244);">
+                          <strong>Causes :</strong><br>
+                          <div id="textMdCauseList_6"></div>
+                        </div>
                       </div>
                     </div>
                     <!-- .form-group -->
@@ -1105,6 +1100,12 @@ and the puerperium : </label>
                         </div>
                         <!-- .selectgroup -->
                       </div>
+                      <div class="col-12 dn" id="textMdCause_7">
+                        <div class="p-3 mt-2" style="border: dashed; border-width: 2px; border-color: rgb(18, 158, 70); border-radius: 10px; background: rgb(244, 244, 244);">
+                          <strong>Causes :</strong><br>
+                          <div id="textMdCauseList_7"></div>
+                        </div>
+                      </div>
                     </div>
                     <!-- .form-group -->
 
@@ -1137,6 +1138,12 @@ and the puerperium : </label>
                         </div>
                         <!-- .selectgroup -->
                       </div>
+                      <div class="col-12 dn" id="textMdCause_8">
+                        <div class="p-3 mt-2" style="border: dashed; border-width: 2px; border-color: rgb(18, 158, 70); border-radius: 10px; background: rgb(244, 244, 244);">
+                          <strong>Causes :</strong><br>
+                          <div id="textMdCauseList_8"></div>
+                        </div>
+                      </div>
                     </div>
                     <!-- .form-group -->
 
@@ -1168,6 +1175,12 @@ and the puerperium : </label>
                           </div>
                         </div>
                         <!-- .selectgroup -->
+                      </div>
+                      <div class="col-12 dn" id="textMdCause_9">
+                        <div class="p-3 mt-2" style="border: dashed; border-width: 2px; border-color: rgb(18, 158, 70); border-radius: 10px; background: rgb(244, 244, 244);">
+                          <strong>Causes :</strong><br>
+                          <div id="textMdCauseList_9"></div>
+                        </div>
                       </div>
                     </div>
                     <!-- .form-group -->
@@ -1542,12 +1555,12 @@ and the puerperium : </label>
                 <!-- .card -->
 
                 <div class="d-none d-sm-block text-center pb-5">
-                  <button type="button" name="button" class="btn btn-secondary" data-role="none" onclick="confirm2Home()">Back to main menu</button>
-                  <button type="submit" name="button" class="btn btn-success" data-role="none" onclick="patient.save_complication()" >Save and review</button>
+                  <button type="button" name="button" class="btn btn-secondary" data-role="none" onclick="confirm2Home()">Save draft and Exit</button>
+                  <button type="submit" name="button" class="btn btn-success" data-role="none" onclick="actor.save_action_6()" >Save and Send revised data</button>
                 </div>
                 <div class="d-block d-sm-none pb-5">
-                  <button type="submit" name="button" class="btn btn-success btn-block" data-role="none" onclick="patient.save_complication()">Save and review</button>
-                  <button type="button" name="button" class="btn btn-secondary btn-block" data-role="none" onclick="confirm2Home()">Back to main menu</button>
+                  <button type="submit" name="button" class="btn btn-success btn-block" data-role="none" onclick="actor.save_action_6()">Save and Send revised data</button>
+                  <button type="button" name="button" class="btn btn-secondary btn-block" data-role="none" onclick="confirm2Home()">Save draft and Exit</button>
                 </div>
 
               </div>
@@ -1946,7 +1959,7 @@ and the puerperium : </label>
 </div>
 
 <div class="modal fade mt-3 mb-3" id="modalMaternalGroup1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 999999999 !important;">
-  <div class="modal-dialog modal-dialog-centered-" role="document">
+  <div class="modal-dialog modal-dialog-centered- modal-lg" role="document">
     <div class="modal-content" style="border: none;">
       <div class="modal-header bg-secondary">
         <h5 class="modal-title text-white" id="exampleModalLabel">Potential causes of death</h5>
