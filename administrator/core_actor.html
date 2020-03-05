@@ -17,14 +17,14 @@
       <div data-role="page" id="app" style="background: #d9d9d9;">
         <div class="tsdn text-white p-3" style="background: rgb(6, 175, 114); z-index: 900000; position: fixed; width: 100%;">
           <div class="row">
-            <div class="col-2"  onclick="confirm2mainapp()">
+            <div class="col-2"  onclick="window.history.back()">
               <button type="button" name="button" class="btn btn-icon text-white" data-role="none" style=""><i class="fas fa-chevron-left"></i></button>
             </div>
             <div class="col-8 text-center d-none d-sm-block" style="padding-top: 5px;">
-              <h4 class="mb-0">Part 1 : Finalize</h4>
+              <h4 class="mb-0">Part 1 : Finalize review</h4>
             </div>
             <div class="col-8 text-center d-block d-sm-none" style="padding-top: 5px;">
-              <h4 class="mb-0">Part 1 : Finalize</h4>
+              <h4 class="mb-0">Part 1 : Finalize review</h4>
             </div>
             <div class="col-2 text-right pr-4" onclick="gotoAct()">
               <button type="button" name="button" class="btn btn-icon text-white" data-role="none" style=""><i class="fas fa-chevron-right"></i></button>
@@ -205,44 +205,47 @@
                       <tbody>
                         <tr>
                           <td style="width: 30%;">Mode of delivery :</td>
-                          <td></td>
+                          <td id="textMod"></td>
                         </tr>
                         <tr>
                           <td>Gestational age at delivery :</td>
-                          <td></td>
+                          <td id="textGaDel">-</td>
                         </tr>
                         <tr>
                           <td>Date and time of delivery :</td>
-                          <td></td>
+                          <td id="textDateTimeDel">-</td>
                         </tr>
                         <tr>
                           <td>Birth attendant :</td>
-                          <td></td>
+                          <td id="textBa">-</td>
+                        </tr>
+                        <tr>
+                          <td>Type of Birth attendant :</td>
+                          <td id="textBatype">-</td>
                         </tr>
                       </tbody>
                     </table>
 
                     <h5>Newborn charatoristics</h5>
-                    <table class="table table-bordered">
-                      <tbody>
-                        <tr>
-                          <td style="width: 30%;">Mode of delivery :</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>Gestational age at delivery :</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>Date and time of delivery :</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>Birth attendant :</td>
-                          <td></td>
-                        </tr>
-                      </tbody>
-                    </table>
+                    <div class="textNewbordData">
+                      No data found
+                      <!-- <table class="table table-bordered">
+                        <tbody>
+                          <tr>
+                            <td style="width: 30%;">Birth weight :</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Sign of viability:</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Apgar score (1 min / 5 min) :</td>
+                            <td></td>
+                          </tr>
+                        </tbody>
+                      </table> -->
+                    </div>
 
                   </div>
                 </div>
@@ -258,56 +261,59 @@
                       <tbody>
                         <tr>
                           <td style="width: 30%;">Normal :</td>
-                          <td></td>
+                          <td id="textNormalStatus">Yes</td>
                         </tr>
                       </tbody>
                     </table>
 
-                    <h5>Complications</h5>
-                    <table class="table table-bordered">
-                      <tbody>
-                        <tr>
-                          <td style="width: 30%;">Severe Preeclampsia/Eclampsia :</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>Postpartum hemorrahge :</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>Sepsis :</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>Obstructed labor :</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>Cesarean delivery :</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>Maternal death :</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>Preterm birth :</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>Low birth weight :</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>Stillbirth :</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>Neonatal death :</td>
-                          <td></td>
-                        </tr>
-                      </tbody>
-                    </table>
+                    <div class="abnormalHidden">
+                      <h5>Complications</h5>
+                      <table class="table table-bordered">
+                        <tbody>
+                          <tr>
+                            <td style="width: 30%;">Severe Preeclampsia/Eclampsia :</td>
+                            <td id="textComp1">No</td>
+                          </tr>
+                          <tr>
+                            <td>Postpartum hemorrahge :</td>
+                            <td id="textComp2">No</td>
+                          </tr>
+                          <tr>
+                            <td>Sepsis :</td>
+                            <td id="textComp3">No</td>
+                          </tr>
+                          <tr>
+                            <td>Obstructed labor :</td>
+                            <td id="textComp4">No</td>
+                          </tr>
+                          <tr>
+                            <td>Cesarean delivery :</td>
+                            <td id="textComp5">No</td>
+                          </tr>
+                          <tr>
+                            <td>Maternal death :</td>
+                            <td id="textComp6">No</td>
+                          </tr>
+                          <tr>
+                            <td>Preterm birth :</td>
+                            <td id="textComp7">No</td>
+                          </tr>
+                          <tr>
+                            <td>Low birth weight :</td>
+                            <td id="textComp8">No</td>
+                          </tr>
+                          <tr>
+                            <td>Stillbirth :</td>
+                            <td id="textComp9">No</td>
+                          </tr>
+                          <tr>
+                            <td>Neonatal death :</td>
+                            <td id="textComp10">No</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
 
                   </div>
                 </div>

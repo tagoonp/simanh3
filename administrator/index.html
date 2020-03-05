@@ -20,7 +20,7 @@
             <div class="col-12 col-sm-10 offset-sm-1">
               <div class="row">
                 <div class="col-10 offset-1 text-center">
-                  <img src="../img/simanh-logo-1.png" alt="" class="img-fluid" >
+                  <img src="../img/logo32.png" alt="" class="img-fluid" >
                 </div>
               </div>
             </div>
@@ -51,7 +51,7 @@
                       <div class="pb-3" style="font-size: 0.8em;">Actor dashboard</div>
                     </div>
 
-                    <div class="col-4 col-sm-3 text-center" style="cursor: pointer;"  onclick="slide2('aggregate')">
+                    <div class="col-4 col-sm-3 text-center dn" style="cursor: pointer;"  onclick="slide2('aggregate')">
                       <div class="pt-2 pl-3 pr-3 pb-2">
                         <img src="../img/btn-1.png" alt="" class="img-fluid">
                       </div>
@@ -146,12 +146,95 @@
       </div>
       <!-- .confirm_record -->
 
+      <div data-role="page" id="statistics" style="background: #e8e8e8;">
+        <div class="container pt-2">
+          <div class="row">
+            <div class="col-12 text-left" onclick="slide2('app', true)" style="cursor: pointer;">
+              <i class="fas fa-chevron-left"></i>
+              Back to main menu
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-12">
+              <h3>Table of Summary</h3>
+              <div>
+                <h4>Common indicators</h4>
+                <div class="card c-drop-shadow-" style="border:none;">
+                  <div class="card-body text-center p-0">
+                    <div class="table-responsive">
+                      <table class="table table-striped mb-0 tsdn">
+                        <thead>
+                          <tr style="background: rgb(15, 176, 113);" class=" text-white">
+                            <th rowspan="2" style="width: 25%;">Facility/Hospital</th>
+                            <th colspan="5">Common indicators</th>
+                          </tr>
+                          <tr style="background: rgb(49, 61, 57);" class=" text-white">
+                            <th>Total admitted</th>
+                            <th>Total delivery</th>
+                            <th>Total births</th>
+                            <th>Total livebirth</th>
+                            <th>Refer case</th>
+                          </tr>
+                        </thead>
+                        <tbody id="tableCommonIndictor">
+                          <tr>
+                            <td colspan="6" class="text-center">No data found</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-4 mb-5">
+                <h4>Complication</h4>
+                <div class="card c-drop-shadow-" style="border:none;">
+                  <div class="card-body text-center p-0">
+                    <div class="table-responsive">
+                      <table class="table table-striped mb-0 tsdn">
+                        <thead>
+                          <tr style="background: rgb(15, 176, 113);" class=" text-white">
+                            <th rowspan="2" style="width: 25%;">Facility/Hospital</th>
+                            <th colspan="10" style="width: 75%;">Indicators</th>
+                          </tr>
+                          <tr style="background: rgb(49, 61, 57); font-weight: 200 !important;" class=" text-white">
+                            <th style="width: 7.5%; vertical-align: top;">Severe P/E <i class="fas fa-info-circle" style="font-size: 0.8em;" data-toggle="tooltip" data-placement="top" title="Severe Preeclampsia/Eclampsia"></i></th>
+                            <th style="width: 7.5%; vertical-align: top;">PPH <i class="fas fa-info-circle" style="font-size: 0.8em;" data-toggle="tooltip" data-placement="top" title="Postpartum hemorrhage"></i></th>
+                            <th style="width: 7.5%; vertical-align: top;">Sepsis </th>
+                            <th style="width: 7.5%; vertical-align: top;">Obstructed <i class="fas fa-info-circle" style="font-size: 0.8em;" data-toggle="tooltip" data-placement="top" title="Obstructed labor"></i></th>
+                            <th style="width: 7.5%; vertical-align: top;">Cesar <i class="fas fa-info-circle" style="font-size: 0.8em;" data-toggle="tooltip" data-placement="top" title="Cesarean delivery"></i></th>
+                            <th style="width: 7.5%; vertical-align: top;">MD <i class="fas fa-info-circle" style="font-size: 0.8em;" data-toggle="tooltip" data-placement="top" title="Maternal death"></i></th>
+                            <th style="width: 7.5%; vertical-align: top;">Preterm <i class="fas fa-info-circle" style="font-size: 0.8em;" data-toggle="tooltip" data-placement="top" title="Preterm birth"></i></th>
+                            <th style="width: 7.5%; vertical-align: top;">LBW <i class="fas fa-info-circle" style="font-size: 0.8em;" data-toggle="tooltip" data-placement="top" title="Low birth weight"></i></th>
+                            <th style="width: 7.5%; vertical-align: top;">Stillbirth</th>
+                            <th style="width: 7.5%; vertical-align: top;">ND <i class="fas fa-info-circle" style="font-size: 0.8em;" data-toggle="tooltip" data-placement="top" title="Neonatal death"></i></th>
+                          </tr>
+                        </thead>
+                        <tbody id="tableComplicationIndictor">
+                          <tr>
+                            <td colspan="11" class="text-center">No data found</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- .confirm_record -->
+
       <div data-role="page" id="actor_index" style="background: #e8e8e8;">
         <div class="container pt-2">
           <div class="row">
-            <div class="col-12 text-left" onclick="slide2('app', true)">
+            <div class="col-12 text-left" onclick="slide2('app', true)" style="cursor: pointer;">
               <i class="fas fa-chevron-left"></i>
-              <img src="../img/simanh-logo-1.png" alt="" width="200" style="cursor: pointer;" >
+              Back to main menu
             </div>
           </div>
 
@@ -988,6 +1071,7 @@
       <script type="text/javascript" src="../assets/custom/js/authen.js" ></script>
       <script type="text/javascript" src="../assets/custom/js/patient-1.0.js"></script>
       <script type="text/javascript" src="../assets/custom/js/actor-1.0.js"></script>
+      <script type="text/javascript" src="../assets/custom/js/report-1.0.js"></script>
       <script>
 
         $(document).ready(function(){
@@ -998,9 +1082,12 @@
           patient.checkInprogressList()
           actor.checkNumActor()
 
+          report.getSummary(1)
+          report.getSummary(2)
           setTimeout(function(){
             // initMap()
             preload.hide()
+            $('[data-toggle="tooltip"]').tooltip()
           }, 000)
         })
 

@@ -130,6 +130,9 @@ if($stage == 'check_prev_info'){
   $hos_id = get_hospcode($conn, $uid);
 
   $strSQL = "SELECT * FROM s6x_patient a LEFT JOIN s6x_delivery b ON a.ind_id = b.pat_ind_id
+             LEFT JOIN s6x_complication c ON a.ind_id = c.comp_ind_id
+             LEFT JOIN s6x_mode_delivery d ON b.moddel = d.mod_id
+             LEFT JOIN s6x_batype e ON b.typa = e.ba_id
              WHERE a.hn = '$hn' AND a.status IN ('0', '1')
              AND a.hos_id = '$hos_id'
              ORDER BY a.ind_id DESC LIMIT 1 ";

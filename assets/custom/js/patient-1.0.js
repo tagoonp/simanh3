@@ -237,13 +237,39 @@ var patient = {
                 console.log(snap);
                 if(fnc.json_exist(snap)){
                   $c = 1
+                  $('.textNewbordData').empty();
                   snap.forEach(i=>{
                     $('#txtBwAdd' + $c).val(i.nb_bw)
                     $('input[name=icon-input-nbsign-add' + $c + '][value=' + i.nb_sov + ']').prop('checked', true)
                     $('input[name=icon-input-apgar1-nb' + $c + '][value=' + i.nb_apg1 + ']').prop('checked', true)
                     $('input[name=icon-input-apgar5-nb' + $c + '][value=' + i.nb_apg5 + ']').prop('checked', true)
+                    $sign = 'No data'
+                    if(i.nb_sov == '1'){ $sign = 'Yes' }
+                    else if(i.nb_sov == '0'){ $sign = 'No' }
+                    $data = '<table class="table table-bordered">' +
+                      '<tbody>' +
+                        '<tr>' +
+                          '<td colspan="2">#' + $c + '</td>' +
+                        '</tr>' +
+                        '<tr>' +
+                          '<td style="width: 30%;">Birth weight :</td>' +
+                          '<td>' + i.nb_bw + '</td>' +
+                        '</tr>' +
+                        '<tr>' +
+                          '<td>Sign of viability:</td>' +
+                          '<td>' + $sign + '</td>' +
+                        '</tr>' +
+                        '<tr>' +
+                          '<td>Apgar score (1 min / 5 min) :</td>' +
+                          '<td>' + i.nb_apg1 + '/' + i.nb_apg5 + '</td>' +
+                        '</tr>' +
+                      '</tbody>' +
+                    '</table>'
+                    $('.textNewbordData').append($data)
                     $c++
                   })
+                }else{
+                  $('.textNewbordData').text('No data found')
                 }
               })
   },
@@ -471,7 +497,14 @@ var patient = {
                     if(i.gadel != null){
                       $('#btn-deli-next').removeClass('dn')
                       $ga_del = i.gadel
+                      $('#textGaDel').text(i.gadel + 'weeks')
+                    }else{
+                      $('#textGaDel').text('-')
                     }
+
+                    $('#textDateTimeDel').text(i.datedel + ' ' + i.timedel)
+                    $('#textBa').text(i.nameba)
+                    $('#textBatype').text(i.ba_name_en)
 
                     $('input[name=icon-input-moddel][value=' + i.moddel + ']').prop('checked', true);
                     console.log(i.gadel);
@@ -489,10 +522,27 @@ var patient = {
                     if(i.indicator_status == '0'){
                       $('input[name=icon-input-comstatus][value=0]').prop('checked', true);
                       $('.abnormalHidden').removeClass('dn')
+                      $('#textNormalStatus').text('No')
+
+                      if(i.eclampsia == '1'){ $('#textComp1').html('<span class="text-danger"><i class="fas fa-exclamation-triangle"></i> Yes</span>')}else{$('#textComp1').text('No')}
+                      if(i.pph == '1'){ $('#textComp2').html('<span class="text-danger"><i class="fas fa-exclamation-triangle"></i> Yes</span>')}else{$('#textComp1').text('No')}
+                      if(i.sepsis == '1'){ $('#textComp3').html('<span class="text-danger"><i class="fas fa-exclamation-triangle"></i> Yes</span>')}else{$('#textComp1').text('No')}
+                      if(i.obl == '1'){ $('#textComp4').html('<span class="text-danger"><i class="fas fa-exclamation-triangle"></i> Yes</span>')}else{$('#textComp1').text('No')}
+                      if(i.cesarean == '1'){ $('#textComp5').html('<span class="text-danger"><i class="fas fa-exclamation-triangle"></i> Yes</span>')}else{$('#textComp1').text('No')}
+                      if(i.maternaldeath == '1'){ $('#textComp6').html('<span class="text-danger"><i class="fas fa-exclamation-triangle"></i> Yes</span>')}else{$('#textComp1').text('No')}
+                      if(i.preterm == '1'){ $('#textComp7').html('<span class="text-danger"><i class="fas fa-exclamation-triangle"></i> Yes</span>')}else{$('#textComp1').text('No')}
+                      if(i.lbw == '1'){ $('#textComp8').html('<span class="text-danger"><i class="fas fa-exclamation-triangle"></i> Yes</span>')}else{$('#textComp1').text('No')}
+                      if(i.stillbirth == '1'){ $('#textComp9').html('<span class="text-danger"><i class="fas fa-exclamation-triangle"></i> Yes</span>')}else{$('#textComp1').text('No')}
+                      if(i.neonataldeath == '1'){ $('#textComp10').html('<span class="text-danger"><i class="fas fa-exclamation-triangle"></i> Yes</span>')}else{$('#textComp1').text('No')}
                     }else{
                       $('input[name=icon-input-comstatus][value=1]').prop('checked', true);
                       $('.abnormalHidden').addClass('dn')
+                      $('#textNormalStatus').text('Yes')
                     }
+
+                    $('#textMod').text(i.mod_name)
+
+
                   })
                   preload.hide()
                 }else{

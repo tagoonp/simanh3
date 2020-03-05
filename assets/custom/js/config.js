@@ -23,6 +23,8 @@ var current_user = window.localStorage.getItem(conf.prefix + 'uid')
 var current_role = window.localStorage.getItem(conf.prefix + 'role')
 var current_hn = window.localStorage.getItem(conf.prefix + 'hn')
 
+var current_hosp = window.localStorage.getItem(conf.prefix + 'hosp')
+
 // checkVersion
 // var versionJxr = $.post(conf.api + 'checkversion', function(){})
 //                   .always(function(resp){
