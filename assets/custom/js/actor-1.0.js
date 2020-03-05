@@ -1,4 +1,71 @@
 var actor = {
+  confirm_record(){
+    $('#modalConfirmsending').modal('hide')
+    $complication = $('#txtSendComplication').val()
+    var param = {
+      uid: current_user,
+      role: current_role,
+      hn: current_hn,
+      complication_group: $complication
+    }
+    preload.show()
+    var jxr = $.post(conf.api + 'actor?stage=confirm_action', param , function(){})
+               .always(function(resp){
+                 if(resp == 'Y'){
+                   preload.hide()
+                   $('#modalConfirmsendingSuccess').modal({backdrop: 'static', keyboard: false})
+                 }else{
+                   preload.hide()
+                   $('#notify1Modal').modal()
+                 }
+               })
+  },
+  saveDraft(group){
+    if(group == 6){ actor.save_action_draft_6() }
+  },
+  save_action_draft_6(){
+    var param = {
+      uid: current_user,
+      role: current_role,
+      hn: current_hn,
+      complication_group: '6',
+      dod: $('#txtYY6').val() + '-' + $('#txtMM6').val() + '-' + $('#txtDD6').val(),
+      tod: $('#txtHH6').val() + ':' + $('#txtMIN6').val() + ':00',
+      q1: $("input[name='icon-input-act-md-1']:checked").val(),
+      q2: $("input[name='icon-input-act-md-2']:checked").val(),
+      q3: $("input[name='icon-input-act-md-3']:checked").val(),
+      q4: $("input[name='icon-input-act-md-4']:checked").val(),
+      q5: $("input[name='icon-input-act-md-5']:checked").val(),
+      q6: $("input[name='icon-input-act-md-6']:checked").val(),
+      q7: $("input[name='icon-input-act-md-7']:checked").val(),
+      q8: $("input[name='icon-input-act-md-8']:checked").val(),
+      q9: $("input[name='icon-input-act-md-9']:checked").val(),
+      q10: $("input[name='icon-input-act-md-10']:checked").val(),
+      q11: $("input[name='icon-input-act-md-11']:checked").val(),
+      q12: $("input[name='icon-input-act-md-12']:checked").val(),
+      q13: $("input[name='icon-input-act-md-13']:checked").val(),
+      q14: $("input[name='icon-input-act-md-14']:checked").val(),
+      q15: $("input[name='icon-input-act-md-15']:checked").val(),
+      q16: $("input[name='icon-input-act-md-16']:checked").val(),
+      q17: $("input[name='icon-input-act-md-17']:checked").val(),
+      q18: $("input[name='icon-input-act-md-18']:checked").val(),
+      q19: $("input[name='icon-input-act-md-19']:checked").val(),
+      q20: $("input[name='icon-input-act-md-20']:checked").val(),
+      q21: $("input[name='icon-input-act-md-21']:checked").val(),
+      q22: $("input[name='icon-input-act-md-22']:checked").val(),
+      q23: $("input[name='icon-input-act-md-23']:checked").val(),
+      q24: $("input[name='icon-input-act-md-24']:checked").val(),
+      q25: $("input[name='icon-input-act-md-25']:checked").val(),
+      q26: $("input[name='icon-input-act-md-26']:checked").val(),
+      q27: $("input[name='icon-input-act-md-27']:checked").val(),
+      q28: $("input[name='icon-input-act-md-28']:checked").val(),
+      q29: $("input[name='icon-input-act-md-29']:checked").val(),
+      q30: $("input[name='icon-input-act-md-30']:checked").val(),
+      q31: $("input[name='icon-input-act-md-31']:checked").val()
+    }
+    var jxr = $.post(conf.api + 'actor?stage=set_action_draft', param , function(){})
+               .always(function(resp){ console.log(resp); })
+  },
   save_action_6(){
     $check = 0
     $('.form-control').removeClass('dn')
@@ -11,6 +78,9 @@ var actor = {
       $('html,body').animate({ scrollTop: 0 }, 'slow'); return ;
       return ;
     }
+
+    $('#modalConfirmsending').modal({backdrop: 'static', keyboard: false})
+    $('#txtSendComplication').val('6')
   },
   getMaternalDeathCauseAll(group_id){
     preload.show()
@@ -260,6 +330,64 @@ function showRecordModal(comp){
 
 }
 
+function getPrevAction(x){
+  if(x == 6){
+    var param = {
+      uid: current_user,
+      role: current_role,
+      hn: current_hn,
+      complication: x
+    }
+    var jxr = $.post(conf.api + 'actor?stage=get_action_info', param , function(){}, 'json')
+               .always(function(snap){
+                 if(fnc.json_exist(snap)){
+                   snap.forEach(i=>{
+                     if((i.mda_date != null) && (i.mda_date != '0000-00-00')){
+                       $b = i.mda_date.split('-')
+                       $('#txtDD6').val($b[2]); $('#txtMM6').val($b[1]); $('#txtYY6').val($b[0])
+                     }
+                     if(i.mda_time != null){
+                       $b = i.mda_time.split(':')
+                       $('#txtHH6').val($b[0])
+                       $('#txtMIN6').val($b[1])
+                     }
+                     $('input[name=icon-input-act-md-1][value=' + i.mda_antibiotic + ']').prop('checked', true)
+                     $('input[name=icon-input-act-md-2][value=' + i.mda_oxytocics + ']').prop('checked', true)
+                     $('input[name=icon-input-act-md-3][value=' + i.mda_anticonvulsant + ']').prop('checked', true)
+                     $('input[name=icon-input-act-md-4][value=' + i.mda_rpcp + ']').prop('checked', true)
+                     $('input[name=icon-input-act-md-5][value=' + i.mda_rp + ']').prop('checked', true)
+                     $('input[name=icon-input-act-md-6][value=' + i.mda_vaginal_delivery + ']').prop('checked', true)
+                     $('input[name=icon-input-act-md-7][value=' + i.mda_cesarean + ']').prop('checked', true)
+                     $('input[name=icon-input-act-md-8][value=' + i.mda_blood_trans + ']').prop('checked', true)
+                     $('input[name=icon-input-act-md-9][value=' + i.mda_hysterectomy + ']').prop('checked', true)
+                     $('input[name=icon-input-act-md-10][value=' + i.mda_other_surgeries + ']').prop('checked', true)
+                     $('input[name=icon-input-act-md-11][value=' + i.mda_intubation + ']').prop('checked', true)
+                     $('input[name=icon-input-act-md-12][value=' + i.mda_cardiopulmonary + ']').prop('checked', true)
+                     $('input[name=icon-input-act-md-13][value=' + i.mda_diagnosis_1 + ']').prop('checked', true)
+                     $('input[name=icon-input-act-md-14][value=' + i.mda_diagnosis_2 + ']').prop('checked', true)
+                     $('input[name=icon-input-act-md-15][value=' + i.mda_diagnosis_3 + ']').prop('checked', true)
+                     $('input[name=icon-input-act-md-16][value=' + i.mda_diagnosis_4 + ']').prop('checked', true)
+                     $('input[name=icon-input-act-md-17][value=' + i.mda_diagnosis_5 + ']').prop('checked', true)
+                     $('input[name=icon-input-act-md-18][value=' + i.mda_diagnosis_6 + ']').prop('checked', true)
+                     $('input[name=icon-input-act-md-19][value=' + i.mda_diagnosis_7 + ']').prop('checked', true)
+                     $('input[name=icon-input-act-md-20][value=' + i.mda_diagnosis_8 + ']').prop('checked', true)
+                     $('input[name=icon-input-act-md-21][value=' + i.mda_diagnosis_9 + ']').prop('checked', true)
+                     $('input[name=icon-input-act-md-22][value=' + i.mda_limit_1 + ']').prop('checked', true)
+                     $('input[name=icon-input-act-md-23][value=' + i.mda_limit_2 + ']').prop('checked', true)
+                     $('input[name=icon-input-act-md-24][value=' + i.mda_limit_3 + ']').prop('checked', true)
+                     $('input[name=icon-input-act-md-25][value=' + i.mda_limit_4 + ']').prop('checked', true)
+                     $('input[name=icon-input-act-md-26][value=' + i.mda_action_1 + ']').prop('checked', true)
+                     $('input[name=icon-input-act-md-27][value=' + i.mda_action_2 + ']').prop('checked', true)
+                     $('input[name=icon-input-act-md-28][value=' + i.mda_action_3 + ']').prop('checked', true)
+                     $('input[name=icon-input-act-md-29][value=' + i.mda_action_4 + ']').prop('checked', true)
+                     $('input[name=icon-input-act-md-30][value=' + i.mda_action_5 + ']').prop('checked', true)
+                     $('input[name=icon-input-act-md-31][value=' + i.mda_action_6 + ']').prop('checked', true)
+                   })
+                 }
+               })
+  }
+}
+
 function getMdCause(group){
   var param = {
     uid: current_user,
@@ -279,7 +407,7 @@ function getMdCause(group){
                  }
 
                  snap.forEach(i=>{
-                   $('#textMdCauseList_' + group).append('<div><span class="badge badge-danger"><i class="fas fa-times"></i></span> <span class="badge badge-primary">' + i.cmp_icd + '</span> ' + i.comp_name + '</div>')
+                   $('#textMdCauseList_' + group).append('<div><span class="badge badge-danger" onclick="deleteMdCause(' + i.ID + ', \'' + group + '\')" style="cursor: pointer;"><i class="fas fa-times"></i></span> <span class="badge badge-primary">' + i.cmp_icd + '</span> ' + i.comp_name + '</div>')
                    $('input[name=md-cause-' + i.cmp_id + ']').prop('checked', true)
                  })
                  preload.hide()
@@ -287,6 +415,21 @@ function getMdCause(group){
                  $('#textMdCauseList_' + group).empty()
                  $('#textMdCause_' + group).addClass('dn')
                  preload.hide()
+               }
+             })
+}
+
+function deleteMdCause(id, group){
+  var param = {
+    uid: current_user,
+    role: current_role,
+    comp_id: id
+  }
+  var jxr = $.post(conf.api + 'actor?stage=delete_complication_icd', param , function(){})
+             .always(function(resp){
+               console.log(resp);
+               if(resp == 'Y'){
+                 getMdCause(group)
                }
              })
 }
@@ -462,5 +605,7 @@ $(function(){
       // $('.obstatricDiv').removeClass('dn')
     }
   })
+
+
 
 })

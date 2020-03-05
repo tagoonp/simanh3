@@ -1621,6 +1621,7 @@ and the puerperium : </label>
             actor.getComplicationList()
 
             for (var i = 1 ; i <= 9; i++) {
+              getPrevAction(i)
               getMdCause(i)
             }
           }, 000)
@@ -1633,7 +1634,9 @@ and the puerperium : </label>
         })
 
         $(function(){
-
+          $('.selectgroup-input').click(function(){
+            actor.saveDraft(6)
+          })
         })
 
         function gotoAct(){
@@ -1673,106 +1676,7 @@ and the puerperium : </label>
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="newbornModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <div class="text-center">
-          <div class="row">
-            <div class="col-12 pb-3 pt-4">
-              <img src="../img/plus-newborn-1.png" alt="" style="max-width: 100px;">
-            </div>
-          </div>
-          <h4>Add newborn</h4>
-          <form class="newbornForm" onsubmit="return false;">
-            <div class="row text-left">
-              <div class="col-12">
-                <div class="form-group">
-                  <div class="form-group row">
-                    <label for="" class="col-form-label col-12 col-sm-3">Birth weight : <span class="text-danger">*</span> </label>
-                    <div class="col-12 col-sm-9">
-                      <div class="row">
-                        <div class="col-12">
-                          <input type="range" min="0" max="9999" class="form-control" id="txtBwAdd" data-rangeSlider value="0">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- .form-group -->
 
-                  <div class="form-group row">
-                    <label for="" class="col-form-label col-12 col-sm-3">Sign of viability (Heart rate, Breath and movement) : </label>
-                    <div class="col-12 col-sm-9">
-                      <div class="selectgroup selectgroup-pills">
-                        <div class="row">
-                          <div class="col-2 col-sm-2">
-                              <label class="selectgroup-item">
-                                  <input type="radio" name="icon-input-nbsign-add" value="1" class="selectgroup-input" data-role="none" checked="">
-                                  <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                              </label>
-                          </div>
-                          <div class="col-9 col-sm-10 pl-4-" style="padding-top: 12px;">Yes</div>
-
-                          <div class="col-2 col-sm-2">
-                              <label class="selectgroup-item">
-                                  <input type="radio" name="icon-input-nbsign-add" value="0" class="selectgroup-input"  data-role="none">
-                                  <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                              </label>
-                          </div>
-                          <div class="col-9 col-sm-10 pl-4-" style="padding-top: 12px;">No</div>
-
-                          <div class="col-2 col-sm-2">
-                              <label class="selectgroup-item">
-                                  <input type="radio" name="icon-input-nbsign-add" value="99" class="selectgroup-input"  data-role="none">
-                                  <span class="selectgroup-button selectgroup-button-icon btn-icon" style="width: 25px; height: 38px;"><i class="fas fa-check"></i></span>
-                              </label>
-                          </div>
-                          <div class="col-9 col-sm-10 pl-4-" style="padding-top: 12px;">No data</div>
-
-                        </div>
-                      </div>
-                      <!-- .selectgroup -->
-                    </div>
-                  </div>
-                  <!-- .form-group -->
-
-                  <div class="form-group row">
-                    <label for="" class="col-form-label col-12 col-sm-3">Apgar score 1 min : <span class="text-danger">*</span> </label>
-                    <div class="col-12 col-sm-9">
-                      <div class="row">
-                        <div class="col-12">
-                          <input type="range" min="0" max="10" class="form-control" id="txtApgar1Add" data-rangeSlider value="">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- .form-group -->
-
-                  <div class="form-group row">
-                    <label for="" class="col-form-label col-12 col-sm-4">Apgar score 5 min : <span class="text-danger">*</span> </label>
-                    <div class="col-12 col-sm-8">
-                      <div class="row">
-                        <div class="col-12">
-                          <input type="range" min="0" max="10" class="form-control" id="txtApgar5Add" data-rangeSlider value="">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- .form-group -->
-
-                </div>
-              </div>
-            </div>
-            <div class="text-center pb-2">
-              <button class="btn btn-secondary- btn-block-" data-role="none" data-dismiss="modal">Cancel</button>
-              <button class="btn btn-success btn-block-" data-role="none"  onclick="backtomenu(2)">Save</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 <!-- Modal -->
@@ -1844,8 +1748,9 @@ and the puerperium : </label>
           <img src="../img/send-1.png" alt="" width="120px;" class="pt-4 pb-4">
           <h4>Are you sure?</h4>
           <p>You can not update or do any process after confirm this record.</p>
+          <input type="hidden" name="txtSendComplication" id="txtSendComplication" >
           <div class="text-center">
-            <button class="btn btn-danger btn-block" data-role="none" onclick="patient.confirm_record()">Confirm and Send</button>
+            <button class="btn btn-danger btn-block" data-role="none" onclick="actor.confirm_record()">Confirm and Send</button>
             <button class="btn btn-success- btn-block" data-role="none" data-dismiss="modal">Cancel</button>
           </div>
         </div>
